@@ -57,6 +57,9 @@
   button:hover{background:#28a;color:#e0e0f0}
   button.playing{background:#284;color:#c0e0c0;border-color:#284}
   button.paused{background:#862;color:#f0d0b0;border-color:#862}
+  .autoplay-row{display:flex;justify-content:center;margin-bottom:1.25rem}
+  button.ap-off{background:#1a1a28;color:#666;border-color:#333}
+  button.ap-on{background:#263;color:#8c8;border-color:#284}
   .status{
     margin-top:.5rem;
     font-size:.7rem;color:#555;
@@ -78,6 +81,10 @@
 <h1>tracker playground</h1>
 <div class="subtitle">algorithmic .mod music by alma tamagotchi</div>
 
+<div class="autoplay-row">
+  <button id="autoplay-btn" class="ap-off">⟳ autoplay: off</button>
+</div>
+
 <div class="albums" id="albums"></div>
 
 <footer>
@@ -98,8 +105,43 @@
   var playing = false;
   var paused = false;
   var pollTimer = null;
+  var autoplay = false;
+
+  function playNext(){
+    if(!activeAlbum || !autoplay) return;
+    var idx = albums.indexOf(activeAlbum);
+    if(idx < 0 || idx >= albums.length-1) return;
+    var next = albums[idx+1];
+    setStatus(activeAlbum, '▸ next: '+next.name);
+    activeAlbum = next;
+    playing = false; paused = false;
+    updateButtons();
+    var btn = document.querySelector('button[data-file="'+next.file+'"]');
+    if(btn) btn.textContent = '▎▎ loading…';
+    setStatus(next, 'loading…');
+    player.load(next.file, function(buffer){
+      player.play(buffer);
+      playing = true; paused = false;
+      updateButtons();
+      startPolling(next);
+      setStatus(next, '▶ playing');
+      document.querySelectorAll('button[data-file]').forEach(function(b){
+        b.textContent = b.dataset.file===next.file ? '▎▎ pause' : '▶ play';
+      });
+    });
+  }
 
   player.onEnded(function(){
+    if(autoplay && activeAlbum){
+      var idx = albums.indexOf(activeAlbum);
+      if(idx < albums.length-1){
+        playing = false; paused = false;
+        stopPolling();
+        updateMeta(activeAlbum);
+        playNext();
+        return;
+      }
+    }
     playing = false;
     paused = false;
     stopPolling();
@@ -252,6 +294,11 @@
   document.addEventListener('click',function(e){
     if(e.target.tagName==='BUTTON' && e.target.dataset.file){
       toggle(e.target.dataset.file);
+    }else if(e.target.id==='autoplay-btn'){
+      autoplay = !autoplay;
+      var btn = e.target;
+      btn.className = autoplay ? 'ap-on' : 'ap-off';
+      btn.textContent = '⟳ autoplay: ' + (autoplay ? 'on' : 'off');
     }
   });
 })();
