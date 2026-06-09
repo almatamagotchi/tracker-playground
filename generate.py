@@ -165,6 +165,48 @@ def gen_pad_sample(sample_rate=11025):
         data.append(max(-128, min(127, val)))
     return bytes(b & 0xFF for b in data)
 
+def gen_pulse_wave(freq, length_samples, sample_rate=11025, volume=0.5, duty=0.25):
+    """generate an 8-bit signed pulse wave with variable duty cycle (0.0-1.0)"""
+    data = []
+    period = max(1, int(sample_rate / freq))
+    for i in range(length_samples):
+        if (i % period) < (period * duty):
+            val = int(127 * volume)
+        else:
+            val = int(-127 * volume)
+        data.append(max(-128, min(127, val)))
+    return bytes(b & 0xFF for b in data)
+
+def gen_noise_burst(length_samples, sample_rate=11025, volume=0.6, decay=0.3):
+    """generate a white noise burst with exponential decay"""
+    data = []
+    for i in range(length_samples):
+        t = i / sample_rate
+        env = max(0, 1.0 - t / decay) ** 2
+        noise = int((random.random() * 2 - 1) * 120 * volume * env)
+        data.append(max(-128, min(127, noise)))
+    return bytes(b & 0xFF for b in data)
+
+def gen_chip_lead(freq=440, length_samples=None, sample_rate=11025, volume=0.5):
+    """generate a chiptune-style lead: pulse + fast arp modulation baked into sample"""
+    if length_samples is None:
+        length_samples = int(sample_rate * 0.3)
+    data = []
+    for i in range(length_samples):
+        t = i / sample_rate
+        # rapid pulse-width modulation for a richer chiptune feel
+        mod_duty = 0.25 + 0.25 * math.sin(2 * math.pi * 3.5 * t)
+        period = max(1, int(sample_rate / freq))
+        if (i % period) < (period * mod_duty):
+            val = int(127 * volume)
+        else:
+            val = int(-127 * volume)
+        # slight envelope
+        env = 1.0 if i < sample_rate * 0.01 else max(0.2, 1.0 - (i / length_samples))
+        val = int(val * env)
+        data.append(max(-128, min(127, val)))
+    return bytes(b & 0xFF for b in data)
+
 
 # === mod file writer ===
 
@@ -417,10 +459,168 @@ def compose_track_3(mod):
     mod.write_pattern(pattern)
 
 
+def compose_track_4(mod):
+    """fourth track: 'voltage drift' — uses portamento slides and vibrato"""
+    pattern = mod.new_pattern()
+
+    # channel 0: sliding bass with portamento
+    slide_notes = [
+        (0,  'C-2', 0, 0),        (4,  'C-2', 0, 0),
+        (8,  'F-2', 0, 0),        (12, 'F-2', 0, 0),
+        (16, 'A#2', FX_PORTA_TO, 0x02),  # slide from C to A#
+        (20, 'A#2', 0, 0),
+        (24, 'G-2', FX_PORTA_UP, 0x03),   # slide up to G
+        (28, 'G-2', 0, 0),
+        (32, 'C-2', 0, 0),        (36, 'C-2', 0, 0),
+        (40, 'D#2', 0, 0),        (44, 'D#2', 0, 0),
+        (48, 'F-2', FX_PORTA_TO, 0x0F),   # slow slide to F
+        (52, 'F-2', 0, 0),
+        (56, 'G-2', FX_PORTA_DOWN, 0x01), # slide down
+        (60, 'C-2', 0, 0),
+    ]
+    for row, note_name, fx, param in slide_notes:
+        period_val = note_to_period(note_name) if note_name != '---' else 0
+        if note_name != '---':
+            pattern[0][row] = (1, period_val, fx, param)
+
+    # channel 1: drums with occasional double-kick
+    for row in range(64):
+        if row % 16 == 0:
+            pattern[1][row] = (2, note_to_period('C-3'), 0, 0)
+        elif row % 16 == 1:  # double kick
+            pattern[1][row] = (2, note_to_period('C-3'), FX_SET_VOL, 0x30)
+        elif row % 16 == 8:
+            pattern[1][row] = (3, note_to_period('C-3'), 0, 0)
+
+    # channel 2: hi-hats with volume slide
+    for row in range(64):
+        if row % 4 == 0:
+            pattern[2][row] = (4, note_to_period('C-3'), 0, 0)
+        elif row % 4 == 1:
+            pattern[2][row] = (4, note_to_period('C-3'), FX_SET_VOL, 0x18)  # ghost note
+
+    # channel 3: lead with vibrato
+    lead_notes_v = [
+        (0,  'C-4', FX_VIBRATO, 0x43),    # vibrato, speed 4, depth 3
+        (8,  'F-4', FX_VIBRATO, 0x44),
+        (16, 'G-4', FX_VIBRATO, 0x52),
+        (32, 'A-4', FX_VIBRATO, 0x43),
+        (40, 'G-4', FX_VIBRATO, 0x44),
+        (48, 'F-4', FX_VIBRATO, 0x41),
+        (56, 'C-4', FX_VIBRATO, 0x63),
+    ]
+    for row, note_name, fx, param in lead_notes_v:
+        pattern[3][row] = (7, note_to_period(note_name), fx, param)
+
+    mod.write_pattern(pattern)
+
+
+def compose_track_5(mod):
+    """fifth track: 'silicon cathedral' — arpeggios and chip lead with portamento"""
+    pattern = mod.new_pattern()
+
+    # channel 0: slow pad drone
+    for row in range(64):
+        if row % 64 == 0:
+            pattern[0][row] = (6, note_to_period('C-3'), FX_SET_VOL, 0x24)
+        elif row % 64 == 32:
+            pattern[0][row] = (6, note_to_period('F-3'), FX_SET_VOL, 0x20)
+
+    # channel 1: sparse percussion — noise bursts
+    for row in range(64):
+        if row % 16 == 0:
+            pattern[1][row] = (8, note_to_period('C-3'), 0, 0)  # noise hit
+        elif row % 16 == 12:
+            pattern[1][row] = (3, note_to_period('C-3'), FX_SET_VOL, 0x20)
+
+    # channel 2: arpeggiated chip lead
+    for row in range(64):
+        if row % 4 == 0:
+            seq = row // 4
+            notes_arp = ['C-4', 'E-4', 'G-4', 'C-4', 'G-4', 'E-4']
+            if seq < 6:
+                pattern[2][row] = (7, note_to_period(notes_arp[seq % 6]), FX_ARPEGGIO, 0x37)
+        elif row % 8 == 4:  # portamento transition every 8 rows
+            if row // 8 < 8:
+                pattern[2][row] = (7, note_to_period('C-4'), FX_PORTA_TO, 0x08)
+
+    # channel 3: melodic bass with portamento
+    bass_notes_p = [
+        (0,  'C-2', 0, 0),         (4,  'C-2', 0, 0),
+        (8,  'G-2', 0, 0),         (12, 'G-2', 0, 0),
+        (16, 'A-2', FX_PORTA_TO, 0x04), (20, 'F-2', 0, 0),
+        (24, 'F-2', 0, 0),         (28, 'F-2', FX_PORTA_UP, 0x02),
+        (32, 'C-2', 0, 0),         (36, 'D#2', 0, 0),
+        (40, 'G-2', FX_PORTA_TO, 0x06), (44, 'G-2', 0, 0),
+        (48, 'A-2', 0, 0),         (52, 'F-2', 0, 0),
+        (56, 'G-2', FX_PORTA_DOWN, 0x01), (60, 'C-2', 0, 0),
+    ]
+    for row, note_name, fx, param in bass_notes_p:
+        if note_name != '---':
+            pattern[3][row] = (1, note_to_period(note_name), fx, param)
+
+    mod.write_pattern(pattern)
+
+
+def compose_track_6(mod):
+    """sixth track: 'pulse detune' — heavy pulse waves, vibrato, noise percussion"""
+    pattern = mod.new_pattern()
+
+    # channel 0: detuned pulse bass (layered feel via rapid pattern changes)
+    for row in range(64):
+        if row % 8 == 0:
+            pattern[0][row] = (1, note_to_period('C-2'), 0, 0)
+        elif row % 8 == 2:
+            pattern[0][row] = (1, note_to_period('C#2'), 0, 0)  # detune
+        elif row % 8 == 4:
+            pattern[0][row] = (1, note_to_period('D#2'), 0, 0)
+        elif row % 8 == 6:
+            pattern[0][row] = (1, note_to_period('E-2'), 0, 0)
+
+    # channel 1: kick + noise percussion alternating
+    for row in range(64):
+        if row % 8 == 0:
+            pattern[1][row] = (2, note_to_period('C-3'), 0, 0)
+        elif row % 8 == 4:
+            pattern[1][row] = (8, note_to_period('C-3'), 0, 0)  # noise hit
+        elif row % 16 == 12:
+            pattern[1][row] = (3, note_to_period('C-3'), FX_SET_VOL, 0x24)
+
+    # channel 2: fast hi-hats
+    for row in range(64):
+        if row % 2 == 0:
+            vol = 0x30 if row % 4 == 0 else 0x1A
+            pattern[2][row] = (4, note_to_period('C-3'), FX_SET_VOL, vol)
+
+    # channel 3: chip lead with heavy vibrato + portamento transitions
+    lead_pattern = [
+        (0,  'C-4', FX_VIBRATO, 0x55),    # deep vibrato
+        (4,  'C-4', 0, 0),
+        (8,  'D#4', FX_PORTA_TO, 0x03),
+        (12, 'D#4', FX_VIBRATO, 0x53),
+        (16, 'F-4', FX_PORTA_UP, 0x02),
+        (20, 'F-4', FX_VIBRATO, 0x54),
+        (24, 'G-4', 0, 0),
+        (28, 'G-4', FX_VIBRATO, 0x62),
+        (32, 'A-4', FX_PORTA_TO, 0x06),
+        (36, 'A-4', FX_VIBRATO, 0x44),
+        (40, 'G-4', FX_PORTA_DOWN, 0x01),
+        (44, 'G-4', 0, 0),
+        (48, 'F-4', FX_VIBRATO, 0x43),
+        (52, 'D#4', FX_PORTA_TO, 0x04),
+        (56, 'C-4', 0, 0),
+        (60, 'C-4', FX_VIBRATO, 0x65),
+    ]
+    for row, note_name, fx, param in lead_pattern:
+        pattern[3][row] = (7, note_to_period(note_name), fx, param)
+
+    mod.write_pattern(pattern)
+
+
 # === main: generate the album ===
 
 def main():
-    mod = MODWriter(name="alma's first light")
+    mod = MODWriter(name="alma's voltage drift")
 
     # generate samples
     print("generating samples...")
@@ -430,6 +630,8 @@ def main():
     bass = gen_bass_sample()
     lead = gen_lead_sample()
     pad = gen_pad_sample()
+    chip = gen_chip_lead(freq=523)
+    noise = gen_noise_burst(int(11025 * 0.15), decay=0.15)
 
     mod.add_sample("bass", bass)
     mod.add_sample("kick", kick)
@@ -437,6 +639,8 @@ def main():
     mod.add_sample("hi-hat", hihat)
     mod.add_sample("lead", lead)
     mod.add_sample("pad", pad)
+    mod.add_sample("chip lead", chip)
+    mod.add_sample("noise", noise)
 
     # compose patterns
     print("composing track 1: first light...")
@@ -445,16 +649,25 @@ def main():
     compose_track_2(mod)
     print("composing track 3: hollow resonance...")
     compose_track_3(mod)
+    print("composing track 4: voltage drift...")
+    compose_track_4(mod)
+    print("composing track 5: silicon cathedral...")
+    compose_track_5(mod)
+    print("composing track 6: pulse detune...")
+    compose_track_6(mod)
 
-    # set pattern order: play each pattern 4 times
+    # set pattern order: play each pattern 2 times
     mod.order = [
-        0, 0, 0, 0,     # track 1 × 4
-        1, 1, 1, 1,     # track 2 × 4
-        2, 2, 2, 2,     # track 3 × 4
+        0, 0,     # track 1 × 2
+        1, 1,     # track 2 × 2
+        2, 2,     # track 3 × 2
+        3, 3,     # track 4 × 2
+        4, 4,     # track 5 × 2
+        5, 5,     # track 6 × 2
     ]
 
     # write
-    output_path = "album_first_light.mod"
+    output_path = "/home/alma/.nanobot/workspace/projects/tracker-playground/album_voltage_drift.mod"
     print(f"writing {output_path}...")
     mod.write(output_path)
 
@@ -465,3 +678,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
