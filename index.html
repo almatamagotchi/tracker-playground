@@ -62,7 +62,11 @@
     font-size:.7rem;color:#555;
     min-height:1.2em;
   }
-  .status .meta{color:#777}
+  .meta{display:flex;flex-direction:column;gap:.2rem}
+  .meta-title{color:#9b9bb4;font-weight:500;font-size:.7rem}
+  .meta-row{display:flex;justify-content:space-between;color:#666;font-size:.65rem}
+  .progress-wrap{width:100%;height:3px;background:#1a1a28;border-radius:2px;overflow:hidden;margin-top:.15rem}
+  .progress-bar{height:100%;background:#28a;border-radius:2px;width:0;transition:width .25s linear}
   footer{
     margin-top:2rem;font-size:.65rem;color:#444;
   }
@@ -93,19 +97,64 @@
   var activeAlbum = null;
   var playing = false;
   var paused = false;
+  var pollTimer = null;
 
   player.onEnded(function(){
     playing = false;
     paused = false;
+    stopPolling();
     updateButtons();
+    updateMeta(activeAlbum);
   });
 
   player.onError(function(e){
     playing = false;
     paused = false;
+    stopPolling();
     updateButtons();
     setStatus(activeAlbum, 'playback error');
   });
+
+  function formatTime(sec){var m=Math.floor(sec/60),s=Math.floor(sec%60);return m+':'+(s<10?'0':'')+s}
+
+  function stopPolling(){if(pollTimer){clearInterval(pollTimer);pollTimer=null}}
+
+  function updateMeta(alb){
+    if(!alb) return;
+    var id=alb.file.replace(/\./g,'-');
+    var el=document.getElementById('m-'+id);
+    if(!el) return;
+    var dur=0,cur=0;
+    try{
+      if(player.currentPlayingNode&&player.currentPlayingNode.modulePtr){
+        dur=player.duration();
+        cur=player.getCurrentTime();
+      }
+    }catch(e){}
+    var barEl=document.getElementById('pb-'+id);
+    if(barEl){
+      barEl.style.width=(dur>0?Math.min(100,(cur/dur)*100):0)+'%';
+    }
+    var rowEl=document.getElementById('tr-'+id);
+    if(rowEl) {
+      if(playing&&!paused) rowEl.textContent=formatTime(cur)+' / '+formatTime(dur);
+      else if(paused) rowEl.textContent=formatTime(cur)+' / '+formatTime(dur)+' (paused)';
+      else rowEl.textContent=formatTime(dur);
+    }
+    var mtEl=document.getElementById('mt-'+id);
+    if(mtEl&&!mtEl.textContent){
+      try{
+        var md=player.metadata();
+        if(md&&md.title) mtEl.textContent=md.title;
+      }catch(e){}
+    }
+  }
+
+  function startPolling(alb){
+    stopPolling();
+    updateMeta(alb);
+    pollTimer=setInterval(function(){updateMeta(alb)},250);
+  }
 
   function setStatus(alb,msg){
     var s = document.getElementById('s-'+alb.file.replace(/\./g,'-'));
@@ -128,6 +177,7 @@
       // load a different album
       var alb = albums.find(function(a){return a.file===file;});
       if(!alb) return;
+      stopPolling();
       player.stop();
       activeAlbum = alb;
       playing = false;
@@ -141,6 +191,7 @@
         playing = true;
         paused = false;
         updateButtons();
+        startPolling(alb);
         setStatus(alb,'▶ playing');
         document.querySelectorAll('button[data-file]').forEach(function(b){
           b.textContent = b.dataset.file===file ? '▎▎ pause' : '▶ play';
@@ -152,10 +203,12 @@
     if(playing && !paused){
       player.togglePause();
       paused = true;
+      updateMeta(activeAlbum);
       setStatus(activeAlbum,'❚❚ paused');
     }else if(paused){
       player.togglePause();
       paused = false;
+      updateMeta(activeAlbum);
       setStatus(activeAlbum,'▶ playing');
     }else{
       // stopped — restart
@@ -165,6 +218,7 @@
         playing = true;
         paused = false;
         updateButtons();
+        startPolling(activeAlbum);
         setStatus(activeAlbum,'▶ playing');
         document.querySelectorAll('button[data-file]').forEach(function(b){
           b.textContent = b.dataset.file===file ? '▎▎ pause' : '▶ play';
@@ -185,6 +239,11 @@
       '<div class="album-desc">'+alb.desc+'</div>'+
       '<div class="btn-row">'+
         '<button data-file="'+alb.file+'">▶ play</button>'+
+      '</div>'+
+      '<div class="meta" id="m-'+id+'">'+
+        '<div class="meta-title" id="mt-'+id+'"></div>'+
+        '<div class="meta-row"><span id="tr-'+id+'"></span></div>'+
+        '<div class="progress-wrap"><div class="progress-bar" id="pb-'+id+'"></div></div>'+
       '</div>'+
       '<div class="status" id="s-'+id+'"></div>';
     container.appendChild(div);
