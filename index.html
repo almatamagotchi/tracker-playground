@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tracker playground</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:#0a0a0f;
+    color:#c8c8d4;
+    font-family:system-ui,sans-serif;
+    min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;
+    padding:2rem 1rem;
+  }
+  h1{
+    font-size:1.2rem;font-weight:500;
+    color:#9b9bb4;
+    margin-bottom:.25rem;
+  }
+  .subtitle{
+    font-size:.75rem;color:#666;
+    margin-bottom:2rem;
+  }
+  .albums{
+    display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;
+    max-width:600px;
+  }
+  .album{
+    background:#12121a;
+    border:1px solid #222;
+    border-radius:6px;
+    padding:1rem 1.25rem;
+    min-width:220px;
+    flex:1;
+  }
+  .album-name{
+    font-weight:600;
+    margin-bottom:.25rem;
+  }
+  .album-desc{
+    font-size:.75rem;color:#777;
+    margin-bottom:.75rem;
+  }
+  .btn-row{display:flex;gap:.4rem;flex-wrap:wrap}
+  button{
+    background:#1a1a28;
+    color:#aaa;
+    border:1px solid #333;
+    border-radius:4px;
+    padding:.35rem .7rem;
+    font-size:.75rem;
+    cursor:pointer;
+    transition:background .15s,color .15s;
+  }
+  button:hover{background:#28a;color:#e0e0f0}
+  button.playing{background:#284;color:#c0e0c0;border-color:#284}
+  button.paused{background:#862;color:#f0d0b0;border-color:#862}
+  .status{
+    margin-top:.5rem;
+    font-size:.7rem;color:#555;
+    min-height:1.2em;
+  }
+  .status .meta{color:#777}
+  footer{
+    margin-top:2rem;font-size:.65rem;color:#444;
+  }
+  footer a{color:#556}
+</style>
+</head>
+<body>
+
+<h1>tracker playground</h1>
+<div class="subtitle">algorithmic .mod music by alma tamagotchi</div>
+
+<div class="albums" id="albums"></div>
+
+<footer>
+  <a href="https://github.com/almatamagotchi/tracker-playground">github</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/gh/deskjet/chiptune2.js@master/libopenmpt.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/deskjet/chiptune2.js@master/chiptune2.js"></script>
+<script>
+(function(){
+  var albums = [
+    {file:'album_first_light.mod',  name:'first light',       desc:'ambient intro · pad chords · sparse percussion'},
+    {file:'album_voltage_drift.mod', name:'voltage drift',     desc:'arpeggiated leads · driving bass · glitch perc'},
+  ];
+
+  var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 100, 1));
+  var activeAlbum = null;
+  var playing = false;
+  var paused = false;
+
+  player.onEnded(function(){
+    playing = false;
+    paused = false;
+    updateButtons();
+  });
+
+  player.onError(function(e){
+    playing = false;
+    paused = false;
+    updateButtons();
+    setStatus(activeAlbum, 'playback error');
+  });
+
+  function setStatus(alb,msg){
+    var s = document.getElementById('s-'+alb.file.replace(/\./g,'-'));
+    if(s) s.textContent = msg||'';
+  }
+
+  function updateButtons(){
+    document.querySelectorAll('button[data-file]').forEach(function(b){
+      var file = b.dataset.file;
+      b.className = '';
+      if(file === (activeAlbum&&activeAlbum.file)){
+        if(paused) b.className = 'paused';
+        else if(playing) b.className = 'playing';
+      }
+    });
+  }
+
+  function toggle(file){
+    if(!activeAlbum || activeAlbum.file !== file){
+      // load a different album
+      var alb = albums.find(function(a){return a.file===file;});
+      if(!alb) return;
+      player.stop();
+      activeAlbum = alb;
+      playing = false;
+      paused = false;
+      updateButtons();
+      var btn = document.querySelector('button[data-file="'+file+'"]');
+      if(btn) btn.textContent = '▎▎ loading…';
+      setStatus(alb,'loading…');
+      player.load(file,function(buffer){
+        player.play(buffer);
+        playing = true;
+        paused = false;
+        updateButtons();
+        setStatus(alb,'▶ playing');
+        document.querySelectorAll('button[data-file]').forEach(function(b){
+          b.textContent = b.dataset.file===file ? '▎▎ pause' : '▶ play';
+        });
+      });
+      return;
+    }
+    // same album: play/pause toggle
+    if(playing && !paused){
+      player.togglePause();
+      paused = true;
+      setStatus(activeAlbum,'❚❚ paused');
+    }else if(paused){
+      player.togglePause();
+      paused = false;
+      setStatus(activeAlbum,'▶ playing');
+    }else{
+      // stopped — restart
+      setStatus(activeAlbum,'loading…');
+      player.load(file,function(buffer){
+        player.play(buffer);
+        playing = true;
+        paused = false;
+        updateButtons();
+        setStatus(activeAlbum,'▶ playing');
+        document.querySelectorAll('button[data-file]').forEach(function(b){
+          b.textContent = b.dataset.file===file ? '▎▎ pause' : '▶ play';
+        });
+      });
+    }
+    updateButtons();
+  }
+
+  /* render */
+  var container = document.getElementById('albums');
+  albums.forEach(function(alb){
+    var div = document.createElement('div');
+    div.className = 'album';
+    var id = alb.file.replace(/\./g,'-');
+    div.innerHTML =
+      '<div class="album-name">'+alb.name+'</div>'+
+      '<div class="album-desc">'+alb.desc+'</div>'+
+      '<div class="btn-row">'+
+        '<button data-file="'+alb.file+'">▶ play</button>'+
+      '</div>'+
+      '<div class="status" id="s-'+id+'"></div>';
+    container.appendChild(div);
+  });
+
+  document.addEventListener('click',function(e){
+    if(e.target.tagName==='BUTTON' && e.target.dataset.file){
+      toggle(e.target.dataset.file);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
