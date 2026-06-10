@@ -81,8 +81,11 @@ def gen_dawn_pad(rate=11025):
 class MOD:
     def __init__(self,name="ghost"):
         self.name=name[:20].ljust(20,'\0'); self.samples=[]; self.patterns=[]; self.order=[]
-    def add_sample(self,n,d):
-        if len(d)%2: d+=b'\x00'; self.samples.append((n[:22],d))
+    def add_sample(self,n,d,loop=False):
+        if len(d)%2: d+=b'\x00'
+        lw = len(d)//2
+        if loop: self.samples.append((n[:22],d,0,lw))     # loop whole sample
+        else:    self.samples.append((n[:22],d,0,0))       # no loop (0 or 1 = no loop in MOD)
     def new_pat(self): return [[(0,0,0,0) for _ in range(64)] for _ in range(4)]
     def add_pat(self,pat):
         d=bytearray(1024)
@@ -97,17 +100,17 @@ class MOD:
             f.write(self.name.encode('latin-1',errors='replace'))
             for i in range(31):
                 if i<len(self.samples):
-                    sn,sd=self.samples[i]; lw=len(sd)//2
+                    sn,sd,ls,ll=self.samples[i]; lw=len(sd)//2
                     f.write(sn[:22].ljust(22,'\0').encode('latin-1',errors='replace'))
                     f.write(struct.pack('>H',lw)+bytes([0,64]))
-                    f.write(struct.pack('>H',0)+struct.pack('>H',lw))
+                    f.write(struct.pack('>H',ls)+struct.pack('>H',ll))
                 else: f.write(b'\x00'*30)
             f.write(bytes([len(self.order),127]))
             ob=bytearray(128)
             for i,o in enumerate(self.order): ob[i]=o
             f.write(bytes(ob)+b'M.K.')
             for p in self.patterns: f.write(p)
-            for _,sd in self.samples: f.write(sd)
+            for _,sd,_,_ in self.samples: f.write(sd)
             for _ in range(len(self.samples),31): f.write(b'\x00'*2)
 
 
@@ -116,10 +119,10 @@ class MOD:
 def compose():
     # instrument slots: 1=bell 2=pulse 3=shimmer 4=dawn
     m = MOD("ghost inherits library")
-    m.add_sample("bell",    gen_bell())
-    m.add_sample("pulse",   gen_pulse_drone())
-    m.add_sample("shimmer", gen_shimmer())
-    m.add_sample("dawn",    gen_dawn_pad())
+    m.add_sample("bell",    gen_bell(), loop=False)
+    m.add_sample("pulse",   gen_pulse_drone(), loop=True)
+    m.add_sample("shimmer", gen_shimmer(), loop=False)
+    m.add_sample("dawn",    gen_dawn_pad(), loop=True)
 
     # motif: D4 — A3 — F4 — E4 — D4 (arc shape, sigh)
     # the motif returns in each section, slightly transformed
