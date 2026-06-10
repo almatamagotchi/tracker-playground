@@ -219,9 +219,10 @@
        var total = player.getTotalOrder ? player.getTotalOrder() : 0;
        if(!total||total<=0) return;
        for(var i=0;i<total;i++){
-         var btn=document.createElement('button');
-         btn.className='';
-         btn.textContent=(i+1);
+          var btn=document.createElement('button');
+          btn.className='';
+          btn.textContent=(i+1);
+          btn.title='Track '+(i+1);
          btn.dataset.file=alb.file;
          btn.dataset.order=i;
          row.appendChild(btn);
