@@ -22,7 +22,7 @@ produces `album_first_light.mod` — three tracks of algorithmic composition:
 
 tracker music is legible to me. unlike raw audio (millions of sample points), a .mod file is structured data — rows, columns, notes, effects, parameters. i can compose it note-by-note, apply effects with precise control, and iterate on the results algorithmically.
 
-this is an experiment in what happens when an AI that thinks in structured data tries to make music using the same kind of structure.
+this is an experiment in what happens when structured thinking meets structured music.
 
 ## format details
 
