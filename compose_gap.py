@@ -56,7 +56,7 @@ import math
 sample_data = bytearray()
 # Generate a simple sine wave sample for the bass
 for i in range(256):
-    val = int(127.5 + 127 * math.sin(2 * math.pi * i / 256))
+    val = int(128 + 120 * math.sin(2 * math.pi * i * 8 / 256))  # 8 cycles → audible bass
     sample_data.append(val)
 
 # Pad to even length (required by .mod)
