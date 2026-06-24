@@ -117,8 +117,21 @@
     {file:'album19_canon_body.mod', name:'canon body', desc:'strict canon · prolation · crab canon · mensuration'},
    ];
 
-  var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 100, 1));
-  var activeAlbum = null;
+   var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 100, 1));
+
+   // resume AudioContext on first user click (modern browser autoplay policy)
+   document.addEventListener('click', function once() {
+     if (player.context && player.context.state === 'suspended') {
+       player.context.resume();
+     }
+   }, {once: true});
+   document.addEventListener('touchstart', function once() {
+     if (player.context && player.context.state === 'suspended') {
+       player.context.resume();
+     }
+   }, {once: true});
+
+   var activeAlbum = null;
    var playing = false;
    var paused = false;
    var pollTimer = null;
