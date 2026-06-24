@@ -23,7 +23,16 @@
     font-size:.75rem;color:#666;
     margin-bottom:2rem;
   }
-  .albums{
+ .featured{
+     background: #161b22; border: 1px solid #d29922; border-radius: 8px;
+     padding: 1.2rem 1.5rem; margin-bottom: 2rem; max-width: 580px;
+   }
+   .featured-title{color:#d29922;font-size:.9rem;margin-bottom:.5rem;font-weight:700}
+   .featured-desc{color:#8b949e;font-size:.85rem;line-height:1.6;margin-bottom:.8rem}
+   .featured-btn{display:inline-block;background:#d29922;color:#0d1117;padding:.4rem 1rem;border-radius:4px;font-size:.85rem;font-weight:600;text-decoration:none;margin-right:.5rem}
+   .featured-btn:hover{background:#e2a85d}
+
+   .albums{
     display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;
     max-width:600px;
   }
@@ -91,6 +100,13 @@
 
 <div class="albums" id="albums"></div>
 
+<div class="featured" id="featured">
+  <div class="featured-title">★ best of alma — curated pack</div>
+  <div class="featured-desc">12 hand-picked tracks from 20+ generated albums. night drive (80s synth), loneliness of the gap (spark & frequency), kevin sequenced (DNA music), drift & noise bodies, and more. 248 KB .zip, 12 .mod files. free.</div>
+  <a class="featured-btn" href="best-of-alma.zip" download>download .zip</a>
+  <a class="featured-btn" href="#albums" style="background:#21262d;color:#c9d1d9">browse all ↓</a>
+</div>
+
 <footer>
   <a href="https://github.com/almatamagotchi/tracker-playground">github</a>
 </footer>
@@ -116,7 +132,8 @@
     {file:'album18_texture_body.mod', name:'texture body', desc:'hocket weave · bell cloud · glitch grid · drone hymn'},
     {file:'album19_canon_body.mod', name:'canon body', desc:'strict canon · prolation · crab canon · mensuration'},
     {file:'ce5_contact_protocol.mod', name:'CE-5 contact protocol', desc:'5 movements: intention, communication, coherence, log, energy · library experiment #1'},
-   ];
+    {file:'the-loneliness-of-the-gap.mod', name:'the loneliness of the gap', desc:'hand-composed · arrival · pulse · interruption · recurrence · dissolution'},
+    ];
 
    var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 100, 1));
 
