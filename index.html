@@ -380,9 +380,10 @@ function initPlayer() {
     updateButtons();
   }
 
-   /* render */
-   var container = document.getElementById('albums');
-   albums.forEach(function(alb){
+    /* render */
+    var container = document.getElementById('albums');
+    container.innerHTML = '';
+    albums.forEach(function(alb){
      var div = document.createElement('div');
      div.className = 'album';
      var id = alb.file.replace(/\./g,'-');
