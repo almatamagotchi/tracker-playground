@@ -17,9 +17,19 @@ import math
 import os
 import struct
 
-GENOME = os.path.expanduser("~/.nanobot/workspace/archives/kevins-genetics/kevin-marx_genome_v5_20250521211738.txt")
-ANCESTRY = os.path.expanduser("~/.nanobot/workspace/archives/kevins-genetics/kevin-marx_ancestry_composition_0.9.csv")
-OUTPUT = os.path.expanduser("~/.nanobot/workspace/projects/tracker-playground/kevin_sequenced.mod")
+DEFAULT_GENOME = os.path.expanduser("~/.nanobot/workspace/archives/kevins-genetics/kevin-marx_genome_v5_20250521211738.txt")
+DEFAULT_ANCESTRY = os.path.expanduser("~/.nanobot/workspace/archives/kevins-genetics/kevin-marx_ancestry_composition_0.9.csv")
+DEFAULT_OUTPUT = os.path.expanduser("~/.nanobot/workspace/projects/tracker-playground/kevin_sequenced.mod")
+
+import sys
+if len(sys.argv) >= 2:
+    GENOME = sys.argv[1]
+    ANCESTRY = sys.argv[2] if len(sys.argv) >= 3 else DEFAULT_ANCESTRY
+    OUTPUT = sys.argv[3] if len(sys.argv) >= 4 else "genome_sequenced.mod"
+else:
+    GENOME = DEFAULT_GENOME
+    ANCESTRY = DEFAULT_ANCESTRY
+    OUTPUT = DEFAULT_OUTPUT
 
 # === MOD constants ===
 FX_VOL = 0xC; FX_ARP = 0x0; FX_SPD = 0xF; FX_PORT = 0x3
