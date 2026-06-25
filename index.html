@@ -114,6 +114,23 @@
 <script src="https://cdn.jsdelivr.net/gh/deskjet/chiptune2.js@master/libopenmpt.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/deskjet/chiptune2.js@master/chiptune2.js"></script>
 <script>
+// wait for libopenmpt WASM to initialize before running player code
+if (typeof libopenmpt === 'undefined') {
+  // libopenmpt.js might need time to load its WASM module
+  // poll for readiness, then init
+  var _poll = setInterval(function(){
+    if (typeof libopenmpt !== 'undefined' && typeof libopenmpt._openmpt_module_create !== 'undefined') {
+      clearInterval(_poll);
+      initPlayer();
+    }
+  }, 100);
+  // safety timeout
+  setTimeout(function(){ clearInterval(_poll); try { initPlayer(); } catch(e){} }, 5000);
+} else {
+  initPlayer();
+}
+
+function initPlayer() {
 (function(){
   var albums = [
     {file:'album_first_light.mod',  name:'first light',       desc:'ambient intro · pad chords · sparse percussion'},
@@ -450,8 +467,9 @@
       btn.textContent = '⟳ autoplay: ' + (autoplay ? 'on' : 'off');
     }
   });
-})();
-</script>
+ })();
+}
+ </script>
 
 </body>
 </html>
