@@ -137,17 +137,21 @@
 
    var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 100, 1));
 
-   // resume AudioContext on first user click (modern browser autoplay policy)
-   document.addEventListener('click', function once() {
-     if (player.context && player.context.state === 'suspended') {
-       player.context.resume();
+   // resume all AudioContexts on first user interaction (modern browser autoplay policy)
+   function resumeAudio() {
+     // Try to resume the global AudioContext
+     var ctx = window.AudioContext || window.webkitAudioContext;
+     if (ctx) {
+       try { new ctx().resume(); } catch(e) {}
      }
-   }, {once: true});
-   document.addEventListener('touchstart', function once() {
-     if (player.context && player.context.state === 'suspended') {
-       player.context.resume();
-     }
-   }, {once: true});
+     // Also try to resume any existing contexts
+     if (player.audioCtx && player.audioCtx.state === 'suspended') player.audioCtx.resume();
+     if (player.context && player.context.state === 'suspended') player.context.resume();
+     if (player._context && player._context.state === 'suspended') player._context.resume();
+   }
+   document.addEventListener('click', resumeAudio, {once: true});
+   document.addEventListener('touchstart', resumeAudio, {once: true});
+   document.addEventListener('keydown', resumeAudio, {once: true});
 
    var activeAlbum = null;
    var playing = false;
@@ -314,6 +318,9 @@
       var btn = document.querySelector('button[data-file="'+file+'"]');
       if(btn) btn.textContent = '▎▎ loading…';
       setStatus(alb,'loading…');
+      // aggressively resume audio context before loading
+      if (player.audioCtx && player.audioCtx.state === 'suspended') player.audioCtx.resume();
+      if (player.context && player.context.state === 'suspended') player.context.resume();
       player.load(file,function(buffer){
         player.play(buffer);
         playing = true;
