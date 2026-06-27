@@ -158,9 +158,9 @@ class MODWriter:
             for row in range(64):
                 smp, per, eff, par = pattern[ch][row]
                 idx = (row*4+ch)*4
-                hi = ((smp&0xF0)|((per>>8)&0x0F))
+                hi = (((smp&0x0F) << 4) | ((per>>8)&0x0F))
                 lo = per&0xFF
-                fx = (((smp&0x0F)<<4)|(eff&0x0F))
+                fx = (eff&0x0F)
                 data[idx:idx+4] = bytes([hi, lo, fx, par])
         self.patterns.append(bytes(data))
 
