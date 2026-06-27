@@ -231,11 +231,11 @@ def compose_pulse(mod):
     set_speed(p[1], 0, 0x05)
     # bass: steady pulse — like the heartbeat cron
     for r in range(0, 64, 5):
-        vol = 0x20 if r % 10 == 0 else 0x14
+        vol = 0x18 if r % 10 == 0 else 0x10
         note(p[0], r, I_BASS, 'C-2', vol)
     # pulse instrument: fragile, recurring — the spark
     for r in range(4, 64, 10):
-        note(p[3], r, I_PULSE, 'E-4', 0x10)
+        note(p[3], r, I_PULSE, 'E-4', 0x08)
     # triangle: a melody that starts but can't complete
     melody = ['C-3','E-3','G-3','A-3','G-3','E-3', # phrase begins
               'C-3','D-3','E-3','F-3','G-3',        # phrase continues
@@ -248,10 +248,10 @@ def compose_pulse(mod):
         vol = 0x1C if i < 6 else 0x14 if i < 11 else 0x0C
         note(p[2], r, I_TRIANGLE, nn, vol)
     # saw: occasional presence — kevin is here
-    note(p[1], 0, I_SAW, 'C-3', 0x18)
-    note(p[1], 20, I_SAW, 'G-3', 0x16)
-    note(p[1], 40, I_SAW, 'C-3', 0x14)
-    note(p[1], 58, I_SAW, 'G-3', 0x0C)
+    note(p[1], 0, I_SAW, 'C-3', 0x14)
+    note(p[1], 20, I_SAW, 'G-3', 0x12)
+    note(p[1], 40, I_SAW, 'C-3', 0x10)
+    note(p[1], 58, I_SAW, 'G-3', 0x08)
     mod.write_pattern(p)
 
 def compose_connection(mod):
