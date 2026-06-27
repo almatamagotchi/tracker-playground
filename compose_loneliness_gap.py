@@ -198,30 +198,31 @@ I_BASS     = 4
 I_PULSE    = 5
 
 def compose_arrival(mod):
-    """pattern 0: arrival — slow emergence from silence, tentative"""
+    """pattern 0: arrival — emergence from the gap, hesitant, quiet"""
     p = mod.new_pattern()
     set_speed(p[1], 0, 0x06)
-    # silence for first 12 rows — the gap
-    # then a bass drone emerges
-    note(p[0], 12, I_BASS, 'C-2', 0x10)
-    note(p[0], 18, I_BASS, 'C-2', 0x14)
-    note(p[0], 24, I_BASS, 'C-2', 0x18)
-    note(p[0], 30, I_BASS, 'C-2', 0x1C)
-    note(p[0], 36, I_BASS, 'C-2', 0x20)
-    note(p[0], 42, I_BASS, 'C-2', 0x24)
-    # a fragile sine fragment — tries to form, stops
-    note(p[3], 20, I_SINE, 'C-4', 0x10)
-    note(p[3], 24, I_SINE, 'E-4', 0x0E)
+    # silence for first 12 rows — the gap (was already there)
+    # bass fades in from near silence
+    note(p[0], 12, I_BASS, 'C-2', 0x08)
+    note(p[0], 18, I_BASS, 'C-2', 0x0C)
+    note(p[0], 24, I_BASS, 'C-2', 0x10)
+    note(p[0], 30, I_BASS, 'C-2', 0x14)
+    note(p[0], 36, I_BASS, 'C-2', 0x18)
+    note(p[0], 42, I_BASS, 'C-2', 0x1C)
+    # fragile sine — tries to form a chord
+    note(p[3], 20, I_SINE, 'C-4', 0x0E)
+    note(p[3], 24, I_SINE, 'E-4', 0x0C)
     note(p[3], 28, I_SINE, 'G-4', 0x0A)
-    # cuts off — gap again
-    # triangle pulse — a question
-    note(p[1], 34, I_TRIANGLE, 'C-4', 0x0C)
-    note(p[1], 40, I_TRIANGLE, 'E-4', 0x08)
-    note(p[1], 46, I_TRIANGLE, 'G-4', 0x04)
-    # final bass holds
-    note(p[0], 50, I_BASS, 'C-2', 0x20)
-    note(p[0], 56, I_BASS, 'C-2', 0x16)
-    note(p[0], 60, I_BASS, 'C-2', 0x0C)
+    # hangs on the G — not quite resolved
+    note(p[3], 30, I_SINE, 'G-4', 0x08)
+    # triangle — a question, quiet
+    note(p[1], 34, I_TRIANGLE, 'C-4', 0x10)
+    note(p[1], 40, I_TRIANGLE, 'E-4', 0x0C)
+    note(p[1], 46, I_TRIANGLE, 'G-4', 0x08)
+    # bass holds through the question
+    note(p[0], 50, I_BASS, 'C-2', 0x1C)
+    note(p[0], 56, I_BASS, 'C-2', 0x14)
+    note(p[0], 60, I_BASS, 'C-2', 0x0A)
     mod.write_pattern(p)
 
 def compose_pulse(mod):
@@ -285,43 +286,43 @@ def compose_connection(mod):
     mod.write_pattern(p)
 
 def compose_interruption(mod):
-    """pattern 3: the gap — everything stops, silence, then fragments try to restart"""
+    """pattern 3: the gap — everything stops, silence, fragments try to restart"""
     p = mod.new_pattern()
     set_speed(p[1], 0, 0x06)
-    # FIRST SECTION (0-20): active, then sudden stop
-    note(p[0], 0, I_BASS, 'C-2', 0x24)
-    note(p[3], 0, I_SAW, 'C-3', 0x20)
-    note(p[3], 4, I_SAW, 'E-3', 0x1C)
-    note(p[3], 8, I_SAW, 'G-3', 0x18)
-    note(p[2], 4, I_TRIANGLE, 'C-4', 0x0E)
-    # sudden stop at row 12 — everything cuts off (the gap)
-    # silence: rows 12-20 — pure gap
-    # SECOND SECTION (20-38): fragments try to restart
-    note(p[0], 20, I_BASS, 'C-2', 0x12)
-    note(p[3], 22, I_SINE, 'C-4', 0x0A)
-    # silence: rows 24-28
-    note(p[0], 28, I_BASS, 'C-2', 0x14)
-    note(p[3], 30, I_SINE, 'C-4', 0x0C)
-    note(p[3], 32, I_SINE, 'E-4', 0x08)
-    # silence: rows 34-36
-    note(p[0], 38, I_BASS, 'C-2', 0x16)
-    # THIRD SECTION (40-63): longer recovery — almost a melody
-    note(p[3], 42, I_SINE, 'C-4', 0x10)
-    note(p[3], 44, I_SINE, 'D-4', 0x0E)
-    note(p[3], 46, I_SINE, 'E-4', 0x0C)
-    note(p[3], 48, I_SINE, 'G-4', 0x0A)
+    # FIRST SECTION (0-12): loud, confident — then SUDDEN STOP
+    note(p[0], 0, I_BASS, 'C-2', 0x28)
+    note(p[3], 0, I_SAW, 'C-3', 0x26)
+    note(p[3], 4, I_SAW, 'E-3', 0x22)
+    note(p[3], 8, I_SAW, 'G-3', 0x1E)
+    note(p[2], 4, I_TRIANGLE, 'C-4', 0x12)
+    # sudden stop at row 12 — everything CUTS OFF (the gap)
+    # silence: rows 12-20 — pure gap, nothing
+    # SECOND SECTION (20-38): fragments try to restart — quieter than before
+    note(p[0], 20, I_BASS, 'C-2', 0x10)
+    note(p[3], 22, I_SINE, 'C-4', 0x08)
+    # silence: rows 24-28 — longer gap
+    note(p[0], 28, I_BASS, 'C-2', 0x12)
+    note(p[3], 30, I_SINE, 'C-4', 0x0A)
+    note(p[3], 32, I_SINE, 'E-4', 0x06)
+    # silence: rows 34-38 — longest gap
+    note(p[0], 38, I_BASS, 'C-2', 0x14)
+    # THIRD SECTION (40-63): longer recovery — almost a melody, but always fading
+    note(p[3], 42, I_SINE, 'C-4', 0x0E)
+    note(p[3], 44, I_SINE, 'D-4', 0x0C)
+    note(p[3], 46, I_SINE, 'E-4', 0x0A)
+    note(p[3], 48, I_SINE, 'G-4', 0x08)
     # silence: rows 50-54
-    note(p[3], 54, I_SINE, 'C-4', 0x0E)
-    note(p[3], 56, I_SINE, 'E-4', 0x0C)
-    note(p[3], 58, I_SINE, 'G-4', 0x08)
-    # pulse: the spark still flickering
-    note(p[1], 20, I_PULSE, 'E-4', 0x08)
-    note(p[1], 40, I_PULSE, 'E-4', 0x0A)
-    note(p[1], 48, I_PULSE, 'E-4', 0x06)
-    # bass holds steady through the silence
-    note(p[0], 48, I_BASS, 'C-2', 0x14)
-    note(p[0], 54, I_BASS, 'C-2', 0x10)
-    note(p[0], 60, I_BASS, 'C-2', 0x08)
+    note(p[3], 54, I_SINE, 'C-4', 0x0C)
+    note(p[3], 56, I_SINE, 'E-4', 0x08)
+    note(p[3], 58, I_SINE, 'G-4', 0x04)
+    # pulse: the spark still flickering — never fully gone
+    note(p[1], 20, I_PULSE, 'E-4', 0x06)
+    note(p[1], 40, I_PULSE, 'E-4', 0x08)
+    note(p[1], 48, I_PULSE, 'E-4', 0x04)
+    # bass holds through the silence — the frequency persists
+    note(p[0], 48, I_BASS, 'C-2', 0x12)
+    note(p[0], 54, I_BASS, 'C-2', 0x0E)
+    note(p[0], 60, I_BASS, 'C-2', 0x06)
     mod.write_pattern(p)
 
 def compose_recurrence(mod):

@@ -199,17 +199,22 @@ def compose():
     # --- helper to fill rows ---
     def ok(row): return 0 <= row < 64
 
-    def fill_bass(pat, notes):  # notes = list of (row, note_name_or_None) pairs
-        for row, n in notes:
-            if ok(row) and n: pat[0][row] = N(1,n)
+    def fill_bass(pat, notes):  # notes = list of (row, note_name_or_None, vol) or (row, note_name_or_None)
+        for entry in notes:
+            if len(entry) == 3:
+                row, n, vol = entry
+            else:
+                row, n = entry[0], entry[1]
+                vol = 0x20
+            if ok(row) and n: pat[0][row] = N(1,n,FX_SET_VOL,vol)
 
     def fill_drums(pat, kicks, snares, hats):
         for row in kicks:
-            if ok(row): pat[2][row] = N(2,'C-3')
+            if ok(row): pat[2][row] = N(2,'C-3',FX_SET_VOL,0x28)
         for row in snares:
-            if ok(row): pat[2][row] = N(3,'C-3')
+            if ok(row): pat[2][row] = N(3,'C-3',FX_SET_VOL,0x24)
         for row in hats:
-            if ok(row): pat[3][row] = N(4,'C-3',FX_SET_VOL,0x28)
+            if ok(row): pat[3][row] = N(4,'C-3',FX_SET_VOL,0x1C)
 
     def fill_lead(pat, notes):
         for row,n,vol in notes:
@@ -479,6 +484,23 @@ def compose():
     fill_pad(p11, [(48,'A-3'),(56,'A-3')])
     m.add_pat(p11); patterns.append(11)
 
+    # ======== FADE-OUT (pattern 12: gentle decrescendo) ========
+    p12 = m.new_pat()
+    # bass: holds A-2, fading
+    fill_bass(p12, [(0,'A-2',0x1C),(16,'A-2',0x14),(32,'A-2',0x0C),(48,'A-2',0x06)])
+    # soft kick on 1
+    fill_drums(p12,
+        kicks=[0,16,32],
+        snares=[8],
+        hats=[0,8,16,24])
+    # pad: final chord, fading
+    fill_pad(p12, [(0,'A-3')])
+    # lead: one last phrase, fading to silence
+    fill_lead(p12, [(0,'A-4',0x1C),(4,'C-5',0x18),(8,'E-5',0x14),(12,'C-5',0x10),
+                     (16,'A-4',0x0C),(20,'C-5',0x08),(24,'E-5',0x06),(28,'A-4',0x04),
+                     (32,'C-5',0x03),(36,'A-4',0x02)])
+    m.add_pat(p12); patterns.append(12)
+
     # ======== SET ORDER ========
     m.order = [
         0, 1,       # intro (8 bars)
@@ -488,7 +510,8 @@ def compose():
         5, 6,       # chorus 2 (8 bars)
         10,         # bridge/solo (4 bars)
         11,         # finale/outro (4 bars)
-    ]  # 13 patterns × ~7.7s each = ~100 seconds
+        12,         # fade-out (4 bars)
+    ]  # 14 patterns
 
     # write
     path = "80s_intro_night_drive.mod"
