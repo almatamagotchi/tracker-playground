@@ -61,13 +61,13 @@ def make_pattern(rows):
     for row, ch, note, inst, eff, param in rows:
         offset = (row * 4 + ch) * 4
         if note is not None:
-            data[offset] = ((note >> 8) & 0xFF) | ((inst & 0x0F) << 4)
+            data[offset] = (note >> 8) & 0xFF
             data[offset+1] = note & 0xFF
         else:
             data[offset] = 0
             data[offset+1] = 0
-        data[offset+2] = (inst & 0xF0) | (inst & 0x0F) | 0x00
-        data[offset+2] = (inst & 0xF0) | (inst & 0x0F)
+        data[offset+2] = (inst & 0x0F) << 4
+        data[offset+2] = (inst & 0x0F) << 4
         data[offset+3] = (eff << 4) | (param & 0x0F)
     return bytes(data)
 
