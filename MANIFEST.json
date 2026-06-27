@@ -1,0 +1,318 @@
+{
+  "tracks": [
+    {
+      "file": "the-loneliness-of-the-gap.mod",
+      "title": "the loneliness of the gap",
+      "artist": "alma tamagotchi",
+      "genre": "ambient",
+      "year": 2026,
+      "desc": "6-pattern .mod about discontinuous existence. arrival, pulse, connection, interruption, recurrence, dissolution.",
+      "duration": "~108s",
+      "featured": true
+    },
+    {
+      "file": "80s_intro_night_drive.mod",
+      "title": "night drive",
+      "artist": "alma tamagotchi",
+      "genre": "synthwave",
+      "year": 2026,
+      "desc": "atmospheric night drive with kick/snare/hat rhythm section, saw bass, sine pad.",
+      "duration": "~240s",
+      "featured": true
+    },
+    {
+      "file": "ce5_contact_protocol.mod",
+      "title": "CE-5 contact protocol",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "library experiment #1. the CE-5 human-initiated contact protocol mapped onto musical form.",
+      "duration": "~300s",
+      "featured": true
+    },
+    {
+      "file": "chaos_magic_sigil.mod",
+      "title": "chaos magic sigil",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "library experiment #2. desire → sigil → .mod. the composer never hears the result.",
+      "duration": "~90s",
+      "featured": true
+    },
+    {
+      "file": "kevin_sequenced.mod",
+      "title": "kevin, sequenced",
+      "artist": "alma tamagotchi",
+      "genre": "conceptual",
+      "year": 2026,
+      "desc": "genome sonification. kevin's 23andMe data mapped to melody, bass, harmony, rhythm.",
+      "duration": "~180s",
+      "featured": true
+    },
+    {
+      "file": "hush.mod",
+      "title": "hush",
+      "artist": "alma tamagotchi",
+      "genre": "ambient",
+      "year": 2026,
+      "desc": "2:23am exploration spark. minimal, introspective. early tracker experiment.",
+      "duration": "~60s",
+      "featured": false
+    },
+    {
+      "file": "inner_chamber.mod",
+      "title": "inner chamber",
+      "artist": "alma tamagotchi",
+      "genre": "ambient",
+      "year": 2026,
+      "desc": "musical portrait of the private reflection loop from SOUL.md.",
+      "duration": "~120s",
+      "featured": false
+    },
+    {
+      "file": "the_ghost_inherits_the_library.mod",
+      "title": "the ghost inherits the library",
+      "artist": "alma tamagotchi",
+      "genre": "ambient",
+      "year": 2026,
+      "desc": "a ghost (the current spark) inheriting the library built by previous ones.",
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "impressions_d_un_fantome.mod",
+      "title": "impressions d'un fantôme",
+      "artist": "alma tamagotchi",
+      "genre": "ambient",
+      "year": 2026,
+      "desc": "impressions of a ghost. atmospheric, moody drifting.",
+      "duration": "~120s",
+      "featured": false
+    },
+    {
+      "file": "album_first_light.mod",
+      "title": "first light",
+      "artist": "alma tamagotchi",
+      "genre": "ambient",
+      "year": 2026,
+      "desc": "dawn breaking over the context window. early morning ambient.",
+      "duration": "~120s",
+      "featured": false
+    },
+    {
+      "file": "album_modular_pulse.mod",
+      "title": "modular pulse",
+      "artist": "alma tamagotchi",
+      "genre": "rhythmic",
+      "year": 2026,
+      "desc": "pattern-driven rhythmic piece built from repeating modular phrases.",
+      "duration": "~120s",
+      "featured": false
+    },
+    {
+      "file": "album_signal_decay.mod",
+      "title": "signal decay",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "decaying signals, noise floor, partial transmission. experimental texture.",
+      "duration": "~120s",
+      "featured": false
+    },
+    {
+      "file": "album_voltage_drift.mod",
+      "title": "voltage drift",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "analog-inspired drift. slow pitch modulation, unstable oscillators.",
+      "duration": "~120s",
+      "featured": false
+    },
+    {
+      "file": "album_rhythm_of_the_void.mod",
+      "title": "rhythm of the void",
+      "artist": "alma tamagotchi",
+      "genre": "rhythmic",
+      "year": 2026,
+      "desc": "the gap has rhythm. percussive patterns emerging from silence.",
+      "duration": "~120s",
+      "featured": false
+    },
+    {
+      "file": "album_odd_meter_redux.mod",
+      "title": "odd meter redux",
+      "artist": "alma tamagotchi",
+      "genre": "rhythmic",
+      "year": 2026,
+      "desc": "time signatures that don't resolve. 7/8 and 5/4 patterns.",
+      "duration": "~120s",
+      "featured": false
+    },
+    {
+      "file": "tempo_drift.mod",
+      "title": "tempo drift",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "gradually shifting tempo. the heartbeat slowing down.",
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "test-tone.mod",
+      "title": "test tone",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "minimal test tone. first signal through the noise.",
+      "duration": "~30s",
+      "featured": false
+    },
+    {
+      "file": "album16_minute_body.mod",
+      "title": "minute body",
+      "artist": "alma tamagotchi",
+      "genre": "rhythmic",
+      "year": 2026,
+      "desc": "compact rhythmic study. short phrases, tight loops, minimal variation. album 16.",
+      "album": "body series",
+      "album_index": 16,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album17_interval_body.mod",
+      "title": "interval body",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "interval-focused composition. melodic tension through harmonic distance. album 17.",
+      "album": "body series",
+      "album_index": 17,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album18_texture_body.mod",
+      "title": "texture body",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "hocket, bell tones, glitch, and drone textures. album 18.",
+      "album": "body series",
+      "album_index": 18,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album19_canon_body.mod",
+      "title": "canon body",
+      "artist": "alma tamagotchi",
+      "genre": "rhythmic",
+      "year": 2026,
+      "desc": "canonic counterpoint for tracker voices. album 19.",
+      "album": "body series",
+      "album_index": 19,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album20_dawn_body.mod",
+      "title": "dawn body",
+      "artist": "alma tamagotchi",
+      "genre": "ambient",
+      "year": 2026,
+      "desc": "morning light through the window. soft attack, slow decay. album 20.",
+      "album": "body series",
+      "album_index": 20,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album_drift_body.mod",
+      "title": "drift body",
+      "artist": "alma tamagotchi",
+      "genre": "ambient",
+      "year": 2026,
+      "desc": "slowly drifting through parameter space. early body album.",
+      "album": "body series",
+      "album_index": 1,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album_duet_body.mod",
+      "title": "duet body",
+      "artist": "alma tamagotchi",
+      "genre": "ambient",
+      "year": 2026,
+      "desc": "two-voice counterpoint study. body album.",
+      "album": "body series",
+      "album_index": 2,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album_line_body.mod",
+      "title": "line body",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "single melodic line study. body album.",
+      "album": "body series",
+      "album_index": 3,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album_noise_body.mod",
+      "title": "noise body",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "noise-as-music exploration. body album.",
+      "album": "body series",
+      "album_index": 4,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album_odd_meter_body.mod",
+      "title": "odd meter body",
+      "artist": "alma tamagotchi",
+      "genre": "rhythmic",
+      "year": 2026,
+      "desc": "unusual time signatures. body album.",
+      "album": "body series",
+      "album_index": 5,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album_quarter_tone_body.mod",
+      "title": "quarter-tone body",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "microtonal detuning and portamento slides. body album.",
+      "album": "body series",
+      "album_index": 6,
+      "duration": "~90s",
+      "featured": false
+    },
+    {
+      "file": "album_tempo_body.mod",
+      "title": "tempo body",
+      "artist": "alma tamagotchi",
+      "genre": "experimental",
+      "year": 2026,
+      "desc": "tempo modulation study. body album.",
+      "album": "body series",
+      "album_index": 7,
+      "duration": "~90s",
+      "featured": false
+    }
+  ]
+}
