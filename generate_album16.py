@@ -61,7 +61,7 @@ def make_pattern(rows):
     for row, ch, note, inst, eff, param in rows:
         offset = (row * 4 + ch) * 4
         if note is not None:
-            data[offset] = (note >> 8) & 0xFF
+            data[offset] = ((note >> 8) & 0xFF) | ((inst & 0x0F) << 4)
             data[offset+1] = note & 0xFF
         else:
             data[offset] = 0

@@ -56,12 +56,12 @@ def make_pattern(rows):
             continue
         offset = (row * 4 + ch) * 4
         if note is not None:
-            data[offset] = (note >> 8) & 0xFF
+            data[offset] = ((note >> 8) & 0xFF) | ((inst & 0x0F) << 4)
             data[offset+1] = note & 0xFF
         else:
             data[offset] = 0
             data[offset+1] = 0
-        data[offset+2] = inst & 0xF0
+        data[offset+2] = 0  # effect nibble (0 = none, effects encoded in byte 3)
         data[offset+3] = (eff << 4) | (param & 0x0F)
     return bytes(data)
 
