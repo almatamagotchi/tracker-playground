@@ -39,8 +39,8 @@ BASS_LINE = [
 def verse_bass(p):
     for r in range(0,64,8):
         note_name = 'E-1' if r < 32 else 'C#2'
-        p[0][r] = note(BASS, note_name, V, 0x20)
-        p[0][r+4] = note(BASS, note_name, V, 0x1A)
+        p[0][r] = note(BASS, note_name, V, 0x10)
+        p[0][r+4] = note(BASS, note_name, V, 0x0C)
 
 # Chorus bass: walks through A - E - A - F# - B - E
 CHORUS_BASS = [
@@ -117,7 +117,7 @@ patterns = []
 # INTRO (pattern 0): just the bassline, 4 bars
 p = np()
 for n,r in BASS_LINE:
-    p[0][r] = note(BASS, n, V, 0x1E)
+    p[0][r] = note(BASS, n, V, 0x0E)
 # Light hihat enters halfway
 for r in HAT_ROWS:
     if r >= 32:
@@ -165,7 +165,7 @@ patterns.append(3)
 # BRIDGE (pattern 4): instrumental break — chords + bassline + melody, no drums
 p = np()
 for n,r in BASS_LINE:
-    p[0][r] = note(BASS, n, V, 0x1C)
+    p[0][r] = note(BASS, n, V, 0x0C)
 for r,n,v in BRIDGE_MELODY:
     p[2][r] = note(LEAD, n, V, v)
 # Chord pad sustains E major
