@@ -104,12 +104,7 @@ SNARE_ROWS = [8, 24, 40, 56]
 HAT_ROWS   = [0,4,8,12, 16,20,24,28, 32,36,40,44, 48,52,56,60]
 
 def drums(p, hat_vol=0x14):
-    for r in KICK_ROWS:
-        p[3][r] = note(KICK, 'C-2', V, 0x24)
-    for r in SNARE_ROWS:
-        p[3][r] = note(SNARE, 'C-2', V, 0x1C)
-    for r in HAT_ROWS:
-        p[3][r] = note(HAT, 'C-2', V, hat_vol)
+    pass  # drums removed for debugging
 
 # --- BUILD PATTERNS ---
 patterns = []
@@ -184,8 +179,7 @@ for n,r in BASS_LINE:
     vol = max(0x06, 0x1C - (r//4))
     p[0][r] = note(BASS, n, V, vol)
 # Fading hihats
-for r in range(0,64,8):
-    p[3][r] = note(HAT, 'C-2', V, max(0x04, 0x0E - r//8))
+# outro hats removed
 # Last notes
 p[2][56] = note(LEAD, 'B-1', V, 0x08)
 p[2][60] = note(LEAD, 'E-2', V, 0x04)
