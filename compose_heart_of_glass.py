@@ -196,4 +196,14 @@ mod.write_pattern(p); patterns.append(5)
 
 mod.order = patterns
 mod.write('heart-of-glass-cover.mod')
+
+# POST-PATCH: drum samples → one-shot (no loop)
+# MOD writer defaults to full-length loops; drums buzz when looped.
+with open('heart-of-glass-cover.mod', 'r+b') as fh:
+    fh.seek(1080)
+    if fh.read(4) == b'M.K.':
+        fh.seek(138); fh.write(b'\x00\x00')  # hihat (sample 4, loop len at +28)
+        fh.seek(168); fh.write(b'\x00\x00')  # kick  (sample 5)
+        fh.seek(198); fh.write(b'\x00\x00')  # snare (sample 6)
+
 print(f"composed: heart of glass cover — {len(patterns)} patterns")
