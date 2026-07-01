@@ -128,7 +128,7 @@ mod.write_pattern(p); patterns.append(0)
 p = np()
 verse_bass(p)
 for r,n,v in VERSE_CHORDS:
-    p[1][r] = note(BASS, n, V, v)
+    p[1][r] = note(CHORD, n, V, v)
 for r,n,v in VERSE_MELODY:
     p[2][r] = note(LEAD, n, V, v)
 drums(p)
@@ -138,7 +138,7 @@ mod.write_pattern(p); patterns.append(1)
 p = np()
 verse_bass(p)
 for r,n,v in VERSE_CHORDS:
-    p[1][r] = note(BASS, n, V, v)
+    p[1][r] = note(CHORD, n, V, v)
 for r,n,v in VERSE_MELODY2:
     p[2][r] = note(LEAD, n, V, v)
 drums(p)
@@ -150,7 +150,7 @@ for n,r,v in CHORUS_BASS:
     p[0][r] = note(BASS, n, V, v)
 for i,(n,v) in enumerate(CHORUS_CHORDS):
     p[1][i*8] = note(CHORD, n, V, v)
-    p[1][i*8+2] = note(BASS, n, V, v-2)  # chord doubling for thickness
+    p[1][i*8+2] = note(CHORD, n, V, v-2)  # chord doubling for thickness
 for r,n,v in CHORUS_HOOK:
     p[2][r] = note(LEAD, n, V, v)
 drums(p, 0x18)
