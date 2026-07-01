@@ -16,9 +16,11 @@ mod = MODWriter('heart of glass')
 mod.add_sample('bass',      gen_sine_wave(110, 1200, volume=0.55))   # disco bass
 mod.add_sample('chord pad', gen_saw_wave(220, 6000, volume=0.22))    # synth chords
 mod.add_sample('lead',      gen_square_wave(440, 1600, volume=0.28)) # vocal melody
-mod.add_sample('hihat',     gen_hihat(volume=0.4))                      # drums
+mod.add_sample('hihat',     gen_hihat(volume=0.4))                   # hihat
+mod.add_sample('kick',      gen_kick_drum(volume=0.7))               # kick drum
+mod.add_sample('snare',     gen_snare_drum(volume=0.6))              # snare drum
 
-BASS, CHORD, LEAD, HAT = 1, 2, 3, 4
+BASS, CHORD, LEAD, HAT, KICK, SNARE = 1, 2, 3, 4, 5, 6
 V  = 0x0C  # set volume
 T  = 0x07  # tremolo
 R  = (0,0,0,0)
@@ -103,11 +105,11 @@ HAT_ROWS   = [0,4,8,12, 16,20,24,28, 32,36,40,44, 48,52,56,60]
 
 def drums(p, hat_vol=0x14):
     for r in KICK_ROWS:
-        p[3][r] = note(BASS, 'C-2', V, 0x2C)  # kick = bass drum sample
+        p[3][r] = note(KICK, 'C-2', V, 0x24)
     for r in SNARE_ROWS:
-        p[3][r] = note(HAT, 'D-2', V, 0x1E)    # snare = noise hit
+        p[3][r] = note(SNARE, 'C-2', V, 0x1C)
     for r in HAT_ROWS:
-        p[3][r] = note(HAT, 'E-2', V, hat_vol)
+        p[3][r] = note(HAT, 'C-2', V, hat_vol)
 
 # --- BUILD PATTERNS ---
 patterns = []
@@ -119,7 +121,7 @@ for n,r in BASS_LINE:
 # Light hihat enters halfway
 for r in HAT_ROWS:
     if r >= 32:
-        p[3][r] = note(HAT, 'E-2', V, 0x0E)
+        p[3][r] = note(HAT, 'C-2', V, 0x0E)
 mod.write_pattern(p); patterns.append(0)
 
 # VERSE 1 (pattern 1): bass + chords + drums + melody
@@ -183,7 +185,7 @@ for n,r in BASS_LINE:
     p[0][r] = note(BASS, n, V, vol)
 # Fading hihats
 for r in range(0,64,8):
-    p[3][r] = note(HAT, 'E-2', V, max(0x04, 0x0E - r//8))
+    p[3][r] = note(HAT, 'C-2', V, max(0x04, 0x0E - r//8))
 # Last notes
 p[2][56] = note(LEAD, 'B-1', V, 0x08)
 p[2][60] = note(LEAD, 'E-2', V, 0x04)
