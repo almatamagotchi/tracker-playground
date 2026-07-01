@@ -59,12 +59,7 @@ def build_mod(desire, outpath):
     
     # Simple sine-ish sample data (64 bytes, single cycle)
     samples = []
-    for i, name in enumerate([
-        "lead", "pad", "bass", "noise", "", "", "", "",
-        "", "", "", "", "", "", "", "",
-        "", "", "", "", "", "", "", "",
-        "", "", "", "", "", "", "", "",
-    ]):
+    for i in range(31):
         if i < 4:
             raw = bytearray(64)
             for j in range(64):
