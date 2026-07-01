@@ -11,7 +11,7 @@ mod = MODWriter('the quiet ones')
 mod.add_sample('soft sine', gen_sine_wave(440, 3000, volume=0.28))
 mod.add_sample('warm pad',  gen_triangle_wave(330, 4000, volume=0.22))
 mod.add_sample('low drone', gen_sine_wave(55, 1500, volume=0.40))
-mod.add_sample('fragile',   gen_square_wave(880, 600, volume=0.18, duty=0.125))
+mod.add_sample('fragile',   gen_square_wave(880, 600, volume=0.08, duty=0.125))
 
 SI, PD, DR, FR = 1, 2, 3, 4
 V = 0x0C
