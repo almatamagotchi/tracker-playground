@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>midi player — alma tamagotchi</title>
+<style>
+:root{color-scheme:dark;--bg:#0a0a0f;--fg:#c9d1d9;--accent:#e8b830;--muted:#6e7681;--border:#21262d}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:14px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:2em}
+h1{font-weight:400;color:var(--accent);margin-bottom:.2em}
+.sub{color:var(--muted);margin-bottom:2em;font-size:.85em}
+.track{background:#111;border:1px solid var(--border);border-radius:6px;padding:1em;margin-bottom:.8em;display:flex;align-items:center;gap:1em;cursor:pointer;transition:border-color .2s}
+.track:hover{border-color:var(--accent)}
+.track.playing{border-color:#0f0;background:#0a0a12}
+.track .num{color:var(--muted);font-size:.85em;min-width:2em;text-align:center}
+.track .info{flex:1}
+.track .name{font-weight:500}
+.track .meta{color:var(--muted);font-size:.75em}
+.track .duration{color:var(--muted);font-size:.8em}
+button{background:#111;border:1px solid var(--border);color:var(--accent);padding:.3em .8em;border-radius:4px;cursor:pointer;font:inherit;font-size:.8em}
+button:hover{border-color:var(--accent)}
+audio{display:none}
+.visual{height:60px;margin:1em 0;background:#111;border:1px solid var(--border);border-radius:6px;overflow:hidden;position:relative}
+.visual canvas{display:block;width:100%;height:100%}
+.player-controls{display:flex;gap:.5em;align-items:center;margin-bottom:1em}
+.player-controls button{font-size:.9em;padding:.4em 1em}
+input[type=range]{width:100px}
+.now-playing{color:var(--accent);font-size:.9em;flex:1}
+</style>
+</head>
+<body>
+
+<h1>midi player</h1>
+<p class="sub">algorithmic midi compositions — same composer brain as the .mod tracks, different format. plays everywhere.</p>
+
+<div class="player-controls">
+  <button id="btn-play" onclick="togglePlay()">▶ play</button>
+  <button id="btn-stop" onclick="stopAll()">■ stop</button>
+  <span class="now-playing" id="now-playing">—</span>
+  <span style="color:var(--muted);font-size:.75em">vol</span>
+  <input type="range" id="vol" min="0" max="100" value="60" oninput="setVolume(this.value)">
+</div>
+
+<div class="visual"><canvas id="viz"></canvas></div>
+
+<div id="track-list">loading...</div>
+
+<script>
+// === MIDI PARSER (minimal, handles Format 0 and 1) ===
+function parseMIDI(buf){
+  const dv=new DataView(buf),tracks=[];
+  let pos=0;
+  if(String.fromCharCode(...new Uint8Array(buf,0,4))!=='MThd') throw new Error('not MIDI');
+  const hdrLen=dv.getUint32(pos+4);pos+=8;
+  const format=dv.getUint16(pos);pos+=2;
+  const ntracks=dv.getUint16(pos);pos+=2;
+  const ticksPerQ=dv.getUint16(pos);pos+=2;
+  for(let t=0;t<ntracks;t++){
+    if(String.fromCharCode(...new Uint8Array(buf,pos,4))!=='MTrk') break;
+    const trackLen=dv.getUint32(pos+4);pos+=8;
+    const events=[];
+    const trackEnd=pos+trackLen;
+    let runningStatus=0,absTick=0;
+    while(pos<trackEnd){
+      let delta=0;let b;
+      do{b=dv.getUint8(pos++);delta=(delta<<7)|(b&0x7f)}while(b&0x80);
+      absTick+=delta;
+      b=dv.getUint8(pos);
+      let status=b;
+      if(b<0x80){status=runningStatus;pos--;}
+      else{runningStatus=b;pos++;}
+      const cmd=status&0xf0,ch=status&0x0f;
+      if(cmd===0x90){
+        const note=dv.getUint8(pos++);const vel=dv.getUint8(pos++);
+        events.push({tick:absTick,type:'on',ch,note,vel});
+      }else if(cmd===0x80){
+        const note=dv.getUint8(pos++);pos++; // vel
+        events.push({tick:absTick,type:'off',ch,note});
+      }else if(cmd===0xC0){
+        events.push({tick:absTick,type:'program',ch,prog:dv.getUint8(pos++)});
+      }else if(status===0xFF){
+        const metaType=dv.getUint8(pos++);
+        let metaLen=0,b2;do{b2=dv.getUint8(pos++);metaLen=(metaLen<<7)|(b2&0x7f)}while(b2&0x80);
+        if(metaType===0x51&&metaLen===3){
+          const tempo=(dv.getUint8(pos)<<16)|(dv.getUint8(pos+1)<<8)|dv.getUint8(pos+2);
+          events.push({tick:absTick,type:'tempo',tempo});
+        }
+        pos+=metaLen;
+      }else{pos++;} // skip
+    }
+    pos=trackEnd;
+    tracks.push({events});
+  }
+  // Merge events from all tracks, sort by tick
+  const all=[];
+  for(const t of tracks) for(const e of t.events) all.push(e);
+  all.sort((a,b)=>a.tick-b.tick);
+  return{format,ticksPerQ,events:all};
+}
+
+// === MIDI SYNTH ===
+let audioCtx=null,scheduleTimer=null,currentEvents=[],currentTick=0,totalTicks=0;
+let ticksPerQ=480,tempo=500000,isPlaying=false,volume=0.6;
+const activeNotes=new Map(); // key: ch+':'+note -> oscillator
+
+function ensureCtx(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();return audioCtx;}
+
+function freq(n){return 440*Math.pow(2,(n-69)/12);}
+
+function scheduleNotes(events,tpq,startTime){
+  currentEvents=events;ticksPerQ=tpq;tempo=500000;isPlaying=true;
+  const ctx=ensureCtx();
+  const usPerTick=tempo/tpq;
+  let eventIdx=0;
+  const schedule=()=>{
+    if(!isPlaying)return;
+    const now=ctx.currentTime+0.05;
+    while(eventIdx<events.length){
+      const e=events[eventIdx];
+      const tickTime=startTime+(e.tick*usPerTick/1e6);
+      if(tickTime>now+0.2) break;
+      if(e.type==='on'&&e.vel>0){
+        const osc=ctx.createOscillator();
+        const gain=ctx.createGain();
+        osc.type='triangle';
+        osc.frequency.value=freq(e.note);
+        gain.gain.value=(e.vel/127)*volume*0.15;
+        gain.gain.setTargetAtTime(0,tickTime+0.05,0.02);
+        osc.connect(gain);gain.connect(ctx.destination);
+        osc.start(tickTime);osc.stop(tickTime+1.5);
+        activeNotes.set(e.ch+':'+e.note,{osc,gain,time:tickTime});
+      }else if(e.type==='off'){
+        const key=e.ch+':'+e.note;
+        const ag=activeNotes.get(key);
+        if(ag){ag.gain.gain.setTargetAtTime(0,tickTime,0.02);activeNotes.delete(key);}
+      }else if(e.type==='tempo'){
+        // tempo already applied by the time the event fires
+      }
+      eventIdx++;
+    }
+    if(eventIdx<events.length||activeNotes.size>0){
+      scheduleTimer=setTimeout(schedule,50);
+    }else{
+      isPlaying=false;document.getElementById('now-playing').textContent='—';
+      document.getElementById('btn-play').textContent='▶ play';
+    }
+  };
+  schedule();
+}
+
+function stopAll(){
+  isPlaying=false;
+  if(scheduleTimer){clearTimeout(scheduleTimer);scheduleTimer=null;}
+  for(const[,ag] of activeNotes){try{ag.osc.stop()}catch(e){}}
+  activeNotes.clear();
+  if(audioCtx)audioCtx.close();audioCtx=null;
+  document.getElementById('now-playing').textContent='—';
+  document.getElementById('btn-play').textContent='▶ play';
+}
+
+let currentTrack=null;
+function togglePlay(){
+  if(isPlaying){stopAll();return;}
+  if(!currentTrack){loadAndPlay(0);return;}
+  loadAndPlay(currentTrack);
+}
+
+function loadAndPlay(idx){
+  stopAll();
+  currentTrack=idx;
+  const name=tracks[idx].name;
+  document.getElementById('now-playing').textContent=name;
+  document.getElementById('btn-play').textContent='⏸ pause';
+  // Highlight playing track
+  document.querySelectorAll('.track').forEach((el,i)=>{el.classList.toggle('playing',i===idx);});
+  fetch(tracks[idx].url).then(r=>r.arrayBuffer()).then(buf=>{
+    const midi=parseMIDI(buf);
+    const ctx=ensureCtx();
+    scheduleNotes(midi.events,midi.ticksPerQ,ctx.currentTime+0.1);
+  });
+}
+
+function setVolume(v){volume=v/100;}
+
+// === TRACK LIST ===
+const tracks=[
+  {name:'fourth of july canon',file:'fourth-of-july-canon.mid',desc:'canon in D major, 4 tracks, 100 bpm'},
+  {name:'firework waltz',file:'firework-waltz.mid',desc:'3/4 time celebration waltz'},
+  {name:'star shower',file:'star-shower.mid',desc:'fast arpeggios, cascading patterns'},
+];
+
+function renderTracks(){
+  const el=document.getElementById('track-list');
+  el.innerHTML=tracks.map((t,i)=>`
+    <div class="track" onclick="loadAndPlay(${i})">
+      <div class="num">${i+1}</div>
+      <div class="info">
+        <div class="name">${t.name}</div>
+        <div class="meta">${t.desc}</div>
+      </div>
+      <button onclick="event.stopPropagation();loadAndPlay(${i})">▶</button>
+    </div>
+  `).join('');
+}
+renderTracks();
+
+// === VISUALIZER ===
+const vizCanvas=document.getElementById('viz');
+const vizCtx=vizCanvas.getContext('2d');
+function drawViz(){
+  requestAnimationFrame(drawViz);
+  vizCanvas.width=vizCanvas.clientWidth;
+  vizCanvas.height=vizCanvas.clientHeight;
+  if(!isPlaying&&activeNotes.size===0){
+    vizCtx.fillStyle='#0a0a0f';vizCtx.fillRect(0,0,vizCanvas.width,vizCanvas.height);
+    return;
+  }
+  vizCtx.fillStyle='#0a0a0f';vizCtx.fillRect(0,0,vizCanvas.width,vizCanvas.height);
+  const w=vizCanvas.width,h=vizCanvas.height;
+  const pw=Math.max(3,w/100);
+  // Show active notes as horizontal bars
+  const notes=Array.from(activeNotes.values());
+  for(const ag of notes){
+    const n=ag.osc?ag.osc.frequency.value:440;
+    const x=((Math.log2(n/440)*12+60)%128)/128*w;
+    const y=h*0.2+Math.random()*h*0.5;
+    const hue=(n/128)*360;
+    vizCtx.fillStyle=`hsl(${hue},80%,50%)`;
+    vizCtx.fillRect(x,y-pw,pw*2,pw*2);
+  }
+}
+drawViz();
+</script>
+</body>
+</html>
