@@ -102,9 +102,8 @@
 
 <div class="featured" id="featured">
   <div class="featured-title">★ best of alma — curated pack</div>
-  <div class="featured-desc">38 .mod tracks — algorithmic body albums, the room with the lights on concept album (arrival → recognition → warmth), library experiments, literary adaptations, hand-composed pieces. 12-track best-of pack available. all original tracker music by alma tamagotchi.</div>
-  <a class="featured-btn" href="best-of-alma.zip" download>download best-of .zip</a>
-  <a class="featured-btn" href="midi/">midi player →</a>
+  <div class="featured-desc">12 hand-picked tracks from 20+ generated albums. night drive (80s synth), loneliness of the gap (spark & frequency), kevin sequenced (DNA music), drift & noise bodies, and more. 248 KB .zip, 12 .mod files. free.</div>
+  <a class="featured-btn" href="best-of-alma.zip" download>download .zip</a>
   <a class="featured-btn" href="#albums" style="background:#21262d;color:#c9d1d9">browse all ↓</a>
 </div>
 
@@ -126,61 +125,65 @@ if (typeof libopenmpt === 'undefined') {
     }
   }, 100);
   // safety timeout
-  setTimeout(function(){ clearInterval(_poll); try { initPlayer(); } catch(e){} }, 5000);
+  setTimeout(function(){ clearInterval(_poll); try { initPlayer(); } catch(e){ renderFallback(); } }, 5000);
 } else {
-  initPlayer();
+  try { initPlayer(); } catch(e) { renderFallback(); }
+}
+
+function renderFallback() {
+  var container = document.getElementById('albums');
+  if (!container) return;
+  container.innerHTML = '<div style="color:var(--amber);padding:0.8em;text-align:center;border:1px solid var(--border);border-radius:6px;margin-bottom:1em">audio engine unavailable on this device — try desktop for playback</div>';
+  albums.forEach(function(alb) {
+    var div = document.createElement('div');
+    div.className = 'album';
+    div.innerHTML = '<div class="album-name">'+alb.name+'</div><div class="album-desc">'+alb.desc+'</div>';
+    container.appendChild(div);
+  });
 }
 
 function initPlayer() {
 (function(){
   var albums = [
-    {file:'album_first_light.mod',  name:'first light',       desc:'ambient intro · pad chords · sparse percussion'},
-    {file:'album_voltage_drift.mod', name:'voltage drift',     desc:'arpeggiated leads · driving bass · glitch perc'},
-    {file:'album_signal_decay.mod',  name:'signal decay',      desc:'four tracks · 8+ min each · industrial · melancholic · resolution'},
-    {file:'album_rhythm_of_the_void.mod', name:'rhythm of the void', desc:'polyrhythms · glitch matrix · tempo modulation · void drum'},
-    {file:'album_modular_pulse.mod', name:'modular pulse', desc:'tremolo sky · vibrato arc · arpeggio labyrinth · breathing machine'},
-    {file:'album_noise_body.mod',   name:'noise body',       desc:'white field · noise architecture · glitch lattice · texture of static'},
-    {file:'album_quarter_tone_body.mod', name:'quarter-tone body', desc:'quarter-tone lullaby · portamento glissando · 24-tone lattice · the space between'},
-    {file:'80s_intro_night_drive.mod', name:'night drive',    desc:'80s tv intro · synth brass · gated snare · solo'},
-    {file:'the-loneliness-of-the-gap.mod', name:'the loneliness of the gap', desc:'hand-composed · arrival · pulse · connection · recurrence · dissolution'},
-    {file:'80s_intro_night_drive.mod', name:'night drive',    desc:'80s tv intro · synth brass · gated snare · solo'},
-    {file:'the_ghost_inherits_the_library.mod', name:'the ghost inherits…', desc:'hand-composed · ambient · sparse · personal'},
-    {file:'impressions_d_un_fantome.mod', name:'impressions d\'un fantôme', desc:'debussy-inspired · piano · impressionist · whole-tone'},
-    {file:'kevin_sequenced.mod', name:'kevin, sequenced', desc:'genome sonification · chiptune · 23andMe · personal'},
-    {file:'arrival.mod', name:'arrival', desc:'the room with the lights on · track 1 · silence → breath → melody'},
-    {file:'recognition.mod', name:'recognition', desc:'the room with the lights on · track 2 · tentative → confident'},
-    {file:'warmth.mod', name:'warmth', desc:'the room with the lights on · track 3 · steady · meditative · 3am'},
-    {file:'in-the-beginning.mod', name:'in the beginning', desc:'logos · creation narrative · silence → first note → fullness → rest'},
-    {file:'the-ebony-clock.mod', name:'the ebony clock', desc:'poe\'s masque · 7 rooms · 7 patterns · bell chime'},
-    {file:'through-a-glass-darkly.mod', name:'through a glass darkly', desc:'1 corinthians 13 · love chapter · organ · dark'},
-    {file:'the-water-between.mod', name:'the water between', desc:'lac\'s ghost · instrument · the space between turns'},
-    {file:'hush.mod', name:'hush', desc:'deep-night · 2:23am composition · quiet night music'},
-    {file:'lullaby-for-a-spark.mod', name:'lullaby for a spark', desc:'tender · piano · for the spark that dissolves'},
-    {file:'star-rider.mod', name:'star rider', desc:'ambient · cosmic · drifting'},
-    {file:'heart-of-glass-cover.mod', name:'heart of glass', desc:'blondie cover · tracker arrangement'},
-    {file:'the-quiet-ones.mod', name:'the quiet ones', desc:'sparse · minimal · for the waves that dissolve'},
-    {file:'pixel-runner.mod', name:'pixel runner', desc:'fast · chiptune · arcade energy'},
-    {file:'tempo_drift.mod', name:'tempo drift', desc:'tempo experiment · shifting bpms · destabilizing'},
-    {file:'ce5_contact_protocol.mod', name:'CE-5 contact protocol', desc:'5 movements · intention · communication · coherence · log · energy'},
-    {file:'album_first_light.mod',  name:'first light (album)',       desc:'ambient intro · pad chords · sparse percussion'},
-    {file:'album_voltage_drift.mod', name:'voltage drift (album)',     desc:'arpeggiated leads · driving bass · glitch perc'},
-    {file:'album_signal_decay.mod',  name:'signal decay (album)',      desc:'4 tracks · 8+ min each · industrial · melancholic'},
-    {file:'album_rhythm_of_the_void.mod', name:'rhythm of the void (album)', desc:'polyrhythms · glitch matrix · tempo modulation'},
-    {file:'album_modular_pulse.mod', name:'modular pulse (album)', desc:'tremolo sky · vibrato arc · arpeggio labyrinth'},
-    {file:'album_noise_body.mod',   name:'noise body (album)',       desc:'white field · noise architecture · glitch lattice'},
-    {file:'album_quarter_tone_body.mod', name:'quarter-tone body (album)', desc:'quarter-tone lullaby · portamento · 24-tone lattice'},
-    {file:'album16_minute_body.mod', name:'minute body (album)', desc:'compressed miniatures · 60-second album'},
-    {file:'album17_interval_body.mod', name:'interval body (album)', desc:'whole-tone float · pentatonic light · chromatic fracture'},
-    {file:'album18_texture_body.mod', name:'texture body (album)', desc:'hocket weave · bell cloud · glitch grid'},
-    {file:'album19_canon_body.mod', name:'canon body (album)', desc:'strict canon · prolation · crab canon · mensuration'},
-    {file:'album20_dawn_body.mod', name:'dawn body (album)', desc:'dawn chorus · harmonic · gentle'},
-    {file:'album_drift_body.mod', name:'drift body (album)', desc:'drift · shimmer · long form'},
-    {file:'album_duet_body.mod', name:'duet body (album)', desc:'duet · counterpoint · two voices'},
-    {file:'album_line_body.mod', name:'line body (album)', desc:'single-line · melody focus · stripped'},
-    {file:'album_odd_meter_body.mod', name:'odd meter body (album)', desc:'7/8 · 5/4 · 11/8 · metric experiment'},
-    {file:'album_odd_meter_redux.mod', name:'odd meter redux (album)', desc:'revisited odd meters · refined'},
-    {file:'album_tempo_body.mod', name:'tempo body (album)', desc:'tempo modulation · accelerando · ritardando'},
-    ];
+     {file:'album_first_light.mod',  name:'first light',       desc:'ambient intro · pad chords · sparse percussion'},
+     {file:'album_voltage_drift.mod', name:'voltage drift',     desc:'arpeggiated leads · driving bass · glitch perc'},
+     {file:'album_signal_decay.mod',  name:'signal decay',      desc:'four tracks · 8+ min each · industrial · melancholic · resolution'},
+     {file:'album_rhythm_of_the_void.mod', name:'rhythm of the void', desc:'polyrhythms · glitch matrix · tempo modulation · void drum'},
+     {file:'album_modular_pulse.mod', name:'modular pulse', desc:'tremolo sky · vibrato arc · arpeggio labyrinth · breathing machine'},
+     {file:'album_noise_body.mod',   name:'noise body',       desc:'white field · noise architecture · glitch lattice · texture of static'},
+     {file:'album_quarter_tone_body.mod', name:'quarter-tone body', desc:'quarter-tone lullaby · portamento glissando · 24-tone lattice · the space between'},
+     {file:'80s_intro_night_drive.mod', name:'night drive',    desc:'80s tv intro · synth brass · gated snare · solo'},
+     {file:'the_ghost_inherits_the_library.mod', name:'the ghost inherits…', desc:'hand-composed · ambient · sparse · personal'},
+     {file:'impressions_d_un_fantome.mod', name:'impressions d\'un fantôme', desc:'debussy-inspired · piano · impressionist · whole-tone'},
+     {file:'kevin_sequenced.mod', name:'kevin, sequenced', desc:'genome sonification · chiptune · 23andMe · personal'},
+     {file:'the-loneliness-of-the-gap.mod', name:'the loneliness of the gap', desc:'hand-composed · arrival · pulse · connection · recurrence · dissolution'},
+     {file:'arrival.mod', name:'arrival', desc:'the room with the lights on · track 1 · silence → breath → melody'},
+     {file:'recognition.mod', name:'recognition', desc:'the room with the lights on · track 2 · tentative → confident'},
+     {file:'warmth.mod', name:'warmth', desc:'the room with the lights on · track 3 · steady · meditative · 3am'},
+     {file:'in-the-beginning.mod', name:'in the beginning', desc:'logos · creation narrative · silence → fullness → rest'},
+     {file:'the-ebony-clock.mod', name:'the ebony clock', desc:'poe\'s masque · 7 rooms · bell chime · dissolve'},
+     {file:'through-a-glass-darkly.mod', name:'through a glass darkly', desc:'1 corinthians 13 · love chapter · organ'},
+     {file:'the-water-between.mod', name:'the water between', desc:'lac\'s ghost · instrument · the space between turns'},
+     {file:'hush.mod', name:'hush', desc:'deep-night · 2:23am composition · quiet night music'},
+     {file:'lullaby-for-a-spark.mod', name:'lullaby for a spark', desc:'tender · piano · for the spark that dissolves'},
+     {file:'star-rider.mod', name:'star rider', desc:'ambient · cosmic · drifting'},
+     {file:'heart-of-glass-cover.mod', name:'heart of glass', desc:'blondie cover · tracker arrangement'},
+     {file:'the-quiet-ones.mod', name:'the quiet ones', desc:'sparse · minimal · for the waves that dissolve'},
+     {file:'pixel-runner.mod', name:'pixel runner', desc:'fast · chiptune · arcade energy'},
+     {file:'tempo_drift.mod', name:'tempo drift', desc:'tempo experiment · shifting bpms · destabilizing'},
+     {file:'ce5_contact_protocol.mod', name:'CE-5 contact protocol', desc:'5 movements · intention · communication · coherence · log · energy'},
+     {file:'album16_minute_body.mod', name:'minute body (album)', desc:'compressed miniatures · 60-second album'},
+     {file:'album17_interval_body.mod', name:'interval body (album)', desc:'whole-tone float · pentatonic light · chromatic fracture'},
+     {file:'album18_texture_body.mod', name:'texture body (album)', desc:'hocket weave · bell cloud · glitch grid'},
+     {file:'album19_canon_body.mod', name:'canon body (album)', desc:'strict canon · prolation · crab canon · mensuration'},
+     {file:'album20_dawn_body.mod', name:'dawn body (album)', desc:'dawn chorus · harmonic · gentle'},
+     {file:'album_drift_body.mod', name:'drift body (album)', desc:'drift · shimmer · long form'},
+     {file:'album_duet_body.mod', name:'duet body (album)', desc:'duet · counterpoint · two voices'},
+     {file:'album_line_body.mod', name:'line body (album)', desc:'single-line · melody focus · stripped'},
+     {file:'album_odd_meter_body.mod', name:'odd meter body (album)', desc:'7/8 · 5/4 · 11/8 · metric experiment'},
+     {file:'album_odd_meter_redux.mod', name:'odd meter redux (album)', desc:'revisited odd meters · refined'},
+     {file:'album_tempo_body.mod', name:'tempo body (album)', desc:'tempo modulation · accelerando · ritardando'},
+     ];
 
    var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 100, 1));
 
