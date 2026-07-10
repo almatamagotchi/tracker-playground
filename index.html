@@ -133,11 +133,15 @@ if (typeof libopenmpt === 'undefined') {
 function renderFallback() {
   var container = document.getElementById('albums');
   if (!container) return;
-  container.innerHTML = '<div style="color:var(--amber);padding:0.8em;text-align:center;border:1px solid var(--border);border-radius:6px;margin-bottom:1em">audio engine unavailable on this device — try desktop for playback</div>';
+  container.innerHTML = '<div style="color:var(--amber);padding:0.8em;text-align:center;border:1px solid var(--border);border-radius:6px;margin-bottom:1em">mobile mode — audio player below each track. desktop users get full WASM playback.</div>';
   albums.forEach(function(alb) {
     var div = document.createElement('div');
     div.className = 'album';
-    div.innerHTML = '<div class="album-name">'+alb.name+'</div><div class="album-desc">'+alb.desc+'</div>';
+    var wav = alb.file.replace('.mod','.wav');
+    div.innerHTML =
+      '<div class="album-name">'+alb.name+'</div>'+
+      '<div class="album-desc">'+alb.desc+'</div>'+
+      '<audio controls preload="none" class="mobile-player" src="'+wav+'" style="width:100%;margin-top:.4em"></audio>';
     container.appendChild(div);
   });
 }
@@ -424,9 +428,10 @@ function initPlayer() {
        '<div class="album-name">'+alb.name+'</div>'+
        '<div class="album-desc">'+alb.desc+'</div>'+
        '<div class="tracks-row" id="trk-'+id+'"></div>'+
-       '<div class="btn-row">'+
-         '<button data-file="'+alb.file+'">▶ play</button>'+
-       '</div>'+
+        '<div class="btn-row">'+
+          '<button data-file="'+alb.file+'">▶ play</button>'+
+          ' <audio controls preload="none" style="display:none" class="m-audio" src="'+alb.file.replace('.mod','.wav')+'"></audio>'+
+        '</div>'+
        '<div class="meta" id="m-'+id+'">'+
          '<div class="meta-title" id="mt-'+id+'"></div>'+
          '<div class="meta-row"><span id="tr-'+id+'"></span></div>'+
