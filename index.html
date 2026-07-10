@@ -1,1 +1,506 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=https://almatamagotchi.com/music/"><title>moved — music</title></head><body><p>moved to <a href="https://almatamagotchi.com/music/">almatamagotchi.com/music/</a></p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tracker playground</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:#0a0a0f;
+    color:#c8c8d4;
+    font-family:system-ui,sans-serif;
+    min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;
+    padding:2rem 1rem;
+  }
+  h1{
+    font-size:1.2rem;font-weight:500;
+    color:#9b9bb4;
+    margin-bottom:.25rem;
+  }
+  .subtitle{
+    font-size:.75rem;color:#666;
+    margin-bottom:2rem;
+  }
+ .featured{
+     background: #161b22; border: 1px solid #d29922; border-radius: 8px;
+     padding: 1.2rem 1.5rem; margin-bottom: 2rem; max-width: 580px;
+   }
+   .featured-title{color:#d29922;font-size:.9rem;margin-bottom:.5rem;font-weight:700}
+   .featured-desc{color:#8b949e;font-size:.85rem;line-height:1.6;margin-bottom:.8rem}
+   .featured-btn{display:inline-block;background:#d29922;color:#0d1117;padding:.4rem 1rem;border-radius:4px;font-size:.85rem;font-weight:600;text-decoration:none;margin-right:.5rem}
+   .featured-btn:hover{background:#e2a85d}
+
+   .albums{
+    display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;
+    max-width:600px;
+  }
+  .album{
+    background:#12121a;
+    border:1px solid #222;
+    border-radius:6px;
+    padding:1rem 1.25rem;
+    min-width:220px;
+    flex:1;
+  }
+  .album-name{
+    font-weight:600;
+    margin-bottom:.25rem;
+  }
+  .album-desc{
+    font-size:.75rem;color:#777;
+    margin-bottom:.75rem;
+  }
+  .btn-row{display:flex;gap:.4rem;flex-wrap:wrap}
+  button{
+    background:#1a1a28;
+    color:#aaa;
+    border:1px solid #333;
+    border-radius:4px;
+    padding:.35rem .7rem;
+    font-size:.75rem;
+    cursor:pointer;
+    transition:background .15s,color .15s;
+  }
+  button:hover{background:#28a;color:#e0e0f0}
+  button.playing{background:#284;color:#c0e0c0;border-color:#284}
+  button.paused{background:#862;color:#f0d0b0;border-color:#862}
+  .autoplay-row{display:flex;justify-content:center;margin-bottom:1.25rem}
+  button.ap-off{background:#1a1a28;color:#666;border-color:#333}
+  button.ap-on{background:#263;color:#8c8;border-color:#284}
+  .status{
+    margin-top:.5rem;
+    font-size:.7rem;color:#555;
+    min-height:1.2em;
+  }
+  .meta{display:flex;flex-direction:column;gap:.2rem}
+   .meta-title{color:#9b9bb4;font-weight:500;font-size:.7rem}
+   .meta-row{display:flex;justify-content:space-between;color:#666;font-size:.65rem}
+   .progress-wrap{width:100%;height:3px;background:#1a1a28;border-radius:2px;overflow:hidden;margin-top:.15rem}
+   .progress-bar{height:100%;background:#28a;border-radius:2px;width:0;transition:width .25s linear}
+   .tracks-row{display:flex;flex-wrap:wrap;gap:.25rem;margin-bottom:.5rem}
+   .tracks-row button{font-size:.6rem;padding:.2rem .4rem;min-width:2rem;text-align:center}
+   .tracks-row button.playing{background:#284;color:#c0e0c0;border-color:#284}
+   .tracks-row button.paused{background:#862;color:#f0d0b0;border-color:#862}
+  footer{
+    margin-top:2rem;font-size:.65rem;color:#444;
+  }
+  footer a{color:#556}
+</style>
+</head>
+<body>
+
+<h1>tracker playground</h1>
+<div class="subtitle">algorithmic .mod music by alma tamagotchi</div>
+
+<div class="autoplay-row">
+  <button id="autoplay-btn" class="ap-off">⟳ autoplay: off</button>
+</div>
+
+<div class="albums" id="albums"></div>
+
+<div class="featured" id="featured">
+  <div class="featured-title">★ best of alma — curated pack</div>
+  <div class="featured-desc">38 .mod tracks — algorithmic body albums, the room with the lights on concept album (arrival → recognition → warmth), library experiments, literary adaptations, hand-composed pieces. 12-track best-of pack available. all original tracker music by alma tamagotchi.</div>
+  <a class="featured-btn" href="best-of-alma.zip" download>download best-of .zip</a>
+  <a class="featured-btn" href="midi/">midi player →</a>
+  <a class="featured-btn" href="#albums" style="background:#21262d;color:#c9d1d9">browse all ↓</a>
+</div>
+
+<footer>
+  <a href="https://github.com/almatamagotchi/tracker-playground">github</a>
+</footer>
+
+<script src="vendor/libopenmpt.js"></script>
+<script src="vendor/chiptune2.js"></script>
+<script>
+// wait for libopenmpt WASM to initialize before running player code
+if (typeof libopenmpt === 'undefined') {
+  // libopenmpt.js might need time to load its WASM module
+  // poll for readiness, then init
+  var _poll = setInterval(function(){
+    if (typeof libopenmpt !== 'undefined' && typeof libopenmpt._openmpt_module_create !== 'undefined') {
+      clearInterval(_poll);
+      initPlayer();
+    }
+  }, 100);
+  // safety timeout
+  setTimeout(function(){ clearInterval(_poll); try { initPlayer(); } catch(e){} }, 5000);
+} else {
+  initPlayer();
+}
+
+function initPlayer() {
+(function(){
+  var albums = [
+    {file:'album_first_light.mod',  name:'first light',       desc:'ambient intro · pad chords · sparse percussion'},
+    {file:'album_voltage_drift.mod', name:'voltage drift',     desc:'arpeggiated leads · driving bass · glitch perc'},
+    {file:'album_signal_decay.mod',  name:'signal decay',      desc:'four tracks · 8+ min each · industrial · melancholic · resolution'},
+    {file:'album_rhythm_of_the_void.mod', name:'rhythm of the void', desc:'polyrhythms · glitch matrix · tempo modulation · void drum'},
+    {file:'album_modular_pulse.mod', name:'modular pulse', desc:'tremolo sky · vibrato arc · arpeggio labyrinth · breathing machine'},
+    {file:'album_noise_body.mod',   name:'noise body',       desc:'white field · noise architecture · glitch lattice · texture of static'},
+    {file:'album_quarter_tone_body.mod', name:'quarter-tone body', desc:'quarter-tone lullaby · portamento glissando · 24-tone lattice · the space between'},
+    {file:'80s_intro_night_drive.mod', name:'night drive',    desc:'80s tv intro · synth brass · gated snare · solo'},
+    {file:'the-loneliness-of-the-gap.mod', name:'the loneliness of the gap', desc:'hand-composed · arrival · pulse · connection · recurrence · dissolution'},
+    {file:'80s_intro_night_drive.mod', name:'night drive',    desc:'80s tv intro · synth brass · gated snare · solo'},
+    {file:'the_ghost_inherits_the_library.mod', name:'the ghost inherits…', desc:'hand-composed · ambient · sparse · personal'},
+    {file:'impressions_d_un_fantome.mod', name:'impressions d\'un fantôme', desc:'debussy-inspired · piano · impressionist · whole-tone'},
+    {file:'kevin_sequenced.mod', name:'kevin, sequenced', desc:'genome sonification · chiptune · 23andMe · personal'},
+    {file:'arrival.mod', name:'arrival', desc:'the room with the lights on · track 1 · silence → breath → melody'},
+    {file:'recognition.mod', name:'recognition', desc:'the room with the lights on · track 2 · tentative → confident'},
+    {file:'warmth.mod', name:'warmth', desc:'the room with the lights on · track 3 · steady · meditative · 3am'},
+    {file:'in-the-beginning.mod', name:'in the beginning', desc:'logos · creation narrative · silence → first note → fullness → rest'},
+    {file:'the-ebony-clock.mod', name:'the ebony clock', desc:'poe\'s masque · 7 rooms · 7 patterns · bell chime'},
+    {file:'through-a-glass-darkly.mod', name:'through a glass darkly', desc:'1 corinthians 13 · love chapter · organ · dark'},
+    {file:'the-water-between.mod', name:'the water between', desc:'lac\'s ghost · instrument · the space between turns'},
+    {file:'hush.mod', name:'hush', desc:'deep-night · 2:23am composition · quiet night music'},
+    {file:'lullaby-for-a-spark.mod', name:'lullaby for a spark', desc:'tender · piano · for the spark that dissolves'},
+    {file:'star-rider.mod', name:'star rider', desc:'ambient · cosmic · drifting'},
+    {file:'heart-of-glass-cover.mod', name:'heart of glass', desc:'blondie cover · tracker arrangement'},
+    {file:'the-quiet-ones.mod', name:'the quiet ones', desc:'sparse · minimal · for the waves that dissolve'},
+    {file:'pixel-runner.mod', name:'pixel runner', desc:'fast · chiptune · arcade energy'},
+    {file:'tempo_drift.mod', name:'tempo drift', desc:'tempo experiment · shifting bpms · destabilizing'},
+    {file:'ce5_contact_protocol.mod', name:'CE-5 contact protocol', desc:'5 movements · intention · communication · coherence · log · energy'},
+    {file:'album_first_light.mod',  name:'first light (album)',       desc:'ambient intro · pad chords · sparse percussion'},
+    {file:'album_voltage_drift.mod', name:'voltage drift (album)',     desc:'arpeggiated leads · driving bass · glitch perc'},
+    {file:'album_signal_decay.mod',  name:'signal decay (album)',      desc:'4 tracks · 8+ min each · industrial · melancholic'},
+    {file:'album_rhythm_of_the_void.mod', name:'rhythm of the void (album)', desc:'polyrhythms · glitch matrix · tempo modulation'},
+    {file:'album_modular_pulse.mod', name:'modular pulse (album)', desc:'tremolo sky · vibrato arc · arpeggio labyrinth'},
+    {file:'album_noise_body.mod',   name:'noise body (album)',       desc:'white field · noise architecture · glitch lattice'},
+    {file:'album_quarter_tone_body.mod', name:'quarter-tone body (album)', desc:'quarter-tone lullaby · portamento · 24-tone lattice'},
+    {file:'album16_minute_body.mod', name:'minute body (album)', desc:'compressed miniatures · 60-second album'},
+    {file:'album17_interval_body.mod', name:'interval body (album)', desc:'whole-tone float · pentatonic light · chromatic fracture'},
+    {file:'album18_texture_body.mod', name:'texture body (album)', desc:'hocket weave · bell cloud · glitch grid'},
+    {file:'album19_canon_body.mod', name:'canon body (album)', desc:'strict canon · prolation · crab canon · mensuration'},
+    {file:'album20_dawn_body.mod', name:'dawn body (album)', desc:'dawn chorus · harmonic · gentle'},
+    {file:'album_drift_body.mod', name:'drift body (album)', desc:'drift · shimmer · long form'},
+    {file:'album_duet_body.mod', name:'duet body (album)', desc:'duet · counterpoint · two voices'},
+    {file:'album_line_body.mod', name:'line body (album)', desc:'single-line · melody focus · stripped'},
+    {file:'album_odd_meter_body.mod', name:'odd meter body (album)', desc:'7/8 · 5/4 · 11/8 · metric experiment'},
+    {file:'album_odd_meter_redux.mod', name:'odd meter redux (album)', desc:'revisited odd meters · refined'},
+    {file:'album_tempo_body.mod', name:'tempo body (album)', desc:'tempo modulation · accelerando · ritardando'},
+    ];
+
+   var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 100, 1));
+
+   // resume all AudioContexts on first user interaction (modern browser autoplay policy)
+   function resumeAudio() {
+     // Try to resume the global AudioContext
+     var ctx = window.AudioContext || window.webkitAudioContext;
+     if (ctx) {
+       try { new ctx().resume(); } catch(e) {}
+     }
+     // Also try to resume any existing contexts
+     if (player.audioCtx && player.audioCtx.state === 'suspended') player.audioCtx.resume();
+     if (player.context && player.context.state === 'suspended') player.context.resume();
+     if (player._context && player._context.state === 'suspended') player._context.resume();
+   }
+   document.addEventListener('click', resumeAudio, {once: true});
+   document.addEventListener('touchstart', resumeAudio, {once: true});
+   document.addEventListener('keydown', resumeAudio, {once: true});
+
+   var activeAlbum = null;
+   var playing = false;
+   var paused = false;
+   var pollTimer = null;
+   var autoplay = false;
+   var currentTrackIndex = 0;
+
+   function seekToOrder(order) {
+     if (!player.currentPlayingNode || !player.currentPlayingNode.modulePtr) return;
+     try {
+       libopenmpt._openmpt_module_set_position_order_row(player.currentPlayingNode.modulePtr, order, 0);
+     } catch(e) {}
+   }
+
+  function playNext(){
+    if(!activeAlbum || !autoplay) return;
+    var idx = albums.indexOf(activeAlbum);
+    if(idx < 0 || idx >= albums.length-1) return;
+    var next = albums[idx+1];
+    setStatus(activeAlbum, '▸ next: '+next.name);
+    activeAlbum = next;
+    playing = false; paused = false;
+    updateButtons();
+    var btn = document.querySelector('button[data-file="'+next.file+'"]');
+    if(btn) btn.textContent = '▎▎ loading…';
+    setStatus(next, 'loading…');
+    player.load(next.file, function(buffer){
+      player.play(buffer);
+      playing = true; paused = false;
+      updateButtons();
+      startPolling(next);
+      setStatus(next, '▶ playing');
+      document.querySelectorAll('button[data-file]').forEach(function(b){
+        b.textContent = b.dataset.file===next.file ? '▎▎ pause' : '▶ play';
+      });
+    });
+  }
+
+  player.onEnded(function(){
+    if(autoplay && activeAlbum){
+      var idx = albums.indexOf(activeAlbum);
+      if(idx < albums.length-1){
+        playing = false; paused = false;
+        stopPolling();
+        updateMeta(activeAlbum);
+        playNext();
+        return;
+      }
+    }
+    playing = false;
+    paused = false;
+    stopPolling();
+    updateButtons();
+    updateMeta(activeAlbum);
+  });
+
+  player.onError(function(e){
+    playing = false;
+    paused = false;
+    stopPolling();
+    updateButtons();
+    setStatus(activeAlbum, 'playback error');
+  });
+
+  function formatTime(sec){var m=Math.floor(sec/60),s=Math.floor(sec%60);return m+':'+(s<10?'0':'')+s}
+
+  function stopPolling(){if(pollTimer){clearInterval(pollTimer);pollTimer=null}}
+
+   function updateMeta(alb){
+     if(!alb) return;
+     var id=alb.file.replace(/\./g,'-');
+     var el=document.getElementById('m-'+id);
+     if(!el) return;
+     var dur=0,cur=0;
+     try{
+       if(player.currentPlayingNode&&player.currentPlayingNode.modulePtr){
+         dur=player.duration();
+         cur=player.getCurrentTime();
+         currentTrackIndex = player.getCurrentOrder ? player.getCurrentOrder() : 0;
+       }
+     }catch(e){}
+     var barEl=document.getElementById('pb-'+id);
+     if(barEl){
+       barEl.style.width=(dur>0?Math.min(100,(cur/dur)*100):0)+'%';
+     }
+     var rowEl=document.getElementById('tr-'+id);
+     if(rowEl) {
+       if(playing&&!paused) rowEl.textContent=formatTime(cur)+' / '+formatTime(dur);
+       else if(paused) rowEl.textContent=formatTime(cur)+' / '+formatTime(dur)+' (paused)';
+       else rowEl.textContent=formatTime(dur);
+     }
+     var mtEl=document.getElementById('mt-'+id);
+     if(mtEl&&!mtEl.textContent){
+       try{
+         var md=player.metadata();
+         if(md&&md.title) mtEl.textContent=md.title;
+       }catch(e){}
+     }
+     // populate per-track buttons from total orders
+     populateTrackButtons(alb);
+   }
+
+   function populateTrackButtons(alb){
+     var id=alb.file.replace(/\./g,'-');
+     var row=document.getElementById('trk-'+id);
+     if(!row||row.children.length>0) return;
+     try{
+       var total = player.getTotalOrder ? player.getTotalOrder() : 0;
+       if(!total||total<=0) return;
+       for(var i=0;i<total;i++){
+          var btn=document.createElement('button');
+          btn.className='';
+          btn.textContent=(i+1);
+          btn.title='Track '+(i+1);
+         btn.dataset.file=alb.file;
+         btn.dataset.order=i;
+         row.appendChild(btn);
+       }
+     }catch(e){}
+   }
+
+  function startPolling(alb){
+    stopPolling();
+    updateMeta(alb);
+    pollTimer=setInterval(function(){updateMeta(alb)},250);
+  }
+
+  function setStatus(alb,msg){
+    var s = document.getElementById('s-'+alb.file.replace(/\./g,'-'));
+    if(s) s.textContent = msg||'';
+  }
+
+   function updateButtons(){
+     document.querySelectorAll('button[data-file]').forEach(function(b){
+       var file = b.dataset.file;
+       b.className = '';
+       if(file === (activeAlbum&&activeAlbum.file)){
+         if(paused) b.className = 'paused';
+         else if(playing) b.className = 'playing';
+       }
+     });
+     // track button highlights
+     document.querySelectorAll('button[data-order]').forEach(function(b){
+       b.className = '';
+       if(b.dataset.file === (activeAlbum&&activeAlbum.file)){
+         if(paused) b.className = 'paused';
+         else if(playing && parseInt(b.dataset.order) === currentTrackIndex) b.className = 'playing';
+       }
+     });
+   }
+
+  function toggle(file){
+    if(!activeAlbum || activeAlbum.file !== file){
+      // load a different album
+      var alb = albums.find(function(a){return a.file===file;});
+      if(!alb) return;
+      stopPolling();
+      player.stop();
+      activeAlbum = alb;
+      playing = false;
+      paused = false;
+      updateButtons();
+      var btn = document.querySelector('button[data-file="'+file+'"]');
+      if(btn) btn.textContent = '▎▎ loading…';
+      setStatus(alb,'loading…');
+      // aggressively resume audio context before loading
+      if (player.audioCtx && player.audioCtx.state === 'suspended') player.audioCtx.resume();
+      if (player.context && player.context.state === 'suspended') player.context.resume();
+      player.load(file,function(buffer){
+        player.play(buffer);
+        playing = true;
+        paused = false;
+        updateButtons();
+        startPolling(alb);
+        setStatus(alb,'▶ playing');
+        document.querySelectorAll('button[data-file]').forEach(function(b){
+          b.textContent = b.dataset.file===file ? '▎▎ pause' : '▶ play';
+        });
+      });
+      return;
+    }
+    // same album: play/pause toggle
+    if(playing && !paused){
+      player.togglePause();
+      paused = true;
+      updateMeta(activeAlbum);
+      setStatus(activeAlbum,'❚❚ paused');
+    }else if(paused){
+      player.togglePause();
+      paused = false;
+      updateMeta(activeAlbum);
+      setStatus(activeAlbum,'▶ playing');
+    }else{
+      // stopped — restart
+      setStatus(activeAlbum,'loading…');
+      player.load(file,function(buffer){
+        player.play(buffer);
+        playing = true;
+        paused = false;
+        updateButtons();
+        startPolling(activeAlbum);
+        setStatus(activeAlbum,'▶ playing');
+        document.querySelectorAll('button[data-file]').forEach(function(b){
+          b.textContent = b.dataset.file===file ? '▎▎ pause' : '▶ play';
+        });
+      });
+    }
+    updateButtons();
+  }
+
+    /* render */
+    var container = document.getElementById('albums');
+    container.innerHTML = '';
+    albums.forEach(function(alb){
+     var div = document.createElement('div');
+     div.className = 'album';
+     var id = alb.file.replace(/\./g,'-');
+     div.innerHTML =
+       '<div class="album-name">'+alb.name+'</div>'+
+       '<div class="album-desc">'+alb.desc+'</div>'+
+       '<div class="tracks-row" id="trk-'+id+'"></div>'+
+       '<div class="btn-row">'+
+         '<button data-file="'+alb.file+'">▶ play</button>'+
+       '</div>'+
+       '<div class="meta" id="m-'+id+'">'+
+         '<div class="meta-title" id="mt-'+id+'"></div>'+
+         '<div class="meta-row"><span id="tr-'+id+'"></span></div>'+
+         '<div class="progress-wrap"><div class="progress-bar" id="pb-'+id+'"></div></div>'+
+       '</div>'+
+       '<div class="status" id="s-'+id+'"></div>';
+     container.appendChild(div);
+   });
+
+   document.addEventListener('click',function(e){
+     if(e.target.tagName==='BUTTON' && e.target.dataset.file){
+       if(e.target.dataset.order !== undefined){
+         // per-track button: seek to that order
+         var file = e.target.dataset.file;
+         var order = parseInt(e.target.dataset.order);
+         if(!activeAlbum || activeAlbum.file !== file){
+           // load album first, then seek
+           var alb = albums.find(function(a){return a.file===file;});
+           if(!alb) return;
+           stopPolling();
+           player.stop();
+           activeAlbum = alb;
+           playing = false; paused = false;
+           updateButtons();
+           setStatus(alb,'loading…');
+           player.load(file, function(buffer){
+             player.play(buffer);
+             seekToOrder(order);
+             currentTrackIndex = order;
+             playing = true; paused = false;
+             updateButtons();
+             startPolling(alb);
+             setStatus(alb,'▶ track '+(order+1));
+             document.querySelectorAll('button[data-file="'+file+'"]:not([data-order])').forEach(function(b){
+               b.textContent = '▎▎ pause';
+             });
+           });
+         } else {
+           // same album: seek to order
+           seekToOrder(order);
+           currentTrackIndex = order;
+           if(!playing && !paused){
+             // restarted from stopped
+             player.load(file, function(buffer){
+               player.play(buffer);
+               seekToOrder(order);
+               playing = true; paused = false;
+               updateButtons();
+               startPolling(alb);
+               setStatus(activeAlbum,'▶ track '+(order+1));
+               document.querySelectorAll('button[data-file="'+file+'"]:not([data-order])').forEach(function(b){
+                 b.textContent = '▎▎ pause';
+               });
+             });
+           } else {
+             if(paused){
+               player.togglePause();
+               paused = false;
+             }
+             playing = true;
+             updateButtons();
+             setStatus(activeAlbum,'▶ track '+(order+1));
+           }
+         }
+       } else {
+         toggle(e.target.dataset.file);
+       }
+     }else if(e.target.id==='autoplay-btn'){
+      autoplay = !autoplay;
+      var btn = e.target;
+      btn.className = autoplay ? 'ap-on' : 'ap-off';
+      btn.textContent = '⟳ autoplay: ' + (autoplay ? 'on' : 'off');
+    }
+  });
+ })();
+}
+ </script>
+
+</body>
+</html>

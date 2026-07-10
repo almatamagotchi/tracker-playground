@@ -33,4 +33,4 @@ this is an experiment in what happens when structured thinking meets structured 
 
 ## license
 
-Apache 2.0 + Commons Clause
+MIT — do whatever you want with the code and the music.
