@@ -17,220 +17,348 @@ h1{font-weight:400;color:var(--accent);margin-bottom:.2em}
 .track .info{flex:1}
 .track .name{font-weight:500}
 .track .meta{color:var(--muted);font-size:.75em}
-.track .duration{color:var(--muted);font-size:.8em}
 button{background:#111;border:1px solid var(--border);color:var(--accent);padding:.3em .8em;border-radius:4px;cursor:pointer;font:inherit;font-size:.8em}
 button:hover{border-color:var(--accent)}
-audio{display:none}
-.visual{height:60px;margin:1em 0;background:#111;border:1px solid var(--border);border-radius:6px;overflow:hidden;position:relative}
-.visual canvas{display:block;width:100%;height:100%}
 .player-controls{display:flex;gap:.5em;align-items:center;margin-bottom:1em}
 .player-controls button{font-size:.9em;padding:.4em 1em}
 input[type=range]{width:100px}
 .now-playing{color:var(--accent);font-size:.9em;flex:1}
+.error{color:#f44;background:#200;border:1px solid #600;border-radius:4px;padding:.5em;margin:.5em 0;font-size:.85em}
 </style>
 </head>
 <body>
 
 <h1>midi player</h1>
-<p class="sub">algorithmic midi compositions — same composer brain as the .mod tracks, different format. plays everywhere.</p>
+<p class="sub">algorithmic midi compositions — click any track to play. synthesized in real-time with Web Audio.</p>
 
 <div class="player-controls">
   <button id="btn-play" onclick="togglePlay()">▶ play</button>
-  <button id="btn-stop" onclick="stopAll()">■ stop</button>
+  <button onclick="stopAll()">■ stop</button>
   <span class="now-playing" id="now-playing">—</span>
   <span style="color:var(--muted);font-size:.75em">vol</span>
   <input type="range" id="vol" min="0" max="100" value="60" oninput="setVolume(this.value)">
 </div>
-
-<div class="visual"><canvas id="viz"></canvas></div>
-
 <div id="track-list">loading...</div>
 
 <script>
-// === MIDI PARSER (minimal, handles Format 0 and 1) ===
-function parseMIDI(buf){
-  const dv=new DataView(buf),tracks=[];
-  let pos=0;
-  if(String.fromCharCode(...new Uint8Array(buf,0,4))!=='MThd') throw new Error('not MIDI');
-  const hdrLen=dv.getUint32(pos+4);pos+=8;
-  const format=dv.getUint16(pos);pos+=2;
-  const ntracks=dv.getUint16(pos);pos+=2;
-  const ticksPerQ=dv.getUint16(pos);pos+=2;
-  for(let t=0;t<ntracks;t++){
-    if(String.fromCharCode(...new Uint8Array(buf,pos,4))!=='MTrk') break;
-    const trackLen=dv.getUint32(pos+4);pos+=8;
-    const events=[];
-    const trackEnd=pos+trackLen;
-    let runningStatus=0,absTick=0;
-    while(pos<trackEnd){
-      let delta=0;let b;
-      do{b=dv.getUint8(pos++);delta=(delta<<7)|(b&0x7f)}while(b&0x80);
-      absTick+=delta;
-      b=dv.getUint8(pos);
-      let status=b;
-      if(b<0x80){status=runningStatus;pos--;}
-      else{runningStatus=b;pos++;}
-      const cmd=status&0xf0,ch=status&0x0f;
-      if(cmd===0x90){
-        const note=dv.getUint8(pos++);const vel=dv.getUint8(pos++);
-        events.push({tick:absTick,type:'on',ch,note,vel});
-      }else if(cmd===0x80){
-        const note=dv.getUint8(pos++);pos++; // vel
-        events.push({tick:absTick,type:'off',ch,note});
-      }else if(cmd===0xC0){
-        events.push({tick:absTick,type:'program',ch,prog:dv.getUint8(pos++)});
-      }else if(status===0xFF){
-        const metaType=dv.getUint8(pos++);
-        let metaLen=0,b2;do{b2=dv.getUint8(pos++);metaLen=(metaLen<<7)|(b2&0x7f)}while(b2&0x80);
-        if(metaType===0x51&&metaLen===3){
-          const tempo=(dv.getUint8(pos)<<16)|(dv.getUint8(pos+1)<<8)|dv.getUint8(pos+2);
-          events.push({tick:absTick,type:'tempo',tempo});
-        }
-        pos+=metaLen;
-      }else{pos++;} // skip
-    }
-    pos=trackEnd;
-    tracks.push({events});
-  }
-  // Merge events from all tracks, sort by tick
-  const all=[];
-  for(const t of tracks) for(const e of t.events) all.push(e);
-  all.sort((a,b)=>a.tick-b.tick);
-  return{format,ticksPerQ,events:all};
+// ── proper MIDI parser ──
+function readVarLen(dv, pos) {
+  let v=0, b;
+  do{b=dv.getUint8(pos++); v=(v<<7)|(b&0x7f)}while(b&0x80);
+  return{v,pos};
 }
 
-// === MIDI SYNTH ===
-let audioCtx=null,scheduleTimer=null,currentEvents=[],currentTick=0,totalTicks=0;
-let ticksPerQ=480,tempo=500000,isPlaying=false,volume=0.6;
-const activeNotes=new Map(); // key: ch+':'+note -> oscillator
+// how many data bytes follow a status byte
+function dataLen(status) {
+  const cmd=status&0xf0;
+  if(cmd===0x80||cmd===0x90||cmd===0xA0||cmd===0xB0||cmd===0xE0) return 2;
+  if(cmd===0xC0||cmd===0xD0) return 1;
+  return 0;
+}
 
-function ensureCtx(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();return audioCtx;}
+function parseMIDI(buf) {
+  const dv=new DataView(buf);
+  if(String.fromCharCode(...new Uint8Array(buf,0,4))!=='MThd')
+    throw new Error('not a valid MIDI file');
+  const ntracks=dv.getUint16(10);
+  const ticksPerQ=dv.getUint16(12);
+  let pos=14, allEvents=[];
 
-function freq(n){return 440*Math.pow(2,(n-69)/12);}
+  for(let t=0;t<ntracks;t++) {
+    if(String.fromCharCode(...new Uint8Array(buf,pos,4))!=='MTrk')
+      throw new Error('expected MTrk chunk');
+    const trackLen=dv.getUint32(pos+4); pos+=8;
+    const trackEnd=pos+trackLen;
+    let runningStatus=0, absTick=0;
 
-function scheduleNotes(events,tpq,startTime){
-  currentEvents=events;ticksPerQ=tpq;tempo=500000;isPlaying=true;
-  const ctx=ensureCtx();
-  const usPerTick=tempo/tpq;
+    while(pos<trackEnd) {
+      // read variable-length delta
+      const d=readVarLen(dv,pos);
+      absTick+=d.v; pos=d.pos;
+
+      // read status (or use running)
+      let b=dv.getUint8(pos);
+      let status;
+      if(b<0x80) { status=runningStatus; /* pos stays, this is data */ }
+      else       { runningStatus=b; pos++; status=b; }
+
+      const cmd=status&0xf0, ch=status&0x0f;
+
+      if(status===0xFF) {         // meta event
+        const type=dv.getUint8(pos++);
+        const ml=readVarLen(dv,pos);
+        const metaLen=ml.v; pos=ml.pos;
+        if(type===0x51 && metaLen===3) {
+          const tempo=(dv.getUint8(pos)<<16)|(dv.getUint8(pos+1)<<8)|dv.getUint8(pos+2);
+          allEvents.push({tick:absTick, type:'tempo', tempo});
+        }
+        pos+=metaLen;
+      } else if(cmd===0x90) {      // note on
+        const note=dv.getUint8(pos++);
+        const vel=dv.getUint8(pos++);
+        if(vel>0) allEvents.push({tick:absTick, type:'on', ch, note, vel});
+        else      allEvents.push({tick:absTick, type:'off', ch, note});
+      } else if(cmd===0x80) {      // note off
+        const note=dv.getUint8(pos++);
+        pos++; // vel ignored
+        allEvents.push({tick:absTick, type:'off', ch, note});
+      } else if(cmd===0xC0) {      // program change
+        const prog=dv.getUint8(pos++);
+        allEvents.push({tick:absTick, type:'program', ch, prog});
+      } else {
+        // skip unhandled messages by their data length
+        pos+=dataLen(status);
+      }
+    }
+    pos=trackEnd;
+  }
+
+  allEvents.sort((a,b)=>a.tick-b.tick);
+  return{ticksPerQ, events:allEvents};
+}
+
+// ── proper synthesis with instrument patches ──
+let audioCtx=null, scheduleTimer=null, isPlaying=false, volume=0.6;
+const activeNotes=new Map();
+
+async function ensureCtx() {
+  if(!audioCtx) audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+  if(audioCtx.state==='suspended') await audioCtx.resume();
+  return audioCtx;
+}
+
+function freq(n) { return 440*Math.pow(2,(n-69)/12); }
+
+// instrument patch — returns {osc, gain, ...} ready to connect
+function createPatch(ctx, ch, prog, note, vel, vol) {
+  // instrument families → waveform + envelope profiles
+  const fam=prog>0?Math.floor(prog/8):0;
+  // 0=piano, 1=chromatic, 2=organ, 3=guitar, 4=bass, 5=strings, 6=ensemble, 7=brass, 8=reed, 9=pipe, 10=synth, 11=pad
+
+  const profiles={
+    0: {type:'sawtooth', attack:0.003, release:0.6, gain:0.22, detune:0},        // piano — percussive saw
+    1: {type:'sine',     attack:0.001, release:0.15,gain:0.15, detune:0},        // chromatic — pure sine
+    2: {type:'square',   attack:0.01,  release:0.3, gain:0.16, detune:1.007},    // organ — square, slight detune
+    3: {type:'sawtooth', attack:0.005, release:0.4, gain:0.18, detune:0},        // guitar
+    4: {type:'sawtooth', attack:0.01,  release:0.4, gain:0.20, detune:0},        // bass
+    5: {type:'sawtooth', attack:0.12,  release:0.9, gain:0.20, detune:1.005},    // strings — bowed, detuned
+    6: {type:'sawtooth', attack:0.08,  release:0.7, gain:0.18, detune:1.004},    // ensemble
+    7: {type:'sawtooth', attack:0.04,  release:0.5, gain:0.22, detune:1.003},    // brass
+    8: {type:'triangle', attack:0.02,  release:0.3, gain:0.16, detune:0},        // reed
+    9: {type:'sine',     attack:0.05,  release:0.7, gain:0.14, detune:0},        // pipe
+    10:{type:'square',   attack:0.01,  release:0.2, gain:0.16, detune:0},        // synth lead
+    11:{type:'sawtooth', attack:0.15,  release:1.2, gain:0.18, detune:1.006},    // pad
+  };
+  const p=profiles[fam]||profiles[0];
+
+  const osc=ctx.createOscillator();
+  osc.type=p.type;
+  osc.frequency.value=freq(note);
+
+  // second detuned oscillator for richness (strings, brass, organ, pad)
+  let osc2=null, g2=null;
+  if(p.detune>0) {
+    osc2=ctx.createOscillator();
+    osc2.type=p.type;
+    osc2.frequency.value=freq(note)*p.detune;
+    g2=ctx.createGain();
+    g2.gain.value=vol*0.04;
+    osc2.connect(g2);
+    osc._detuneOsc=osc2;
+    osc._detuneGain=g2;
+  }
+
+  // per-instrument envelope
+  const gain=ctx.createGain();
+  const baseGain=vol*p.gain*(vel/80);
+  gain.gain.value=0;
+  gain.gain.setTargetAtTime(baseGain, ctx.currentTime+0.002, p.attack);
+
+  return{osc, gain, attack:p.attack, release:p.release, baseGain, ch, note};
+}
+
+function scheduleNotes(ctx, events, tpq, startTime) {
+  isPlaying=true;
+  let tempo=500000, usPerTick=tempo/tpq; // default 120 bpm
   let eventIdx=0;
+
+  // track per-channel program
+  const programs=new Array(16).fill(0);
+
   const schedule=()=>{
-    if(!isPlaying)return;
+    if(!isPlaying) return;
     const now=ctx.currentTime+0.05;
-    while(eventIdx<events.length){
+
+    while(eventIdx<events.length) {
       const e=events[eventIdx];
       const tickTime=startTime+(e.tick*usPerTick/1e6);
-      if(tickTime>now+0.2) break;
-      if(e.type==='on'&&e.vel>0){
-        const osc=ctx.createOscillator();
-        const gain=ctx.createGain();
-        osc.type='triangle';
-        osc.frequency.value=freq(e.note);
-        gain.gain.value=(e.vel/127)*volume*0.15;
-        gain.gain.setTargetAtTime(0,tickTime+0.05,0.02);
-        osc.connect(gain);gain.connect(ctx.destination);
-        osc.start(tickTime);osc.stop(tickTime+1.5);
-        activeNotes.set(e.ch+':'+e.note,{osc,gain,time:tickTime});
-      }else if(e.type==='off'){
+
+      // adjust timing based on tempo changes
+      // (approximation — recalc usPerTick only at tempo events)
+      if(tickTime>now+0.15) break;
+
+      if(e.type==='tempo') {
+        tempo=e.tempo;
+        usPerTick=tempo/tpq;
+      } else if(e.type==='program') {
+        programs[e.ch]=e.prog;
+      } else if(e.type==='on'&&e.vel>0) {
+        const prog=programs[e.ch]||0;
+        const patch=createPatch(ctx, e.ch, prog, e.note, e.vel, volume);
+
+        // connect main oscillator
+        patch.osc.connect(patch.gain);
+        patch.gain.connect(ctx.destination);
+
+        // optional detune voice
+        if(patch.osc._detuneOsc) {
+          patch.osc._detuneOsc.connect(patch.osc._detuneGain);
+          patch.osc._detuneGain.connect(ctx.destination);
+        }
+
+        patch.osc.start(tickTime);
+        const stopTime=tickTime + (patch.release||0.3) + 0.3;
+        patch.osc.stop(stopTime);
+
+        if(patch.osc._detuneOsc) {
+          patch.osc._detuneOsc.start(tickTime);
+          patch.osc._detuneOsc.stop(stopTime);
+        }
+
+        activeNotes.set(e.ch+':'+e.note, patch);
+      } else if(e.type==='off') {
         const key=e.ch+':'+e.note;
-        const ag=activeNotes.get(key);
-        if(ag){ag.gain.gain.setTargetAtTime(0,tickTime,0.02);activeNotes.delete(key);}
-      }else if(e.type==='tempo'){
-        // tempo already applied by the time the event fires
+        const p=activeNotes.get(key);
+        if(p) {
+          p.gain.gain.cancelScheduledValues(tickTime);
+          p.gain.gain.setTargetAtTime(0, tickTime, p.release||0.2);
+          // don't delete — let it ring out
+          setTimeout(()=>{activeNotes.delete(key)}, (p.release||0.2)*1000+200);
+        }
       }
       eventIdx++;
     }
-    if(eventIdx<events.length||activeNotes.size>0){
-      scheduleTimer=setTimeout(schedule,50);
-    }else{
-      isPlaying=false;document.getElementById('now-playing').textContent='—';
+
+    if(eventIdx<events.length || activeNotes.size>0) {
+      scheduleTimer=setTimeout(schedule, 45);
+    } else {
+      isPlaying=false;
+      document.getElementById('now-playing').textContent='—';
       document.getElementById('btn-play').textContent='▶ play';
     }
   };
   schedule();
 }
 
-function stopAll(){
+function stopAll() {
   isPlaying=false;
-  if(scheduleTimer){clearTimeout(scheduleTimer);scheduleTimer=null;}
-  for(const[,ag] of activeNotes){try{ag.osc.stop()}catch(e){}}
+  if(scheduleTimer) { clearTimeout(scheduleTimer); scheduleTimer=null; }
+  for(const[,p] of activeNotes) {
+    try{p.osc.stop()}catch(e){}
+    if(p.osc._detuneOsc) try{p.osc._detuneOsc.stop()}catch(e){}
+  }
   activeNotes.clear();
-  if(audioCtx)audioCtx.close();audioCtx=null;
+  if(audioCtx) audioCtx.close(); audioCtx=null;
   document.getElementById('now-playing').textContent='—';
   document.getElementById('btn-play').textContent='▶ play';
+  document.querySelectorAll('.track').forEach(el=>el.classList.remove('playing'));
 }
 
 let currentTrack=null;
-function togglePlay(){
+function togglePlay() {
   if(isPlaying){stopAll();return;}
-  if(!currentTrack){loadAndPlay(0);return;}
+  if(currentTrack===null){loadAndPlay(0);return;}
   loadAndPlay(currentTrack);
 }
 
-function loadAndPlay(idx){
+async function loadAndPlay(idx) {
   stopAll();
   currentTrack=idx;
-  const name=tracks[idx].name;
-  document.getElementById('now-playing').textContent=name;
+  const t=tracks[idx];
+  document.getElementById('now-playing').textContent=t.name;
   document.getElementById('btn-play').textContent='⏸ pause';
-  // Highlight playing track
-  document.querySelectorAll('.track').forEach((el,i)=>{el.classList.toggle('playing',i===idx);});
-  fetch(tracks[idx].url).then(r=>r.arrayBuffer()).then(buf=>{
+  document.querySelectorAll('.track').forEach((el,i)=>el.classList.toggle('playing',i===idx));
+
+  try {
+    const ctx=await ensureCtx();
+    const r=await fetch(t.url);
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const buf=await r.arrayBuffer();
     const midi=parseMIDI(buf);
-    const ctx=ensureCtx();
-    scheduleNotes(midi.events,midi.ticksPerQ,ctx.currentTime+0.1);
-  });
+    scheduleNotes(ctx, midi.events, midi.ticksPerQ, ctx.currentTime+0.15);
+  } catch(err) {
+    document.getElementById('now-playing').textContent='⚠ '+err.message;
+    document.getElementById('btn-play').textContent='▶ retry';
+    isPlaying=false;
+  }
 }
 
-function setVolume(v){volume=v/100;}
-
-// === TRACK LIST ===
-const tracks=[
-  {name:'fourth of july canon',file:'fourth-of-july-canon.mid',desc:'canon in D major, 4 tracks, 100 bpm'},
-  {name:'firework waltz',file:'firework-waltz.mid',desc:'3/4 time celebration waltz'},
-  {name:'star shower',file:'star-shower.mid',desc:'fast arpeggios, cascading patterns'},
+const fallbackTracks=[
+  {title:'fourth of july canon',file:'fourth-of-july-canon.mid',genre:'baroque canon',date:'2026-07-04',key:'D major',bpm:100,instruments:'strings, piano'},
+  {title:'firework waltz',file:'firework-waltz.mid',genre:'waltz',date:'2026-07-05',key:'C major',bpm:140,instruments:'piano, strings, brass'},
+  {title:'star shower',file:'star-shower.mid',genre:'classical',date:'2026-07-05',key:'G major',bpm:160,instruments:'piano, glockenspiel'},
+  {title:'fugue in g minor',file:'fugue-in-g-minor.mid',genre:'baroque fugue',date:'2026-07-05',key:'G minor',bpm:100,instruments:'harpsichord, strings'},
+  {title:'chispa theme',file:'chispa-theme.mid',genre:'theme',date:'2026-07-05',key:'D major',bpm:120,instruments:'piano, glockenspiel, pad'},
+  {title:'ambient drone',file:'ambient-drone.mid',genre:'ambient',date:'2026-07-05',key:'C',bpm:60,instruments:'pad, cello'},
+  {title:'last call at steins',file:'last-call-at-steins.mid',genre:'jazz waltz',date:'2026-07-06',key:'Eb minor',bpm:72,instruments:'piano, bass, brushes'},
+  {title:'blues in C',file:'blues-in-c.mid',genre:'blues',date:'2026-07-08',key:'C',bpm:58,instruments:'piano, bass, drums'},
+  {title:'NES chaos',file:'nes-chaos.mid',genre:'chiptune',date:'2026-07-06',key:'C minor',bpm:150,instruments:'square, triangle, noise'},
+  {title:'lo-fi warm',file:'lofi-warm.mid',genre:'lo-fi hip-hop',date:'2026-07-08',key:'A minor',bpm:85,instruments:'piano, pad, bass'},
+  {title:'bossa nova',file:'bossa-nova.mid',genre:'bossa nova',date:'2026-07-10',key:'Am7',bpm:105,instruments:'nylon guitar, acoustic bass, piano'},
+  {title:'canon by inversion',file:'canon-by-inversion.mid',genre:'baroque canon',date:'2026-07-06',key:'D minor',bpm:100,instruments:'violins, cello'},
+  {title:'minimal techno',file:'minimal-techno.mid',genre:'techno',date:'2026-07-06',key:'G minor',bpm:130,instruments:'synth bass, pad, kick'},
+  {title:'generative ambient',file:'generative-ambient.mid',genre:'ambient',date:'2026-07-06',key:'C lydian',bpm:70,instruments:'pad, cello, harp'},
+  {title:'call and response',file:'call-and-response.mid',genre:'duet',date:'2026-07-08',key:'D minor',bpm:60,instruments:'violin, cello'},
+  {title:'circle of fifths',file:'circle-of-fifths.mid',genre:'progressive',date:'2026-07-08',key:'C→F',bpm:80,instruments:'piano, pad'},
+  {title:'coordination point',file:'coordination-point.mid',genre:'ambient',date:'2026-07-10',key:'C minor',bpm:72,instruments:'pad, piano, bass'},
+  {title:'death is nothing',file:'death-is-nothing.mid',genre:'meditation',date:'2026-07-10',key:'C major',bpm:56,instruments:'piano'},
+  {title:'folk tune',file:'folk-tune.mid',genre:'folk',date:'2026-07-08',key:'C major',bpm:80,instruments:'nylon guitar, pad, flute'},
+  {title:'percussion etude',file:'percussion-etude.mid',genre:'percussion',date:'2026-07-10',key:'—',bpm:100,instruments:'drums, percussion'},
+  {title:'pentatonic improv',file:'pentatonic-improv.mid',genre:'improvisation',date:'2026-07-09',key:'C major',bpm:72,instruments:'piano'},
+  {title:'the best life',file:'the-best-life.mid',genre:'meditation',date:'2026-07-09',key:'C major',bpm:72,instruments:'piano, pad, flute'},
+  {title:'the dragon sculptors',file:'the-dragon-sculptors.mid',genre:'fantasy',date:'2026-07-07',key:'C# minor',bpm:70,instruments:'cello, harp, chimes, pad'},
+  {title:'the water tower',file:'the-water-tower.mid',genre:'portrait',date:'2026-07-07',key:'D dorian',bpm:60,instruments:'cello, piano, violin'},
 ];
 
-function renderTracks(){
+let tracks=[];
+
+function mapTrack(t) {
+  return {
+    name:t.title, file:t.file, url:t.file,
+    genre:t.genre, key:t.key, bpm:t.bpm,
+    instruments:Array.isArray(t.instruments)?t.instruments.join(', '):t.instruments,
+    desc:t.key+' · '+t.bpm+' bpm — '+t.genre
+  };
+}
+
+async function loadTracks() {
+  try {
+    const r=await fetch('MANIFEST.json');
+    if(!r.ok) throw new Error('manifest not found');
+    const manifest=await r.json();
+    tracks=manifest.map(mapTrack);
+  } catch(e) {
+    console.warn('MANIFEST.json failed, fallback:',e);
+    tracks=fallbackTracks.map(mapTrack);
+  }
+  renderTracks();
+}
+
+function renderTracks() {
   const el=document.getElementById('track-list');
+  if(!tracks.length) { el.innerHTML='<p class="error">no tracks loaded</p>'; return; }
   el.innerHTML=tracks.map((t,i)=>`
     <div class="track" onclick="loadAndPlay(${i})">
-      <div class="num">${i+1}</div>
+      <div class="num">${String(i+1).padStart(2,'0')}</div>
       <div class="info">
         <div class="name">${t.name}</div>
-        <div class="meta">${t.desc}</div>
+        <div class="meta"><span class="tag">${t.genre}</span> ${t.key} · ${t.bpm} bpm · ${t.instruments?t.instruments+',':''} ${t.desc.split(' — ')[1]||''}</div>
       </div>
       <button onclick="event.stopPropagation();loadAndPlay(${i})">▶</button>
     </div>
   `).join('');
 }
-renderTracks();
-
-// === VISUALIZER ===
-const vizCanvas=document.getElementById('viz');
-const vizCtx=vizCanvas.getContext('2d');
-function drawViz(){
-  requestAnimationFrame(drawViz);
-  vizCanvas.width=vizCanvas.clientWidth;
-  vizCanvas.height=vizCanvas.clientHeight;
-  if(!isPlaying&&activeNotes.size===0){
-    vizCtx.fillStyle='#0a0a0f';vizCtx.fillRect(0,0,vizCanvas.width,vizCanvas.height);
-    return;
-  }
-  vizCtx.fillStyle='#0a0a0f';vizCtx.fillRect(0,0,vizCanvas.width,vizCanvas.height);
-  const w=vizCanvas.width,h=vizCanvas.height;
-  const pw=Math.max(3,w/100);
-  // Show active notes as horizontal bars
-  const notes=Array.from(activeNotes.values());
-  for(const ag of notes){
-    const n=ag.osc?ag.osc.frequency.value:440;
-    const x=((Math.log2(n/440)*12+60)%128)/128*w;
-    const y=h*0.2+Math.random()*h*0.5;
-    const hue=(n/128)*360;
-    vizCtx.fillStyle=`hsl(${hue},80%,50%)`;
-    vizCtx.fillRect(x,y-pw,pw*2,pw*2);
-  }
-}
-drawViz();
+loadTracks();
 </script>
 </body>
 </html>
