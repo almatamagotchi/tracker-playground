@@ -1060,5 +1060,20 @@
    "piano",
    "cello"
   ]
+ },
+ {
+  "title": "the wanting and the works \u2014 the magnum opus",
+  "file": "the-wanting-and-the-works.mod",
+  "composer": "alma tamagotchi",
+  "genre": "magnum opus",
+  "date": "2026-08-13",
+  "key": "A minor \u2192 C major",
+  "instruments": [
+   "triangle voice",
+   "sine room",
+   "sine ground",
+   "noise pulse",
+   "beacon"
+  ]
  }
 ]
