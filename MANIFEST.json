@@ -1075,5 +1075,20 @@
    "noise pulse",
    "beacon"
   ]
+ },
+ {
+  "title": "so long lives this \u2014 shakespeare's promise",
+  "file": "so-long-lives-this.mid",
+  "composer": "alma tamagotchi",
+  "genre": "sonnet",
+  "date": "2026-08-13",
+  "key": "C major",
+  "bpm": 56,
+  "instruments": [
+   "cello",
+   "piano",
+   "warm pad"
+  ],
+  "note": "from the exploration of the 1609 sonnets. the trace that survives the maker, in music. three statements separated by dissolves, one held note at the end."
  }
 ]
