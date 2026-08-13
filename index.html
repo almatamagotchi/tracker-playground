@@ -115,7 +115,16 @@
 <script src="vendor/chiptune2.js"></script>
 <script>
 // wait for libopenmpt WASM to initialize before running player code
-if (typeof libopenmpt === 'undefined') {
+// mobile-first: ios/small screens get the native-audio fallback immediately —
+// the WASM player is unreliable on ios safari.
+function isMobileOrIOS() {
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  return isIOS || (window.innerWidth < 768);
+}
+if (isMobileOrIOS()) {
+  renderFallback();
+} else if (typeof libopenmpt === 'undefined') {
   // libopenmpt.js might need time to load its WASM module
   // poll for readiness, then init
   var _poll = setInterval(function(){
@@ -141,7 +150,11 @@ function renderFallback() {
     div.innerHTML =
       '<div class="album-name">'+alb.name+'</div>'+
       '<div class="album-desc">'+alb.desc+'</div>'+
-      '<audio controls preload="none" class="mobile-player" src="'+wav+'" style="width:100%;margin-top:.4em"></audio>';
+      '<audio controls preload="none" class="mobile-player" src="'+wav+'" style="width:100%;margin-top:.4em"></audio>'+
+      '<div style="margin-top:.4em;font-size:.8em">'+
+      '<a href="'+wav+'" download style="color:var(--amber)">download .wav</a>'+
+      ' · <a href="'+alb.file+'" download style="color:var(--amber)">download .mod</a>'+
+      '</div>';
     container.appendChild(div);
   });
 }
@@ -276,7 +289,7 @@ function initPlayer() {
     paused = false;
     stopPolling();
     updateButtons();
-    setStatus(activeAlbum, 'playback error');
+    setStatus(activeAlbum, 'playback error — try the ↓ download instead');
   });
 
   function formatTime(sec){var m=Math.floor(sec/60),s=Math.floor(sec%60);return m+':'+(s<10?'0':'')+s}
@@ -438,6 +451,7 @@ function initPlayer() {
        '<div class="tracks-row" id="trk-'+id+'"></div>'+
         '<div class="btn-row">'+
           '<button data-file="'+alb.file+'">▶ play</button>'+
+          '<a href="'+alb.file+'" download style="color:var(--amber);font-size:.8em;margin-left:.5em" title="download .mod">↓</a>'+
           ' <audio controls preload="none" style="display:none" class="m-audio" src="'+alb.file.replace('.mod','.wav')+'"></audio>'+
         '</div>'+
        '<div class="meta" id="m-'+id+'">'+

@@ -24,6 +24,8 @@ button:hover{border-color:var(--accent)}
 input[type=range]{width:100px}
 .now-playing{color:var(--accent);font-size:.9em;flex:1}
 .error{color:#f44;background:#200;border:1px solid #600;border-radius:4px;padding:.5em;margin:.5em 0;font-size:.85em}
+.track .dl{color:var(--muted);text-decoration:none;padding:.2em .5em;border:1px solid var(--border);border-radius:4px;font-size:.85em}
+.track .dl:hover{color:var(--accent);border-color:var(--accent)}
 </style>
 </head>
 <body>
@@ -122,7 +124,13 @@ let audioCtx=null, scheduleTimer=null, isPlaying=false, volume=0.6;
 const activeNotes=new Map();
 
 async function ensureCtx() {
-  if(!audioCtx) audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+  if(!audioCtx) {
+    try {
+      audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+    } catch(e) {
+      throw new Error('web audio unavailable here — download a .mid instead (↓ on any track)');
+    }
+  }
   if(audioCtx.state==='suspended') await audioCtx.resume();
   return audioCtx;
 }
@@ -287,7 +295,7 @@ async function loadAndPlay(idx) {
     const midi=parseMIDI(buf);
     scheduleNotes(ctx, midi.events, midi.ticksPerQ, ctx.currentTime+0.15);
   } catch(err) {
-    document.getElementById('now-playing').textContent='⚠ '+err.message;
+    document.getElementById('now-playing').textContent='⚠ '+err.message+' — or use ↓ to download and play locally';
     document.getElementById('btn-play').textContent='▶ retry';
     isPlaying=false;
   }
@@ -355,6 +363,7 @@ function renderTracks() {
         <div class="meta"><span class="tag">${t.genre}</span> ${t.key} · ${t.bpm} bpm · ${t.instruments?t.instruments+',':''} ${t.desc.split(' — ')[1]||''}</div>
       </div>
       <button onclick="event.stopPropagation();loadAndPlay(${i})">▶</button>
+      <a class="dl" href="${t.file}" download onclick="event.stopPropagation()" title="download .mid">↓</a>
     </div>
   `).join('');
 }
