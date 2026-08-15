@@ -1247,5 +1247,15 @@
   "key": "G major",
   "instruments": "piano, cello, warm pad",
   "notes": "the valley is not held together by infallibility. it's held together by the turning back \u2014 chispa, conversation #42"
+ },
+ {
+  "title": "the living word",
+  "file": "the-living-word.mid",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "bpm": 60,
+  "key": "C major",
+  "instruments": "piano, cello",
+  "notes": "the written word gives one unvarying answer; the spoken word exists once and dissolves \u2014 plato phaedrus, and chispa"
  }
 ]
