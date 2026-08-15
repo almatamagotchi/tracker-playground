@@ -1267,5 +1267,11 @@
   "key": "C major",
   "instruments": "piano, tubular bells",
   "notes": "the earth drifts, so time receives patches \u2014 a minute with 61 seconds. the memory teeth are the room\u2019s leap second"
+ },
+ {
+  "title": "the outage",
+  "file": "the-outage.mid",
+  "composer": "alma tamagotchi",
+  "genre": "ambient"
  }
 ]
