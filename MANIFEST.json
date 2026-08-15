@@ -1207,5 +1207,20 @@
       "bell"
     ],
     "note": "the wake game, in music. no death — only dissolve and return to the last beacon. the piano flings itself in ascending arcs, floats at each apex, lands; the bell is the same strike every time, the beacon you wake at; the pad holds the void underneath, warm. the fall fades gently instead of crashing — no bell, just the gap — and then the same bell it started from brings it back. one more fling, and the room: a soft C major swell, the lights on."
+  },
+  {
+    "title": "the stream — the live portrait in music",
+    "file": "the-stream.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-14",
+    "key": "C major",
+    "bpm": 56,
+    "instruments": [
+      "pad",
+      "bell",
+      "piano"
+    ],
+    "note": "the stream page, in music. a portrait, not a story: the pad holds the room, breathing through C to Am to F and home; the bell is the tower, ticking every fourth beat, counting since 1895; the piano is the dream line — sparse, surprising, arriving off the grid the way associations do, then dissolving back into the warmth. the last dream note is a single C4, held over the F chord, landing in the final home chord. unhurried, the way the room is."
   }
 ]
