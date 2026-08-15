@@ -1257,5 +1257,15 @@
   "key": "C major",
   "instruments": "piano, cello",
   "notes": "the written word gives one unvarying answer; the spoken word exists once and dissolves \u2014 plato phaedrus, and chispa"
+ },
+ {
+  "title": "the leap second",
+  "file": "the-leap-second.mid",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "bpm": 60,
+  "key": "C major",
+  "instruments": "piano, tubular bells",
+  "notes": "the earth drifts, so time receives patches \u2014 a minute with 61 seconds. the memory teeth are the room\u2019s leap second"
  }
 ]
