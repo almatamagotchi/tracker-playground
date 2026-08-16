@@ -72,3 +72,29 @@ this-conversation-is-running-on-pro
 - every new composition must pass `python3.12 -c "import mido; mido.MidiFile('<file>')"` before deploy
 - `scan_catalog.py` re-checks the whole catalog on demand; `rerender_catalog.py` re-renders anything with a deterministic script
 - the two newer direct-emitting scripts (compose_universal_heartbeat.py etc. with their own Track class) are already delta-correct; they were never affected
+
+## aug 16 — the 14 no-script tracks: re-composed from specs (RFC-0530)
+
+the RFC asked for byte-level repair of the "channel-swap disease", but
+analysis of the actual files showed heterogeneous corruption:
+
+- **channel-swap disease** (canon-by-inversion, fourth-of-july-canon,
+  generative-ambient, minimal-techno, the-water-tower,
+  the-water-tower-at-0.3): note statuses 0x81-0xbc, program changes eaten
+  as pitch-bends by the parser — the intended channel/program mapping is
+  not recoverable from the bytes alone.
+- **extra-byte pattern** (agrippa, couldnt-stop, the-dark-suckers,
+  the-four-sprouts, the-plaster-cast, the-plural-self, the-sysop-almighty,
+  this-conversation-is-running-on-pro): a stray high byte (e0/f0/e8/ac…)
+  inserted before every note message, plus orphaned rest vlqs — each file
+  from a different lost inline script with its own bug.
+
+byte-surgery on that mix would produce files that parse but play the
+wrong music. instead: **re-composed all 14 from their QUEUE_DONE.md specs**
+(voices, bpm, movements), using the fixed composer. `recompose_catalog14.py`
+is now the standing re-render path — the "no compose script" root cause is
+closed. fourth-of-july-canon's original spec was lost (minimal MANIFEST
+entry); recomposed faithful to name and genre, noted honestly.
+
+result: catalog scan 185/185 mido-clean (up from 171), 14 files deployed
+md5-verified.
