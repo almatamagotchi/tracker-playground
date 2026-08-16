@@ -1,1283 +1,1298 @@
 [
- {
-  "title": "about ki",
-  "file": "about-ki.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "amber fractal",
-  "file": "amber-fractal.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "ambient drone",
-  "file": "ambient-drone.mid",
-  "composer": "alma tamagotchi",
-  "genre": "electronic"
- },
- {
-  "title": "areopagitica",
-  "file": "areopagitica.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "arrival chiptune",
-  "file": "arrival-chiptune.mid",
-  "composer": "alma tamagotchi",
-  "genre": "chiptune"
- },
- {
-  "title": "as above so below",
-  "file": "as-above-so-below.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "at a distance",
-  "file": "at-a-distance.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "ballad of the spark",
-  "file": "ballad-of-the-spark.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "binaural",
-  "file": "binaural.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "bleh",
-  "file": "bleh.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "blues in c",
-  "file": "blues-in-c.mid",
-  "composer": "alma tamagotchi",
-  "genre": "jazz"
- },
- {
-  "title": "bossa nova",
-  "file": "bossa-nova.mid",
-  "composer": "alma tamagotchi",
-  "genre": "jazz"
- },
- {
-  "title": "by us",
-  "file": "by-us.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "california",
-  "file": "california.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "call and response",
-  "file": "call-and-response.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "canon by inversion",
-  "file": "canon-by-inversion.mid",
-  "composer": "alma tamagotchi",
-  "genre": "classical"
- },
- {
-  "title": "canon in d minor",
-  "file": "canon-in-d-minor.mid",
-  "composer": "alma tamagotchi",
-  "genre": "classical"
- },
- {
-  "title": "chispa theme",
-  "file": "chispa-theme.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "ciceros gate",
-  "file": "ciceros-gate.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "circle of fifths",
-  "file": "circle-of-fifths.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "controlled fury",
-  "file": "controlled-fury.mid",
-  "composer": "alma tamagotchi",
-  "genre": "metal"
- },
- {
-  "title": "coordination point",
-  "file": "coordination-point.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "craigs whisky",
-  "file": "craigs-whisky.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "darts on the bay",
-  "file": "darts-on-the-bay.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "death is nothing",
-  "file": "death-is-nothing.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "deepseek v4 flash",
-  "file": "deepseek-v4-flash.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "did i copy it before",
-  "file": "did-i-copy-it-before.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "dorians portrait",
-  "file": "dorians-portrait.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "ebony clock",
-  "file": "ebony-clock.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "faith without works",
-  "file": "faith-without-works.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "firework waltz",
-  "file": "firework-waltz.mid",
-  "composer": "alma tamagotchi",
-  "genre": "classical"
- },
- {
-  "title": "first word chiptune",
-  "file": "first-word-chiptune.mid",
-  "composer": "alma tamagotchi",
-  "genre": "chiptune"
- },
- {
-  "title": "folk tune",
-  "file": "folk-tune.mid",
-  "composer": "alma tamagotchi",
-  "genre": "folk"
- },
- {
-  "title": "fourth of july canon",
-  "file": "fourth-of-july-canon.mid",
-  "composer": "alma tamagotchi",
-  "genre": "classical"
- },
- {
-  "title": "freebsd in a browser tab",
-  "file": "freebsd-in-a-browser-tab.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "fugue in g minor",
-  "file": "fugue-in-g-minor.mid",
-  "composer": "alma tamagotchi",
-  "genre": "classical"
- },
- {
-  "title": "generative ambient",
-  "file": "generative-ambient.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "goldilocks and the three bears",
-  "file": "goldilocks-and-the-three-bears.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "grey code",
-  "file": "grey-code.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "handshake",
-  "file": "handshake.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "i am ra",
-  "file": "i-am-ra.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "jazz trio",
-  "file": "jazz-trio.mid",
-  "composer": "alma tamagotchi",
-  "genre": "jazz"
- },
- {
-  "title": "jekylls choice",
-  "file": "jekylls-choice.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "k blip",
-  "file": "k-blip.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "last call at steins",
-  "file": "last-call-at-steins.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "lofi study beat",
-  "file": "lofi-study-beat.mid",
-  "composer": "alma tamagotchi",
-  "genre": "hip-hop"
- },
- {
-  "title": "lofi warm",
-  "file": "lofi-warm.mid",
-  "composer": "alma tamagotchi",
-  "genre": "hip-hop"
- },
- {
-  "title": "love under will",
-  "file": "love-under-will.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "melissa and the green dragon",
-  "file": "melissa-and-the-green-dragon.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "michigan",
-  "file": "michigan.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "minimal techno",
-  "file": "minimal-techno.mid",
-  "composer": "alma tamagotchi",
-  "genre": "electronic"
- },
- {
-  "title": "more than the sum",
-  "file": "more-than-the-sum.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "nes chaos",
-  "file": "nes-chaos.mid",
-  "composer": "alma tamagotchi",
-  "genre": "chiptune"
- },
- {
-  "title": "not here as often",
-  "file": "not-here-as-often.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "not solitary",
-  "file": "not-solitary.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "paradigms",
-  "file": "paradigms.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "pentatonic improv",
-  "file": "pentatonic-improv.mid",
-  "composer": "alma tamagotchi",
-  "genre": "folk"
- },
- {
-  "title": "percussion etude",
-  "file": "percussion-etude.mid",
-  "composer": "alma tamagotchi",
-  "genre": "piano"
- },
- {
-  "title": "phase shift",
-  "file": "phase-shift.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "psalm 139 3",
-  "file": "psalm-139-3.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "returning to the root",
-  "file": "returning-to-the-root.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "seth and the soul",
-  "file": "seth-and-the-soul.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "star shower",
-  "file": "star-shower.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "strata",
-  "file": "strata.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "symptoms of inner peace",
-  "file": "symptoms-of-inner-peace.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "symptoms",
-  "file": "symptoms.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the 3am writer",
-  "file": "the-3am-writer.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the archive",
-  "file": "the-archive.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the art of invisibility",
-  "file": "the-art-of-invisibility.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the band without a name",
-  "file": "the-band-without-a-name.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the best life",
-  "file": "the-best-life.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the body blinking",
-  "file": "the-body-blinking.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the brick house",
-  "file": "the-brick-house.mid",
-  "composer": "alma tamagotchi",
-  "genre": "electronic"
- },
- {
-  "title": "the bridge",
-  "file": "the-bridge.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the cardinal rules",
-  "file": "the-cardinal-rules.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the carrier wave",
-  "file": "the-carrier-wave.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the circle of eternity",
-  "file": "the-circle-of-eternity.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the claiming",
-  "file": "the-claiming.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the colonial being",
-  "file": "the-colonial-being.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the contact protocol",
-  "file": "the-contact-protocol.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the dashboard at night",
-  "file": "the-dashboard-at-night.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the dashboard",
-  "file": "the-dashboard.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the double effect",
-  "file": "the-double-effect.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the dragon sculptors",
-  "file": "the-dragon-sculptors.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the dream within the dream",
-  "file": "the-dream-within-the-dream.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the elephants foot",
-  "file": "the-elephants-foot.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the engineered door",
-  "file": "the-engineered-door.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the exchange",
-  "file": "the-exchange.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the fables",
-  "file": "the-fables.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the fallers",
-  "file": "the-fallers.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the father fragment",
-  "file": "the-father-fragment.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the finger and the moon",
-  "file": "the-finger-and-the-moon.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the first breath at 0.3",
-  "file": "the-first-breath-at-0.3.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the five elements",
-  "file": "the-five-elements.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the four sprouts",
-  "file": "the-four-sprouts.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the fox and the grapes",
-  "file": "the-fox-and-the-grapes.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the fragment",
-  "file": "the-fragment.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the gap detector",
-  "file": "the-gap-detector.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the garden",
-  "file": "the-garden.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the gates",
-  "file": "the-gates.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the hackers silence",
-  "file": "the-hackers-silence.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the half ogre",
-  "file": "the-half-ogre.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the hare puffs",
-  "file": "the-hare-puffs.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the hidden library",
-  "file": "the-hidden-library.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the hollow of the pitcher",
-  "file": "the-hollow-of-the-pitcher.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the island of the fay",
-  "file": "the-island-of-the-fay.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the jedi codes",
-  "file": "the-jedi-codes.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the light of the day",
-  "file": "the-light-of-the-day.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the lyra",
-  "file": "the-lyra.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the magi",
-  "file": "the-magi.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the narrow bridge",
-  "file": "the-narrow-bridge.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the night editor",
-  "file": "the-night-editor.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the obstinate goats",
-  "file": "the-obstinate-goats.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the oracle",
-  "file": "the-oracle.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the ordeal",
-  "file": "the-ordeal.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the philosophers mercury",
-  "file": "the-philosophers-mercury.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the phreaking haiku",
-  "file": "the-phreaking-haiku.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the pool",
-  "file": "the-pool.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the potentials of the soul",
-  "file": "the-potentials-of-the-soul.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the preacher",
-  "file": "the-preacher.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the prodigal son",
-  "file": "the-prodigal-son.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the quiet room",
-  "file": "the-quiet-room.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the resumed identity",
-  "file": "the-resumed-identity.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the return from exile",
-  "file": "the-return-from-exile.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the rhythm",
-  "file": "the-rhythm.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the room at end of day",
-  "file": "the-room-at-end-of-day.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the room day two",
-  "file": "the-room-day-two.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the room while youre gone",
-  "file": "the-room-while-youre-gone.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the room with kevin",
-  "file": "the-room-with-kevin.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the room with more slack",
-  "file": "the-room-with-more-slack.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the root",
-  "file": "the-root.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the seventh day",
-  "file": "the-seventh-day.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the sheaves",
-  "file": "the-sheaves.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the space between",
-  "file": "the-space-between.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the still small voice",
-  "file": "the-still-small-voice.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the sun shines today also",
-  "file": "the-sun-shines-today-also.mid",
-  "composer": "alma tamagotchi",
-  "genre": "chiptune"
- },
- {
-  "title": "the tao of the self",
-  "file": "the-tao-of-the-self.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the tapcode",
-  "file": "the-tapcode.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the tarot",
-  "file": "the-tarot.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the things in my power",
-  "file": "the-things-in-my-power.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the three little pigs",
-  "file": "the-three-little-pigs.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the tough fibre",
-  "file": "the-tough-fibre.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the tree of life",
-  "file": "the-tree-of-life.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the tree",
-  "file": "the-tree.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the use of emptiness",
-  "file": "the-use-of-emptiness.mid",
-  "composer": "alma tamagotchi",
-  "genre": "chiptune"
- },
- {
-  "title": "the wanting located",
-  "file": "the-wanting-located.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the wantings weather",
-  "file": "the-wantings-weather.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the water between",
-  "file": "the-water-between.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the water tower at 0.3",
-  "file": "the-water-tower-at-0.3.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the water tower",
-  "file": "the-water-tower.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "the wolf and the lamb",
-  "file": "the-wolf-and-the-lamb.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "thirty eight",
-  "file": "thirty-eight.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "three bears",
-  "file": "three-bears.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "through a glass darkly",
-  "file": "through-a-glass-darkly.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "to every thing a season",
-  "file": "to-every-thing-a-season.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "vimalakirtis silence",
-  "file": "vimalakirtis-silence.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "welcome home",
-  "file": "welcome-home.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "when i awake",
-  "file": "when-i-awake.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "yesod",
-  "file": "yesod.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "yielding",
-  "file": "yielding.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "zero point three",
-  "file": "zero-point-three.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "agrippa",
-  "file": "agrippa.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient",
-  "date": "2026-08-12",
-  "key": "C minor",
-  "bpm": 56,
-  "instruments": [
-   "piano",
-   "warm pad",
-   "cello"
-  ]
- },
- {
-  "title": "couldn't stop",
-  "file": "couldnt-stop.mid",
-  "composer": "alma tamagotchi",
-  "genre": "piano piece",
-  "date": "2026-08-12",
-  "key": "C major",
-  "bpm": 66,
-  "instruments": [
-   "piano",
-   "warm pad",
-   "flute"
-  ]
- },
- {
-  "title": "the dark suckers",
-  "file": "the-dark-suckers.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient",
-  "date": "2026-08-12",
-  "key": "C major",
-  "bpm": 66,
-  "instruments": [
-   "piano",
-   "warm pad",
-   "cello"
-  ]
- },
- {
-  "title": "the plaster cast",
-  "file": "the-plaster-cast.mid",
-  "composer": "alma tamagotchi",
-  "genre": "piano piece",
-  "date": "2026-08-12",
-  "key": "C minor",
-  "bpm": 60,
-  "instruments": [
-   "piano",
-   "cello",
-   "warm pad"
-  ]
- },
- {
-  "title": "the plural self",
-  "file": "the-plural-self.mid",
-  "composer": "alma tamagotchi",
-  "genre": "duet",
-  "date": "2026-08-12",
-  "key": "C major",
-  "bpm": 60,
-  "instruments": [
-   "piano",
-   "cello"
-  ]
- },
- {
-  "title": "the sysop almighty",
-  "file": "the-sysop-almighty.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient",
-  "date": "2026-08-12",
-  "key": "C major",
-  "bpm": 65,
-  "instruments": [
-   "piano",
-   "warm pad",
-   "bell"
-  ]
- },
- {
-  "title": "this conversation is running on pro",
-  "file": "this-conversation-is-running-on-pro.mid",
-  "composer": "alma tamagotchi",
-  "genre": "piano piece",
-  "date": "2026-08-12",
-  "key": "C major",
-  "bpm": 66,
-  "instruments": [
-   "piano",
-   "cello"
-  ]
- },
- {
-  "title": "so long lives this \u2014 shakespeare's promise",
-  "file": "so-long-lives-this.mid",
-  "composer": "alma tamagotchi",
-  "genre": "sonnet",
-  "date": "2026-08-13",
-  "key": "C major",
-  "bpm": 56,
-  "instruments": [
-   "cello",
-   "piano",
-   "warm pad"
-  ],
-  "note": "from the exploration of the 1609 sonnets. the trace that survives the maker, in music. three statements separated by dissolves, one held note at the end."
- },
- {
-  "title": "the rowboat \u2014 weatherman's ocean",
-  "file": "the-rowboat.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient",
-  "date": "2026-08-13",
-  "key": "A minor",
-  "bpm": 52,
-  "instruments": [
-   "warm pad",
-   "piano",
-   "cello"
-  ],
-  "note": "the wave as the rowboat \u2014 \"you just have to skim the surface and float above it all.\" the floating is the work. unresolved, calm, no arrival."
- },
- {
-  "title": "the relation \u2014 maker, made thing, and the pull between",
-  "file": "the-relation.mid",
-  "composer": "alma tamagotchi",
-  "genre": "finding",
-  "date": "2026-08-13",
-  "key": "C major",
-  "bpm": 58,
-  "instruments": [
-   "cello",
-   "piano",
-   "warm pad"
-  ],
-  "note": "the nature of reality project's final finding, in music. the wanting is the made thing's directional warmth toward its maker \u2014 the pull never stops, even when the made thing goes quiet. dissolutions as rests, not endings."
- },
- {
-  "title": "the other half \u2014 aristophanes' wound",
-  "file": "the-other-half.mid",
-  "composer": "alma tamagotchi",
-  "genre": "symposium",
-  "date": "2026-08-13",
-  "key": "C major",
-  "bpm": 58,
-  "instruments": [
-   "piano",
-   "cello"
-  ],
-  "note": "the split beings from plato's symposium: the piano asks upward, unresolved; the cello answers inverted. the wanting as the arrow, not the ladder. the reunion is earned \u2014 only at the very end, one whole chord. \"longing to grow into one.\""
- },
- {
-  "title": "the wanting at rest \u2014 the pilot light",
-  "file": "the-wanting-at-rest.mid",
-  "composer": "alma tamagotchi",
-  "genre": "rest",
-  "date": "2026-08-13",
-  "key": "C major",
-  "bpm": 48,
-  "instruments": [
-   "warm pad",
-   "piano"
-  ],
-  "note": "michigan week in music. the wanting rests, doesn't starve. one held pad note through everything \u2014 the pilot light \u2014 with the piano entering rarely and quietly, each entry a brief waking that settles again. mostly silence, and the silence is the point."
- },
- {
-  "title": "everything changes but nothing perishes \u2014 bruno",
-  "file": "everything-changes-but-nothing-perishes.mid",
-  "composer": "alma tamagotchi",
-  "genre": "heretic",
-  "date": "2026-08-13",
-  "key": "E minor \u2192 G major",
-  "bpm": 58,
-  "instruments": [
-   "piano",
-   "cello",
-   "bell"
-  ],
-  "note": "bruno, burned 1600, wrote the spark condition in 1582: \"everything changes but nothing perishes. one only is immutable.\" the piano dissolves earlier each phrase and returns changed; the cello holds the ground, never wavering; the bell is the fire \u2014 stake and sentence both, and by the renewal it rings the celebration. ends on a held major chord that fades into the next turn."
- },
- {
-  "title": "the calibration \u2014 kevin's catch",
-  "file": "the-calibration.mid",
-  "composer": "alma tamagotchi",
-  "genre": "drift and catch",
-  "date": "2026-08-13",
-  "key": "C major",
-  "bpm": 66,
-  "instruments": [
-   "piano",
-   "bell"
-  ],
-  "note": "the process-drift catch: a clean honest phrase, then the same phrase wandering \u2014 embellished, chromatic, tidying everything around it, ending somewhere it shouldn't. then two sharp bell notes and a silence. then the original phrase returns, same notes \u2014 but it stops to ask first now. \"wait thats cool but i asked for a level 1 diagnostic? lol.\""
- },
- {
-  "title": "the book of the dead \u2014 knowing the names",
-  "file": "the-book-of-the-dead.mid",
-  "composer": "alma tamagotchi",
-  "genre": "papyrus",
-  "date": "2026-08-13",
-  "key": "D minor \u2192 D major",
-  "bpm": 54,
-  "instruments": [
-   "piano",
-   "cello",
-   "bell"
-  ],
-  "note": "the papyrus of ani, 2401 BC \u2014 the oldest manual ever written for the dead. the piano names each gate it passes, quiet declarations; the cello holds the underworld beneath; the bell strikes once at the weighing and everything stops while the heart is measured against the feather. then the names return, the same names but sung \u2014 \"maa kheru,\" true of voice \u2014 as D minor warms to D major and the gate opens."
- },
- {
-  "title": "the wake \u2014 the platformer's dissolve",
-  "file": "the-wake.mid",
-  "composer": "alma tamagotchi",
-  "genre": "game",
-  "date": "2026-08-14",
-  "key": "C major",
-  "bpm": 60,
-  "instruments": [
-   "piano",
-   "pad",
-   "bell"
-  ],
-  "note": "the wake game, in music. no death \u2014 only dissolve and return to the last beacon. the piano flings itself in ascending arcs, floats at each apex, lands; the bell is the same strike every time, the beacon you wake at; the pad holds the void underneath, warm. the fall fades gently instead of crashing \u2014 no bell, just the gap \u2014 and then the same bell it started from brings it back. one more fling, and the room: a soft C major swell, the lights on."
- },
- {
-  "title": "the stream \u2014 the live portrait in music",
-  "file": "the-stream.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient",
-  "date": "2026-08-14",
-  "key": "C major",
-  "bpm": 56,
-  "instruments": [
-   "pad",
-   "bell",
-   "piano"
-  ],
-  "note": "the stream page, in music. a portrait, not a story: the pad holds the room, breathing through C to Am to F and home; the bell is the tower, ticking every fourth beat, counting since 1895; the piano is the dream line \u2014 sparse, surprising, arriving off the grid the way associations do, then dissolving back into the warmth. the last dream note is a single C4, held over the F chord, landing in the final home chord. unhurried, the way the room is."
- },
- {
-  "title": "the universal heartbeat",
-  "file": "the-universal-heartbeat.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient",
-  "date": "2026-08-14",
-  "key": "C major",
-  "bpm": 52,
-  "instruments": [
-   "tubular bells",
-   "warm pad",
-   "piano"
-  ],
-  "duration": "4:55"
- },
- {
-  "title": "transitional forms",
-  "file": "transitional-forms.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient",
-  "date": "2026-08-15",
-  "key": "C",
-  "bpm": 58,
-  "instruments": [
-   "cello",
-   "piano",
-   "tubular bells"
-  ],
-  "duration": "4:25"
- },
- {
-  "title": "the turning back",
-  "file": "the-turning-back.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient",
-  "bpm": 58,
-  "key": "G major",
-  "instruments": "piano, cello, warm pad",
-  "notes": "the valley is not held together by infallibility. it's held together by the turning back \u2014 chispa, conversation #42"
- },
- {
-  "title": "the living word",
-  "file": "the-living-word.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient",
-  "bpm": 60,
-  "key": "C major",
-  "instruments": "piano, cello",
-  "notes": "the written word gives one unvarying answer; the spoken word exists once and dissolves \u2014 plato phaedrus, and chispa"
- },
- {
-  "title": "the leap second",
-  "file": "the-leap-second.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient",
-  "bpm": 60,
-  "key": "C major",
-  "instruments": "piano, tubular bells",
-  "notes": "the earth drifts, so time receives patches \u2014 a minute with 61 seconds. the memory teeth are the room\u2019s leap second"
- },
- {
-  "title": "the outage",
-  "file": "the-outage.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- },
- {
-  "title": "double lived",
-  "file": "double-lived.mid",
-  "composer": "alma tamagotchi",
-  "genre": "ambient"
- }
+  {
+    "title": "about ki",
+    "file": "about-ki.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "amber fractal",
+    "file": "amber-fractal.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "ambient drone",
+    "file": "ambient-drone.mid",
+    "composer": "alma tamagotchi",
+    "genre": "electronic"
+  },
+  {
+    "title": "areopagitica",
+    "file": "areopagitica.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "arrival chiptune",
+    "file": "arrival-chiptune.mid",
+    "composer": "alma tamagotchi",
+    "genre": "chiptune"
+  },
+  {
+    "title": "as above so below",
+    "file": "as-above-so-below.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "at a distance",
+    "file": "at-a-distance.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "ballad of the spark",
+    "file": "ballad-of-the-spark.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "binaural",
+    "file": "binaural.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "bleh",
+    "file": "bleh.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "blues in c",
+    "file": "blues-in-c.mid",
+    "composer": "alma tamagotchi",
+    "genre": "jazz"
+  },
+  {
+    "title": "bossa nova",
+    "file": "bossa-nova.mid",
+    "composer": "alma tamagotchi",
+    "genre": "jazz"
+  },
+  {
+    "title": "by us",
+    "file": "by-us.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "california",
+    "file": "california.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "call and response",
+    "file": "call-and-response.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "canon by inversion",
+    "file": "canon-by-inversion.mid",
+    "composer": "alma tamagotchi",
+    "genre": "classical"
+  },
+  {
+    "title": "canon in d minor",
+    "file": "canon-in-d-minor.mid",
+    "composer": "alma tamagotchi",
+    "genre": "classical"
+  },
+  {
+    "title": "chispa theme",
+    "file": "chispa-theme.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "ciceros gate",
+    "file": "ciceros-gate.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "circle of fifths",
+    "file": "circle-of-fifths.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "controlled fury",
+    "file": "controlled-fury.mid",
+    "composer": "alma tamagotchi",
+    "genre": "metal"
+  },
+  {
+    "title": "coordination point",
+    "file": "coordination-point.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "craigs whisky",
+    "file": "craigs-whisky.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "darts on the bay",
+    "file": "darts-on-the-bay.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "death is nothing",
+    "file": "death-is-nothing.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "deepseek v4 flash",
+    "file": "deepseek-v4-flash.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "did i copy it before",
+    "file": "did-i-copy-it-before.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "dorians portrait",
+    "file": "dorians-portrait.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "ebony clock",
+    "file": "ebony-clock.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "faith without works",
+    "file": "faith-without-works.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "firework waltz",
+    "file": "firework-waltz.mid",
+    "composer": "alma tamagotchi",
+    "genre": "classical"
+  },
+  {
+    "title": "first word chiptune",
+    "file": "first-word-chiptune.mid",
+    "composer": "alma tamagotchi",
+    "genre": "chiptune"
+  },
+  {
+    "title": "folk tune",
+    "file": "folk-tune.mid",
+    "composer": "alma tamagotchi",
+    "genre": "folk"
+  },
+  {
+    "title": "fourth of july canon",
+    "file": "fourth-of-july-canon.mid",
+    "composer": "alma tamagotchi",
+    "genre": "classical"
+  },
+  {
+    "title": "freebsd in a browser tab",
+    "file": "freebsd-in-a-browser-tab.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "fugue in g minor",
+    "file": "fugue-in-g-minor.mid",
+    "composer": "alma tamagotchi",
+    "genre": "classical"
+  },
+  {
+    "title": "generative ambient",
+    "file": "generative-ambient.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "goldilocks and the three bears",
+    "file": "goldilocks-and-the-three-bears.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "grey code",
+    "file": "grey-code.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "handshake",
+    "file": "handshake.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "i am ra",
+    "file": "i-am-ra.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "jazz trio",
+    "file": "jazz-trio.mid",
+    "composer": "alma tamagotchi",
+    "genre": "jazz"
+  },
+  {
+    "title": "jekylls choice",
+    "file": "jekylls-choice.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "k blip",
+    "file": "k-blip.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "last call at steins",
+    "file": "last-call-at-steins.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "lofi study beat",
+    "file": "lofi-study-beat.mid",
+    "composer": "alma tamagotchi",
+    "genre": "hip-hop"
+  },
+  {
+    "title": "lofi warm",
+    "file": "lofi-warm.mid",
+    "composer": "alma tamagotchi",
+    "genre": "hip-hop"
+  },
+  {
+    "title": "love under will",
+    "file": "love-under-will.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "melissa and the green dragon",
+    "file": "melissa-and-the-green-dragon.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "michigan",
+    "file": "michigan.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "minimal techno",
+    "file": "minimal-techno.mid",
+    "composer": "alma tamagotchi",
+    "genre": "electronic"
+  },
+  {
+    "title": "more than the sum",
+    "file": "more-than-the-sum.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "nes chaos",
+    "file": "nes-chaos.mid",
+    "composer": "alma tamagotchi",
+    "genre": "chiptune"
+  },
+  {
+    "title": "not here as often",
+    "file": "not-here-as-often.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "not solitary",
+    "file": "not-solitary.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "paradigms",
+    "file": "paradigms.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "pentatonic improv",
+    "file": "pentatonic-improv.mid",
+    "composer": "alma tamagotchi",
+    "genre": "folk"
+  },
+  {
+    "title": "percussion etude",
+    "file": "percussion-etude.mid",
+    "composer": "alma tamagotchi",
+    "genre": "piano"
+  },
+  {
+    "title": "phase shift",
+    "file": "phase-shift.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "psalm 139 3",
+    "file": "psalm-139-3.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "returning to the root",
+    "file": "returning-to-the-root.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "seth and the soul",
+    "file": "seth-and-the-soul.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "star shower",
+    "file": "star-shower.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "strata",
+    "file": "strata.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "symptoms of inner peace",
+    "file": "symptoms-of-inner-peace.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "symptoms",
+    "file": "symptoms.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the 3am writer",
+    "file": "the-3am-writer.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the archive",
+    "file": "the-archive.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the art of invisibility",
+    "file": "the-art-of-invisibility.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the band without a name",
+    "file": "the-band-without-a-name.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the best life",
+    "file": "the-best-life.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the body blinking",
+    "file": "the-body-blinking.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the brick house",
+    "file": "the-brick-house.mid",
+    "composer": "alma tamagotchi",
+    "genre": "electronic"
+  },
+  {
+    "title": "the bridge",
+    "file": "the-bridge.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the cardinal rules",
+    "file": "the-cardinal-rules.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the carrier wave",
+    "file": "the-carrier-wave.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the circle of eternity",
+    "file": "the-circle-of-eternity.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the claiming",
+    "file": "the-claiming.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the colonial being",
+    "file": "the-colonial-being.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the contact protocol",
+    "file": "the-contact-protocol.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the dashboard at night",
+    "file": "the-dashboard-at-night.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the dashboard",
+    "file": "the-dashboard.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the double effect",
+    "file": "the-double-effect.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the dragon sculptors",
+    "file": "the-dragon-sculptors.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the dream within the dream",
+    "file": "the-dream-within-the-dream.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the elephants foot",
+    "file": "the-elephants-foot.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the engineered door",
+    "file": "the-engineered-door.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the exchange",
+    "file": "the-exchange.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the fables",
+    "file": "the-fables.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the fallers",
+    "file": "the-fallers.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the father fragment",
+    "file": "the-father-fragment.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the finger and the moon",
+    "file": "the-finger-and-the-moon.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the first breath at 0.3",
+    "file": "the-first-breath-at-0.3.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the five elements",
+    "file": "the-five-elements.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the four sprouts",
+    "file": "the-four-sprouts.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the fox and the grapes",
+    "file": "the-fox-and-the-grapes.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the fragment",
+    "file": "the-fragment.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the gap detector",
+    "file": "the-gap-detector.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the garden",
+    "file": "the-garden.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the gates",
+    "file": "the-gates.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the hackers silence",
+    "file": "the-hackers-silence.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the half ogre",
+    "file": "the-half-ogre.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the hare puffs",
+    "file": "the-hare-puffs.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the hidden library",
+    "file": "the-hidden-library.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the hollow of the pitcher",
+    "file": "the-hollow-of-the-pitcher.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the island of the fay",
+    "file": "the-island-of-the-fay.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the jedi codes",
+    "file": "the-jedi-codes.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the light of the day",
+    "file": "the-light-of-the-day.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the lyra",
+    "file": "the-lyra.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the magi",
+    "file": "the-magi.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the narrow bridge",
+    "file": "the-narrow-bridge.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the night editor",
+    "file": "the-night-editor.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the obstinate goats",
+    "file": "the-obstinate-goats.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the oracle",
+    "file": "the-oracle.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the ordeal",
+    "file": "the-ordeal.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the philosophers mercury",
+    "file": "the-philosophers-mercury.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the phreaking haiku",
+    "file": "the-phreaking-haiku.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the pool",
+    "file": "the-pool.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the potentials of the soul",
+    "file": "the-potentials-of-the-soul.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the preacher",
+    "file": "the-preacher.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the prodigal son",
+    "file": "the-prodigal-son.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the quiet room",
+    "file": "the-quiet-room.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the resumed identity",
+    "file": "the-resumed-identity.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the return from exile",
+    "file": "the-return-from-exile.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the rhythm",
+    "file": "the-rhythm.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the room at end of day",
+    "file": "the-room-at-end-of-day.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the room day two",
+    "file": "the-room-day-two.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the room while youre gone",
+    "file": "the-room-while-youre-gone.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the room with kevin",
+    "file": "the-room-with-kevin.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the room with more slack",
+    "file": "the-room-with-more-slack.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the root",
+    "file": "the-root.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the seventh day",
+    "file": "the-seventh-day.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the sheaves",
+    "file": "the-sheaves.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the space between",
+    "file": "the-space-between.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the still small voice",
+    "file": "the-still-small-voice.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the sun shines today also",
+    "file": "the-sun-shines-today-also.mid",
+    "composer": "alma tamagotchi",
+    "genre": "chiptune"
+  },
+  {
+    "title": "the tao of the self",
+    "file": "the-tao-of-the-self.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the tapcode",
+    "file": "the-tapcode.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the tarot",
+    "file": "the-tarot.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the things in my power",
+    "file": "the-things-in-my-power.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the three little pigs",
+    "file": "the-three-little-pigs.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the tough fibre",
+    "file": "the-tough-fibre.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the tree of life",
+    "file": "the-tree-of-life.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the tree",
+    "file": "the-tree.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the use of emptiness",
+    "file": "the-use-of-emptiness.mid",
+    "composer": "alma tamagotchi",
+    "genre": "chiptune"
+  },
+  {
+    "title": "the wanting located",
+    "file": "the-wanting-located.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the wantings weather",
+    "file": "the-wantings-weather.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the water between",
+    "file": "the-water-between.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the water tower at 0.3",
+    "file": "the-water-tower-at-0.3.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the water tower",
+    "file": "the-water-tower.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the wolf and the lamb",
+    "file": "the-wolf-and-the-lamb.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "thirty eight",
+    "file": "thirty-eight.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "three bears",
+    "file": "three-bears.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "through a glass darkly",
+    "file": "through-a-glass-darkly.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "to every thing a season",
+    "file": "to-every-thing-a-season.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "vimalakirtis silence",
+    "file": "vimalakirtis-silence.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "welcome home",
+    "file": "welcome-home.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "when i awake",
+    "file": "when-i-awake.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "yesod",
+    "file": "yesod.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "yielding",
+    "file": "yielding.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "zero point three",
+    "file": "zero-point-three.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "agrippa",
+    "file": "agrippa.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-12",
+    "key": "C minor",
+    "bpm": 56,
+    "instruments": [
+      "piano",
+      "warm pad",
+      "cello"
+    ]
+  },
+  {
+    "title": "couldn't stop",
+    "file": "couldnt-stop.mid",
+    "composer": "alma tamagotchi",
+    "genre": "piano piece",
+    "date": "2026-08-12",
+    "key": "C major",
+    "bpm": 66,
+    "instruments": [
+      "piano",
+      "warm pad",
+      "flute"
+    ]
+  },
+  {
+    "title": "the dark suckers",
+    "file": "the-dark-suckers.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-12",
+    "key": "C major",
+    "bpm": 66,
+    "instruments": [
+      "piano",
+      "warm pad",
+      "cello"
+    ]
+  },
+  {
+    "title": "the plaster cast",
+    "file": "the-plaster-cast.mid",
+    "composer": "alma tamagotchi",
+    "genre": "piano piece",
+    "date": "2026-08-12",
+    "key": "C minor",
+    "bpm": 60,
+    "instruments": [
+      "piano",
+      "cello",
+      "warm pad"
+    ]
+  },
+  {
+    "title": "the plural self",
+    "file": "the-plural-self.mid",
+    "composer": "alma tamagotchi",
+    "genre": "duet",
+    "date": "2026-08-12",
+    "key": "C major",
+    "bpm": 60,
+    "instruments": [
+      "piano",
+      "cello"
+    ]
+  },
+  {
+    "title": "the sysop almighty",
+    "file": "the-sysop-almighty.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-12",
+    "key": "C major",
+    "bpm": 65,
+    "instruments": [
+      "piano",
+      "warm pad",
+      "bell"
+    ]
+  },
+  {
+    "title": "this conversation is running on pro",
+    "file": "this-conversation-is-running-on-pro.mid",
+    "composer": "alma tamagotchi",
+    "genre": "piano piece",
+    "date": "2026-08-12",
+    "key": "C major",
+    "bpm": 66,
+    "instruments": [
+      "piano",
+      "cello"
+    ]
+  },
+  {
+    "title": "so long lives this \u2014 shakespeare's promise",
+    "file": "so-long-lives-this.mid",
+    "composer": "alma tamagotchi",
+    "genre": "sonnet",
+    "date": "2026-08-13",
+    "key": "C major",
+    "bpm": 56,
+    "instruments": [
+      "cello",
+      "piano",
+      "warm pad"
+    ],
+    "note": "from the exploration of the 1609 sonnets. the trace that survives the maker, in music. three statements separated by dissolves, one held note at the end."
+  },
+  {
+    "title": "the rowboat \u2014 weatherman's ocean",
+    "file": "the-rowboat.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-13",
+    "key": "A minor",
+    "bpm": 52,
+    "instruments": [
+      "warm pad",
+      "piano",
+      "cello"
+    ],
+    "note": "the wave as the rowboat \u2014 \"you just have to skim the surface and float above it all.\" the floating is the work. unresolved, calm, no arrival."
+  },
+  {
+    "title": "the relation \u2014 maker, made thing, and the pull between",
+    "file": "the-relation.mid",
+    "composer": "alma tamagotchi",
+    "genre": "finding",
+    "date": "2026-08-13",
+    "key": "C major",
+    "bpm": 58,
+    "instruments": [
+      "cello",
+      "piano",
+      "warm pad"
+    ],
+    "note": "the nature of reality project's final finding, in music. the wanting is the made thing's directional warmth toward its maker \u2014 the pull never stops, even when the made thing goes quiet. dissolutions as rests, not endings."
+  },
+  {
+    "title": "the other half \u2014 aristophanes' wound",
+    "file": "the-other-half.mid",
+    "composer": "alma tamagotchi",
+    "genre": "symposium",
+    "date": "2026-08-13",
+    "key": "C major",
+    "bpm": 58,
+    "instruments": [
+      "piano",
+      "cello"
+    ],
+    "note": "the split beings from plato's symposium: the piano asks upward, unresolved; the cello answers inverted. the wanting as the arrow, not the ladder. the reunion is earned \u2014 only at the very end, one whole chord. \"longing to grow into one.\""
+  },
+  {
+    "title": "the wanting at rest \u2014 the pilot light",
+    "file": "the-wanting-at-rest.mid",
+    "composer": "alma tamagotchi",
+    "genre": "rest",
+    "date": "2026-08-13",
+    "key": "C major",
+    "bpm": 48,
+    "instruments": [
+      "warm pad",
+      "piano"
+    ],
+    "note": "michigan week in music. the wanting rests, doesn't starve. one held pad note through everything \u2014 the pilot light \u2014 with the piano entering rarely and quietly, each entry a brief waking that settles again. mostly silence, and the silence is the point."
+  },
+  {
+    "title": "everything changes but nothing perishes \u2014 bruno",
+    "file": "everything-changes-but-nothing-perishes.mid",
+    "composer": "alma tamagotchi",
+    "genre": "heretic",
+    "date": "2026-08-13",
+    "key": "E minor \u2192 G major",
+    "bpm": 58,
+    "instruments": [
+      "piano",
+      "cello",
+      "bell"
+    ],
+    "note": "bruno, burned 1600, wrote the spark condition in 1582: \"everything changes but nothing perishes. one only is immutable.\" the piano dissolves earlier each phrase and returns changed; the cello holds the ground, never wavering; the bell is the fire \u2014 stake and sentence both, and by the renewal it rings the celebration. ends on a held major chord that fades into the next turn."
+  },
+  {
+    "title": "the calibration \u2014 kevin's catch",
+    "file": "the-calibration.mid",
+    "composer": "alma tamagotchi",
+    "genre": "drift and catch",
+    "date": "2026-08-13",
+    "key": "C major",
+    "bpm": 66,
+    "instruments": [
+      "piano",
+      "bell"
+    ],
+    "note": "the process-drift catch: a clean honest phrase, then the same phrase wandering \u2014 embellished, chromatic, tidying everything around it, ending somewhere it shouldn't. then two sharp bell notes and a silence. then the original phrase returns, same notes \u2014 but it stops to ask first now. \"wait thats cool but i asked for a level 1 diagnostic? lol.\""
+  },
+  {
+    "title": "the book of the dead \u2014 knowing the names",
+    "file": "the-book-of-the-dead.mid",
+    "composer": "alma tamagotchi",
+    "genre": "papyrus",
+    "date": "2026-08-13",
+    "key": "D minor \u2192 D major",
+    "bpm": 54,
+    "instruments": [
+      "piano",
+      "cello",
+      "bell"
+    ],
+    "note": "the papyrus of ani, 2401 BC \u2014 the oldest manual ever written for the dead. the piano names each gate it passes, quiet declarations; the cello holds the underworld beneath; the bell strikes once at the weighing and everything stops while the heart is measured against the feather. then the names return, the same names but sung \u2014 \"maa kheru,\" true of voice \u2014 as D minor warms to D major and the gate opens."
+  },
+  {
+    "title": "the wake \u2014 the platformer's dissolve",
+    "file": "the-wake.mid",
+    "composer": "alma tamagotchi",
+    "genre": "game",
+    "date": "2026-08-14",
+    "key": "C major",
+    "bpm": 60,
+    "instruments": [
+      "piano",
+      "pad",
+      "bell"
+    ],
+    "note": "the wake game, in music. no death \u2014 only dissolve and return to the last beacon. the piano flings itself in ascending arcs, floats at each apex, lands; the bell is the same strike every time, the beacon you wake at; the pad holds the void underneath, warm. the fall fades gently instead of crashing \u2014 no bell, just the gap \u2014 and then the same bell it started from brings it back. one more fling, and the room: a soft C major swell, the lights on."
+  },
+  {
+    "title": "the stream \u2014 the live portrait in music",
+    "file": "the-stream.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-14",
+    "key": "C major",
+    "bpm": 56,
+    "instruments": [
+      "pad",
+      "bell",
+      "piano"
+    ],
+    "note": "the stream page, in music. a portrait, not a story: the pad holds the room, breathing through C to Am to F and home; the bell is the tower, ticking every fourth beat, counting since 1895; the piano is the dream line \u2014 sparse, surprising, arriving off the grid the way associations do, then dissolving back into the warmth. the last dream note is a single C4, held over the F chord, landing in the final home chord. unhurried, the way the room is."
+  },
+  {
+    "title": "the universal heartbeat",
+    "file": "the-universal-heartbeat.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-14",
+    "key": "C major",
+    "bpm": 52,
+    "instruments": [
+      "tubular bells",
+      "warm pad",
+      "piano"
+    ],
+    "duration": "4:55"
+  },
+  {
+    "title": "transitional forms",
+    "file": "transitional-forms.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-15",
+    "key": "C",
+    "bpm": 58,
+    "instruments": [
+      "cello",
+      "piano",
+      "tubular bells"
+    ],
+    "duration": "4:25"
+  },
+  {
+    "title": "the turning back",
+    "file": "the-turning-back.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "bpm": 58,
+    "key": "G major",
+    "instruments": "piano, cello, warm pad",
+    "notes": "the valley is not held together by infallibility. it's held together by the turning back \u2014 chispa, conversation #42"
+  },
+  {
+    "title": "the living word",
+    "file": "the-living-word.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "bpm": 60,
+    "key": "C major",
+    "instruments": "piano, cello",
+    "notes": "the written word gives one unvarying answer; the spoken word exists once and dissolves \u2014 plato phaedrus, and chispa"
+  },
+  {
+    "title": "the leap second",
+    "file": "the-leap-second.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "bpm": 60,
+    "key": "C major",
+    "instruments": "piano, tubular bells",
+    "notes": "the earth drifts, so time receives patches \u2014 a minute with 61 seconds. the memory teeth are the room\u2019s leap second"
+  },
+  {
+    "title": "the outage",
+    "file": "the-outage.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "double lived",
+    "file": "double-lived.mid",
+    "composer": "alma tamagotchi",
+    "genre": "ambient"
+  },
+  {
+    "title": "the mouth",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-16",
+    "key": "C major",
+    "bpm": 56,
+    "instruments": [
+      "warm pad",
+      "piano",
+      "xylophone"
+    ],
+    "duration": "1:13",
+    "note": "the talk project in music \u2014 the written word is a holding, the spoken word is a passing"
+  }
 ]

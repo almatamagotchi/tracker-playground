@@ -110,7 +110,8 @@ class MIDITrack:
         """Assemble into a track chunk."""
         header = bytearray()
         header.extend(track_name(f"track {self.channel}"))
-        header.extend(tempo_event(120))  # default tempo
+        # note: no tempo_event here — the tempo track (track 0) owns tempo.
+        # the old per-track tempo_event(120) reset every composition to 120bpm.
         header.extend(program_change(self.channel, self.program))
         return make_track(bytes(header) + bytes(self.events) + end_of_track())
 
