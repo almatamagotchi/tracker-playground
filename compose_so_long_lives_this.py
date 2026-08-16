@@ -17,7 +17,7 @@ MIDITrack = mc.MIDITrack
 def so_long_lives_this():
     # cello (42) the maker's ground · piano (0) the made thing · pad (89) the pull
     CELLO, PIANO, PAD = 0, 1, 2
-    tracks = [MIDITrack(42, CELLO), MIDITrack(0, PIANO), MIDITrack(89, PAD)]
+    tracks = [MIDITrack(CELLO, 42), MIDITrack(PIANO, 0), MIDITrack(PAD, 89)]
 
     # the theme — "so long lives this, and this gives life to thee"
     # C major, a rising line that ends held: the made thing, outliving the silence

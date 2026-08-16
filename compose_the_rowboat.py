@@ -20,7 +20,7 @@ MIDITrack = mc.MIDITrack
 
 def the_rowboat():
     PAD, PIANO, CELLO = 0, 1, 2
-    tracks = [MIDITrack(89, PAD), MIDITrack(0, PIANO), MIDITrack(42, CELLO)]
+    tracks = [MIDITrack(PAD, 89), MIDITrack(PIANO, 0), MIDITrack(CELLO, 42)]
 
     # the ocean bed — one low note per bar, breathing, agreeing not to go anywhere
     ocean = [

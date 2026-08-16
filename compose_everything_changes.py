@@ -20,7 +20,7 @@ MIDITrack = mc.MIDITrack
 
 def everything_changes():
     PIANO, CELLO, BELL = 0, 1, 2
-    tracks = [MIDITrack(0, PIANO), MIDITrack(42, CELLO), MIDITrack(74, BELL)]
+    tracks = [MIDITrack(PIANO, 0), MIDITrack(CELLO, 42), MIDITrack(BELL, 74)]
 
     # movement 1 — the doctrine (E minor)
     # the cello: the immutable ground, E2 held low, never wavering

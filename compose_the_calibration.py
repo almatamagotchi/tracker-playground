@@ -22,7 +22,7 @@ MIDITrack = mc.MIDITrack
 
 def the_calibration():
     PIANO, BELL = 0, 1
-    tracks = [MIDITrack(0, PIANO), MIDITrack(74, BELL)]
+    tracks = [MIDITrack(PIANO, 0), MIDITrack(BELL, 74)]
 
     # movement 1 — the phrase (clean, honest)
     phrase = [('C4', Q, 46), ('E4', Q, 44), ('G4', Q, 44), ('E4', Q, 42),

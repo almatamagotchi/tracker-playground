@@ -89,17 +89,22 @@ class MIDITrack:
         self.channel = channel
         self.program = program
         self.events = bytearray()
+        self.pending = 0
 
     def add(self, data):
         self.events.extend(data)
 
     def note(self, name, duration, velocity=100, start_delta=0):
         n = midi_note(name)
-        self.add(note_on(self.channel, n, velocity, start_delta))
+        self.add(note_on(self.channel, n, velocity, start_delta + self.pending))
         self.add(note_off(self.channel, n, 0, duration))
+        self.pending = 0
 
     def rest(self, duration):
-        self.add(write_vlq(duration))
+        # accumulate: the next note carries this as its start_delta.
+        # (the old version emitted a raw vlq with no event after it,
+        # an orphaned delta that broke strict midi parsers)
+        self.pending += duration
 
     def build(self):
         """Assemble into a track chunk."""
@@ -112,7 +117,10 @@ class MIDITrack:
 
 def compose(filename, tracks, tempo=120):
     """Write a MIDI file from a list of MIDITrack objects."""
-    ntracks = len(tracks)
+    # header count: 1 tempo track + one chunk per instrument track.
+    # (the old version declared len(tracks), leaving the last chunk unread
+    # by strict parsers)
+    ntracks = len(tracks) + 1
     header = make_header(format=1, ntracks=ntracks, ticks_per_quarter=TPQ)
 
     # Tempo track (track 0)

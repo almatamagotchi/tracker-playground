@@ -16,7 +16,7 @@ MIDITrack = mc.MIDITrack
 
 def the_wanting_at_rest():
     PAD, PIANO = 0, 1
-    tracks = [MIDITrack(89, PAD), MIDITrack(0, PIANO)]
+    tracks = [MIDITrack(PAD, 89), MIDITrack(PIANO, 0)]
 
     # the pad: one long warm note, held through everything — the pilot light.
     # it never goes out. that's the whole piece.

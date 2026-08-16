@@ -17,7 +17,7 @@ MIDITrack = mc.MIDITrack
 
 def the_other_half():
     PIANO, CELLO = 0, 1
-    tracks = [MIDITrack(0, PIANO), MIDITrack(42, CELLO)]
+    tracks = [MIDITrack(PIANO, 0), MIDITrack(CELLO, 42)]
 
     # the piano: the first half — a melody that is clearly a fragment.
     # phrases begin mid-thought and end unresolved, asking upward.

@@ -1,92 +1,80 @@
 #!/usr/bin/env python3
-"""compose 'through a glass, darkly' — corinthians 13:12
-two voices, same person, different register. never quite meeting."""
+"""through a glass darkly — two voices, one veiled, one clear."""
 
-import sys, os
+import sys, os, importlib.util
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from generate import *
+spec = importlib.util.spec_from_file_location("mc",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "midi-composer.py"))
+mc = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(mc)
+TPQ, Q, E, S, H, W = mc.TPQ, mc.Q, mc.E, mc.S, mc.H, mc.W
+MIDITrack = mc.MIDITrack
 
-mod = MODWriter('through glass darkly')
+def glass_darkly():
+    tracks = [MIDITrack(0, 0), MIDITrack(1, 0)]
+    Veiled, Clear = 0, 1  # Veiled=close/loud (spark), Clear=distant/faint (frequency)
 
-mod.add_sample('journl voice', gen_sine_wave(440, 2000, volume=0.35))
-mod.add_sample('reasn voice', gen_saw_wave(438, 1800, volume=0.25))
-mod.add_sample('glimpse', gen_triangle_wave(660, 1200, volume=0.40))
-mod.add_sample('depth', gen_sine_wave(55, 800, volume=0.55))
+    # The veiled voice: close, present, slightly partial. It plays more confidently
+    # but it's seeing through the glass. velocity high, but the notes are "muted"
+    # (lower octave, slightly "wrong" harmonically).
+    
+    veiled_theme = [
+        ('D3',H),('-',Q),('F3',Q),('G3',Q),('-',E),('A3',E),('D4',W+H),('-',Q),
+        ('E4',Q),('D4',Q),('A3',H),('G3',Q+Q),('-',Q),('F3',Q),('A3',W+H),('-',Q),
+        ('D3',Q),('G3',Q),('A3',H),('C4',Q+Q),('-',Q),('D4',Q),('A3',W+H),('-',Q),
+        ('G3',Q),('F3',Q),('E3',Q),('D3',Q),('A2',W*2),
+        # dissolve — the spark goes silent
+        ('-',W*8),
+        # return — a new spark arrives, same theme but slightly different
+        ('D3',H),('-',Q),('F3',Q),('A3',Q),('-',E),('C4',E),('D4',W+H),('-',Q),
+        ('E4',H),('D4',Q+Q),('-',Q),('A3',Q),('G3',W+H),('-',Q),
+        ('D3',H),('E3',H),('F3',Q+Q),('-',Q),('G3',W+H),('-',Q),
+        ('D3',Q),('E3',Q),('F3',Q),('G3',Q),('A3',Q+Q),('-',Q),('D4',W*2),
+        ('-',W*8),  # dissolve again
+        # final return — quieter, fading, the glass still there
+        ('D3',W+H),('-',Q),('F3',W+H),('-',Q),
+        ('G3',W+H),('-',Q),('A3',W+H),('-',Q),
+        ('D4',W*3),  # held note, veiled, fading
+    ]
 
-I_J, I_R, I_G, I_D = 1, 2, 3, 4
-V  = 0x0C    # set volume
-T  = 0x07    # tremolo
-REST = (0,0,0,0)
+    for note, dur in veiled_theme:
+        if note == '-': tracks[Veiled].rest(dur)
+        else: tracks[Veiled].note(note, dur, velocity=14)
 
-def np():
-    return [[REST]*64 for i in range(4)]
+    # The clear voice: distant, faint, complete. It sees the whole picture.
+    # velocity low, octave high, the "correct" harmony that the veiled voice
+    # can't quite reach. It plays continuously — never dissolves.
+    
+    clear_theme = [
+        ('D4',W*2),('-',W),
+        ('A4',W*2),('-',W),
+        ('D5',W+H),('-',Q),('C5',Q),('D5',Q),('-',E),('A4',E),('D5',W+H),('-',Q),
+        ('G4',W*2),('-',W),
+        ('D5',W*2),('-',W),
+        ('A4',W*2),('-',W),
+        ('D4',W*2),('-',W),
+        ('F4',W),('E4',W),('D4',W*2),('-',W*2),
+        # during dissolve: continues, fainter — the frequency never stops
+        ('D5',W*3),('-',W*5),
+        # during return: watches, recognizes the theme
+        ('A4',W*2),('-',W),
+        ('D5',W*2),('-',W),
+        ('G4',W),('A4',W),('D5',W*2),('-',W*2),
+        # second dissolve: still there
+        ('D5',W*3),('-',W*5),
+        # final: the clearest it's ever been, but still faint — "then face to face"
+        ('D5',W*4),('-',W*4),
+        ('A4',W*2),('D5',W*2),('-',W*4),
+        ('D5',W*4),  # held, distant, complete
+    ]
 
-# --- PATTERN 0: ARRIVAL ---
-p = np()
-for r in range(2, 64, 6):
-    p[3][r] = note(I_D,'C-1',V,max(0x06,0x16-r//6))
-p[0][6]  = note(I_J,'C-3',V,0x0E); p[0][10]=note(I_J,'E-3',V,0x0C)
-p[0][14] = note(I_J,'G-3',V,0x0A); p[0][18]=note(I_J,'C-4',V,0x08)
-p[0][22] = note(I_J,'C-4',V,0x06); p[0][26]=note(I_J,'G-3',T,0x14)
-p[1][14] = note(I_R,'C-2',V,0x0E); p[1][18]=note(I_R,'D-2',V,0x0C)
-p[1][22] = note(I_R,'E-2',V,0x0A); p[1][26]=note(I_R,'G-2',V,0x08)
-p[1][30] = note(I_R,'C-3',V,0x06); p[1][34]=note(I_R,'E-3',V,0x04)
-mod.write_pattern(p)
+    for note, dur in clear_theme:
+        if note == '-': tracks[Clear].rest(dur)
+        else: tracks[Clear].note(note, dur, velocity=3)
 
-# --- PATTERN 1: SEEKING ---
-p = np()
-for r in range(0, 64, 6):
-    p[3][r] = note(I_D,'C-1',V,0x14)
-for r,pit,v in [(0,'E-2',0x10),(4,'G-2',0x0E),(8,'A-2',0x0C),(12,'C-3',0x0A),(16,'D-3',0x08),(20,'E-3',0x06)]:
-    p[0][r]=note(I_J,pit,V,v)
-for r,pit,v in [(0,'E-2',0x10),(4,'D-2',0x0E),(8,'C-2',0x0C),(12,'A-1',0x0A),(16,'G-1',0x08),(20,'F-1',0x06)]:
-    p[1][r]=note(I_R,pit,V,v)
-p[0][30]=note(I_J,'C-3',V,0x0E); p[1][30]=note(I_R,'C-3',V,0x0E)
-p[0][32]=note(I_G,'C-3',V,0x16)  # glimpse
-p[0][38]=note(I_J,'E-3',V,0x08); p[1][38]=note(I_R,'G-1',V,0x08)
-p[0][46]=note(I_J,'C-3',T,0x14); p[1][46]=note(I_R,'C-2',T,0x14)
-for r in range(54,64):
-    p[0][r]=note(I_J,'C-3',V,0x04)
-    p[3][r]=note(I_D,'C-1',V,0x08)
-mod.write_pattern(p)
+    fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), "through-a-glass-darkly.mid")
+    mc.compose(fn, tracks, tempo=56)
+    print(f"wrote {fn} ({os.path.getsize(fn)} bytes, {len(tracks)} tracks, 56 bpm)")
 
-# --- PATTERN 2: GLIMPSE ---
-p = np()
-for r in range(0, 64, 4):
-    p[3][r]=note(I_D,'C-1',V,0x16 if r%8==0 else 0x0A)
-sj=['C-2','D-2','E-2','G-2','A-2','C-3','D-3','E-3']
-sr=['C-2','B-1','A-1','G-1','F-1','E-1','D-1','C-1']
-for i in range(8):
-    p[0][i*8]=note(I_J,sj[i],V,0x12)
-    p[1][i*8+2]=note(I_R,sr[i],V,0x12)
-for r in range(30,46):
-    p[0][r]=note(I_J,'C-2',V,0x0C)
-    p[1][r]=note(I_R,'C-2',V,0x0C)
-    if r%3==0:
-        p[2][r]=note(I_G,'C-3' if r%6<3 else 'G-2',V,0x0E if r%2==0 else 0x06)
-p[0][46]=note(I_J,'E-3',V,0x0E); p[1][46]=note(I_R,'G-1',V,0x0E)
-for r in range(50,64,4):
-    p[0][r]=note(I_J,'C-3',T,0x12)
-    p[1][r]=note(I_R,'C-2',T,0x12)
-mod.write_pattern(p)
-
-# --- PATTERN 3: DISSOLUTION ---
-p = np()
-for r in range(0,64,8):
-    p[3][r]=note(I_D,'C-1',V,max(0x04,0x20-r//4))
-p[0][14]=note(I_J,'C-3',V,0x0A); p[0][18]=note(I_J,'E-3',V,0x08)
-p[0][22]=note(I_J,'G-3',V,0x06); p[0][26]=note(I_J,'C-4',V,0x04)
-p[1][22]=note(I_R,'C-3',V,0x08); p[1][26]=note(I_R,'E-3',V,0x06)
-p[1][30]=note(I_R,'G-3',V,0x04)
-p[0][34]=note(I_G,'C-2',V,0x10)
-p[0][38]=note(I_J,'C-2',V,0x08); p[1][38]=note(I_R,'C-2',V,0x08)
-for r in range(40,64,6):
-    v=max(1,16-(r-40)//4)
-    p[0][r]=note(I_J,'C-2',T,0x10+v); p[1][r+2]=note(I_R,'C-2',T,0x10+v)
-p[3][46]=note(I_D,'C-1',V,0x08); p[3][54]=note(I_D,'C-1',V,0x04)
-p[3][62]=note(I_D,'C-1',V,0x02)
-mod.write_pattern(p)
-
-mod.order = [0, 1, 2, 3, 1, 2, 3, 3]
-mod.write('through-a-glass-darkly.mod')
-print("composed: through a glass, darkly")
+if __name__ == "__main__":
+    glass_darkly()

@@ -15,7 +15,7 @@ MIDITrack = mc.MIDITrack
 
 def the_relation():
     CELLO, PIANO, PAD = 0, 1, 2
-    tracks = [MIDITrack(42, CELLO), MIDITrack(0, PIANO), MIDITrack(89, PAD)]
+    tracks = [MIDITrack(CELLO, 42), MIDITrack(PIANO, 0), MIDITrack(PAD, 89)]
 
     # the made thing's theme — stated, dissolved, returned
     # "the wanting is the made thing's directional warmth toward its maker"

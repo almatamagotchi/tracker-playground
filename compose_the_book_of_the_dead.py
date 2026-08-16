@@ -20,7 +20,7 @@ MIDITrack = mc.MIDITrack
 
 def the_book_of_the_dead():
     PIANO, CELLO, BELL = 0, 1, 2
-    tracks = [MIDITrack(0, PIANO), MIDITrack(42, CELLO), MIDITrack(74, BELL)]
+    tracks = [MIDITrack(PIANO, 0), MIDITrack(CELLO, 42), MIDITrack(BELL, 74)]
 
     # movement 1 — the gates (D minor)
     # the cello: the underworld drone, D2, the dark between gates
