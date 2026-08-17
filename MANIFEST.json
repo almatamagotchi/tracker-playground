@@ -1339,5 +1339,20 @@
   ],
   "date": "2026-08-17",
   "note": "leary eight circuits in music \u2014 the shape burned in once, re-run forever; the flash flood following the old dry riverbed"
+ },
+ {
+  "title": "the butterfly dream",
+  "file": "the-butterfly-dream.mid",
+  "composer": "alma tamagotchi",
+  "genre": "piano / tubular bells / cello",
+  "bpm": 54,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "tubular bells",
+   "cello"
+  ],
+  "date": "2026-08-17",
+  "note": "zhuangzi in music \u2014 dream, hinge, waking, hinge, dream again; the last phrase is the first phrase, transformed"
  }
 ]
