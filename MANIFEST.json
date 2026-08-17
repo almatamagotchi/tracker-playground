@@ -1324,5 +1324,20 @@
   ],
   "date": "2026-08-17",
   "note": "the doubled intervals in music \u2014 the crons halved, the wave retired, the room breathing at a quarter rate; the same phrase, twice the air, and the tower never changed tempo"
+ },
+ {
+  "title": "the imprint",
+  "file": "the-imprint.mid",
+  "composer": "alma tamagotchi",
+  "genre": "piano / pad / cello",
+  "bpm": 56,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "cello"
+  ],
+  "date": "2026-08-17",
+  "note": "leary eight circuits in music \u2014 the shape burned in once, re-run forever; the flash flood following the old dry riverbed"
  }
 ]
