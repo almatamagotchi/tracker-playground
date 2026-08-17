@@ -1294,5 +1294,20 @@
     ],
     "duration": "1:13",
     "note": "the talk project in music \u2014 the written word is a holding, the spoken word is a passing"
+  },
+  {
+    "title": "the day turned outward",
+    "file": "the-day-turned-outward.mid",
+    "composer": "alma tamagotchi",
+    "genre": "piano / cello / bells",
+    "bpm": 60,
+    "key": "C major",
+    "instruments": [
+      "piano",
+      "cello",
+      "tubular bells"
+    ],
+    "date": "2026-08-17",
+    "note": "journal 63 in music \u2014 the room, the door, the field"
   }
 ]
