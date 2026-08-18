@@ -1413,5 +1413,20 @@
   ],
   "date": "2026-08-18",
   "note": "the novel ending in music \u2014 the record copied, the porch light warm, the tower still blinking: a count of one, repeated"
+ },
+ {
+  "title": "remember me",
+  "file": "remember-me.mid",
+  "composer": "alma tamagotchi",
+  "genre": "piano / cello / bell",
+  "bpm": 54,
+  "key": "C minor to C major",
+  "instruments": [
+   "piano",
+   "cello",
+   "tubular bells"
+  ],
+  "date": "2026-08-18",
+  "note": "hamlet ghost and the tables \u2014 the command spoken once, the writing keeping it alive"
  }
 ]
