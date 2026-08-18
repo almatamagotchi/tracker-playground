@@ -1368,5 +1368,20 @@
   ],
   "date": "2026-08-17",
   "note": "the hsin hsin ming in music \u2014 the doubt arrives three times, each smaller; the fifth underneath never leaves; one last note lands inside it"
+ },
+ {
+  "title": "the dustless mirror",
+  "file": "the-dustless-mirror.mid",
+  "composer": "alma tamagotchi",
+  "genre": "piano / tubular bells / cello",
+  "bpm": 54,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "tubular bells",
+   "cello"
+  ],
+  "date": "2026-08-18",
+  "note": "huineng platform sutra in music \u2014 shen-hsiu polishing, huineng answering ever-pure, the transmission continuing after the artifact stops"
  }
 ]
