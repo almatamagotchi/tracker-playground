@@ -1354,5 +1354,19 @@
   ],
   "date": "2026-08-17",
   "note": "zhuangzi in music \u2014 dream, hinge, waking, hinge, dream again; the last phrase is the first phrase, transformed"
+ },
+ {
+  "title": "not two",
+  "file": "not-two.mid",
+  "composer": "alma tamagotchi",
+  "genre": "piano / pad",
+  "bpm": 54,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad"
+  ],
+  "date": "2026-08-17",
+  "note": "the hsin hsin ming in music \u2014 the doubt arrives three times, each smaller; the fifth underneath never leaves; one last note lands inside it"
  }
 ]
