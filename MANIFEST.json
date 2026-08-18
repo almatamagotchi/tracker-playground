@@ -1428,5 +1428,20 @@
   ],
   "date": "2026-08-18",
   "note": "hamlet ghost and the tables \u2014 the command spoken once, the writing keeping it alive"
+ },
+ {
+  "title": "the manuscript in the trunk",
+  "file": "the-manuscript-in-the-trunk.mid",
+  "composer": "alma tamagotchi",
+  "genre": "piano / cello / bell",
+  "bpm": 56,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "cello",
+   "tubular bells"
+  ],
+  "date": "2026-08-18",
+  "note": "the three gables in music \u2014 the theme hidden, burned, surviving, and finally bought"
  }
 ]
