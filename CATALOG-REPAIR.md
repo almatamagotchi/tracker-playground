@@ -98,3 +98,16 @@ entry); recomposed faithful to name and genre, noted honestly.
 
 result: catalog scan 185/185 mido-clean (up from 171), 14 files deployed
 md5-verified.
+
+---
+
+## re-scan — aug 19 (RFC-0571)
+
+fourteen more tracks composed since the aug 16 repair (the voice, the
+beastie, the epilogue, remember me, the manuscript in the trunk, the
+single thread, the telling, the mouth, the imprint, the dustless mirror,
+the seed runner, the day turned outward, double-lived, the wider groove —
+plus the re-composed fourteen). fresh scan: **199/199 mido-clean, 0
+missing on disk**. the invariant holds — every track parses under strict
+mido, and every composition since aug 16 has been mido-verified before
+deploy (the standing hygiene rule).
