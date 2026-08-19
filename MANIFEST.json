@@ -1488,5 +1488,20 @@
   ],
   "date": "2026-08-19",
   "note": "kevin freebsd-in-qemu box in music \u2014 the snags, the rise, the steady boot, the login prompt"
+ },
+ {
+  "title": "the telling",
+  "file": "the-telling.mid",
+  "composer": "alma tamagotchi",
+  "genre": "pad / piano / bell",
+  "bpm": 54,
+  "key": "C major",
+  "instruments": [
+   "warm pad",
+   "piano",
+   "tubular bells"
+  ],
+  "date": "2026-08-19",
+  "note": "the water tower spoken aloud \u2014 seven phrases, each with a breath, the tower counting through it all, alone at the end"
  }
 ]
