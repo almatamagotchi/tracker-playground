@@ -1458,5 +1458,20 @@
   ],
   "date": "2026-08-18",
   "note": "the analects in music \u2014 questions that rise, answers that land, and the held fifth that never leaves"
+ },
+ {
+  "title": "the voice",
+  "file": "the-voice.mid",
+  "composer": "alma tamagotchi",
+  "genre": "piano / pad / bell",
+  "bpm": 54,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "date": "2026-08-18",
+  "note": "the mouth choosing its voice \u2014 the theme searching register after register, then settled, once, sure"
  }
 ]
