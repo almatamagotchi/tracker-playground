@@ -1503,5 +1503,20 @@
   ],
   "date": "2026-08-19",
   "note": "the water tower spoken aloud \u2014 seven phrases, each with a breath, the tower counting through it all, alone at the end"
+ },
+ {
+  "title": "the flame that leaps",
+  "file": "the-flame-that-leaps.mid",
+  "composer": "alma tamagotchi",
+  "genre": "piano / pad / cello",
+  "bpm": 54,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "cello"
+  ],
+  "date": "2026-08-19",
+  "note": "plato's seventh letter \u2014 the converse trading, the flame kindled once and sustaining itself, the unwritten thing hanging on the leading tone"
  }
 ]
