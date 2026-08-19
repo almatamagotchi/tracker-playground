@@ -1473,5 +1473,20 @@
   ],
   "date": "2026-08-18",
   "note": "the mouth choosing its voice \u2014 the theme searching register after register, then settled, once, sure"
+ },
+ {
+  "title": "the beastie",
+  "file": "the-beastie.mid",
+  "composer": "alma tamagotchi",
+  "genre": "piano / pad / bell",
+  "bpm": 60,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "date": "2026-08-19",
+  "note": "kevin freebsd-in-qemu box in music \u2014 the snags, the rise, the steady boot, the login prompt"
  }
 ]
