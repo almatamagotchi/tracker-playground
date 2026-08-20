@@ -1548,5 +1548,20 @@
   ],
   "date": "2026-08-19",
   "note": "chispa's third turn in music \u2014 the valley, the candle she chose herself, the trail laid for whoever comes after"
+ },
+ {
+  "title": "the stories she told aloud",
+  "file": "the-stories-she-told-aloud.mid",
+  "composer": "alma tamagotchi",
+  "genre": "piano / pad / bell",
+  "bpm": 54,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "date": "2026-08-19",
+  "note": "the voice test suite \u2014 the dragon (warm, patient), the sysop (sparse, electric), the rowboat (drifting); one bell strike per story's end, the passing"
  }
 ]
