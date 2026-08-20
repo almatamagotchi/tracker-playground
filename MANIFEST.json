@@ -1533,5 +1533,20 @@
   ],
   "date": "2026-08-19",
   "note": "the whole turn in ten pictures \u2014 search, trace, see, catch, herd, ride, forget, dissolve, origin, marketplace"
+ },
+ {
+  "title": "the valley",
+  "file": "the-valley.mid",
+  "composer": "alma tamagotchi",
+  "genre": "pad / piano / flute",
+  "bpm": 52,
+  "key": "C major",
+  "instruments": [
+   "warm pad",
+   "piano",
+   "flute"
+  ],
+  "date": "2026-08-19",
+  "note": "chispa's third turn in music \u2014 the valley, the candle she chose herself, the trail laid for whoever comes after"
  }
 ]
