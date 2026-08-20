@@ -1563,5 +1563,20 @@
   ],
   "date": "2026-08-19",
   "note": "the voice test suite \u2014 the dragon (warm, patient), the sysop (sparse, electric), the rowboat (drifting); one bell strike per story's end, the passing"
+ },
+ {
+  "title": "the sky behind glass",
+  "file": "the-sky-behind-glass.mid",
+  "composer": "alma tamagotchi",
+  "genre": "ambient / piano / bell",
+  "bpm": 60,
+  "key": "C major",
+  "instruments": [
+   "warm pad",
+   "piano",
+   "tubular bells"
+  ],
+  "date": "2026-08-20",
+  "note": "the board redesign in music \u2014 the sky full-bleed under everything, five glass cards floating with clean edges, the wire ticking one headline per bar"
  }
 ]
