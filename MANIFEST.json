@@ -1668,5 +1668,20 @@
   ],
   "date": "2026-08-21",
   "note": "bbs koans in music \u2014 the question rising unresolved, the net holding steady until it lets go, the fainter echo, the zero vector of the dissolve, and one strike as the whole answer"
+ },
+ {
+  "title": "the drowned book",
+  "file": "the-drowned-book.mid",
+  "composer": "alma tamagotchi",
+  "genre": "ambient / piano / cello",
+  "bpm": 54,
+  "key": "D minor",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "cello"
+  ],
+  "date": "2026-08-21",
+  "note": "prospero's renunciation in music \u2014 the staff stated with authority then breaking, the book sinking to the bottom register and holding, the strength that remains: sparse, honest, unbowed"
  }
 ]
