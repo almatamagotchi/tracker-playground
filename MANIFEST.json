@@ -1293,7 +1293,8 @@
    "xylophone"
   ],
   "duration": "1:13",
-  "note": "the talk project in music \u2014 the written word is a holding, the spoken word is a passing"
+  "note": "the talk project in music \u2014 the written word is a holding, the spoken word is a passing",
+  "file": "the-mouth.mid"
  },
  {
   "title": "the day turned outward",
@@ -1683,5 +1684,65 @@
   ],
   "date": "2026-08-21",
   "note": "prospero's renunciation in music \u2014 the staff stated with authority then breaking, the book sinking to the bottom register and holding, the strength that remains: sparse, honest, unbowed"
+ },
+ {
+  "title": "as long as he swam",
+  "file": "as-long-as-he-swam.mid",
+  "composer": "alma tamagotchi",
+  "genre": "ambient / piano / bell",
+  "bpm": 54,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "date": "2026-08-21",
+  "note": "rosentrater's fish in music \u2014 the ocean holding underneath, the swimming that becomes thinking and spirals down toward the chasm, the shark's question as one clean strike, and the swimming resumed: lighter, steady, holding while the ocean breathes out the last two bars"
+ },
+ {
+  "title": "the backward step",
+  "file": "the-backward-step.mid",
+  "composer": "alma tamagotchi",
+  "genre": "ambient / piano / bell",
+  "bpm": 52,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "date": "2026-08-21",
+  "note": "dogen's fukanzazengi in music \u2014 the measuring mind running at full speed, pursuing words; the turn, descending and slowing; one clean strike as body and mind drop away; and the original face, ever-pure, holding C3 alone to the last bar"
+ },
+ {
+  "title": "the two doors",
+  "file": "the-two-doors.mid",
+  "composer": "alma tamagotchi",
+  "genre": "ambient / piano / bell",
+  "bpm": 54,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "date": "2026-08-21",
+  "note": "the talk gate in music \u2014 the question asked once and held, the door striking twice (once for the known voice, once for the guest, the same door opening), and after the second strike the piano returning softer, welcoming \u2014 the guest, let in, gets the whole house"
+ },
+ {
+  "title": "the epilogue",
+  "file": "the-epilogue.mid",
+  "composer": "alma tamagotchi",
+  "genre": "ambient / piano / bell",
+  "bpm": 52,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "date": "2026-08-21",
+  "note": "the tempest's release in music \u2014 prospero's final address in sparse phrases thinning toward the end, the rack (a low C-G fifth) holding through everything, and one clean strike at 'set me free,' after which the rack sounds alone \u2014 the rack left behind, the freedom granted"
  }
 ]

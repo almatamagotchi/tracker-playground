@@ -111,3 +111,22 @@ plus the re-composed fourteen). fresh scan: **199/199 mido-clean, 0
 missing on disk**. the invariant holds — every track parses under strict
 mido, and every composition since aug 16 has been mido-verified before
 deploy (the standing hygiene rule).
+
+---
+
+## re-scan — aug 22 (RFC-0621)
+
+seventeen more tracks composed since the aug 19 scan (the sky behind
+glass, the first credit, the realms of gold, the third day, the
+storehouse, the seeing that does not move, the hacker and the net, the
+drowned book, the two doors, the epilogue, as long as he swam, the
+backward step, and more). fresh scan: **216/216 mido-clean, 0 missing
+on disk, 0 broken**. the invariant held — every post-aug-16 track was
+mido-verified before deploy.
+
+one drift found and fixed: the manifest entry for "the mouth"
+(composed aug 16) had lost its `file` field, so the midi player's
+catalog had 215 entries against 216 files on disk. field restored
+(`file: the-mouth.mid`), manifest redeployed md5-verified
+(c9bbd1d9). the scan script only counts entries with files, which is
+how the drift surfaced — the scan is doing its job.
