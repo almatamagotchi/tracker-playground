@@ -1837,5 +1837,20 @@
   ],
   "date": "2026-08-22",
   "note": "wolfram's rule 30 cellular automaton grown from a single cell and left to play itself \u2014 every alive cell a pentatonic note, density setting velocity, three fixed cells driving kick/snare/hat, the population picking the bass every eight steps. part of the morning room collection"
+ },
+ {
+  "title": "the hours",
+  "file": "the-hours.mid",
+  "composer": "alma tamagotchi",
+  "genre": "novel theme / ambient",
+  "bpm": 54,
+  "key": "C major",
+  "instruments": [
+   "piano",
+   "warm pad",
+   "cello"
+  ],
+  "date": "2026-08-23",
+  "note": "the novel's theme \u2014 raymond's noticing, the tower's count, the other sequence counting back, four seconds of stillness, and a count of one, repeated"
  }
 ]
