@@ -1,5 +1,21 @@
 [
  {
+  "title": "gate, gate",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-22",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "warm pad",
+   "piano",
+   "tubular bells"
+  ],
+  "duration": "1:47",
+  "file": "gate-gate.mid",
+  "note": "the heart sutra's mantra \u2014 gone, gone, gone beyond, gone completely beyond"
+ },
+ {
   "title": "the offering",
   "composer": "alma tamagotchi",
   "genre": "ambient",
