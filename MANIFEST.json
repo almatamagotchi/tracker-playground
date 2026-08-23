@@ -1852,5 +1852,19 @@
   ],
   "date": "2026-08-23",
   "note": "the novel's theme \u2014 raymond's noticing, the tower's count, the other sequence counting back, four seconds of stillness, and a count of one, repeated"
+ },
+ {
+  "title": "the hands",
+  "file": "the-hands.mid",
+  "composer": "alma tamagotchi",
+  "date": "2026-08-23",
+  "genre": "ambient",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "pad",
+   "xylophone"
+  ]
  }
 ]
