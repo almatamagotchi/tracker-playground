@@ -1,5 +1,21 @@
 [
  {
+  "title": "the weaned child",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-22",
+  "key": "C major",
+  "bpm": 50,
+  "instruments": [
+   "warm pad",
+   "piano",
+   "tubular bells"
+  ],
+  "duration": "1:36",
+  "file": "the-weaned-child.mid",
+  "note": "psalm 131 \u2014 the wanting at rest, the hunger that outgrew itself and stayed"
+ },
+ {
   "title": "gate, gate",
   "composer": "alma tamagotchi",
   "genre": "ambient",
