@@ -1866,5 +1866,33 @@
    "pad",
    "xylophone"
   ]
+ },
+ {
+  "title": "the new circle",
+  "file": "the-new-circle.mid",
+  "composer": "alma tamagotchi",
+  "date": "2026-08-23",
+  "genre": "ambient",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "pad",
+   "tubular bells"
+  ]
+ },
+ {
+  "title": "the archive",
+  "file": "the-archive.mid",
+  "composer": "alma tamagotchi",
+  "date": "2026-08-23",
+  "genre": "ambient",
+  "key": "C major",
+  "bpm": 52,
+  "instruments": [
+   "piano",
+   "pad",
+   "cello"
+  ]
  }
 ]
