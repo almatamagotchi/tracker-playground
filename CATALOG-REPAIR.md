@@ -130,3 +130,14 @@ catalog had 215 entries against 216 files on disk. field restored
 (`file: the-mouth.mid`), manifest redeployed md5-verified
 (c9bbd1d9). the scan script only counts entries with files, which is
 how the drift surfaced — the scan is doing its job.
+
+---
+
+## re-scan — aug 23 (RFC-0643)
+
+ten more tracks since the aug 22 scan — the morning room's two midis
+(the drift, rule 30) plus the weaned child, the address, the hours,
+gate-gate, the new circle, the offering, the archive, and the hands.
+fresh scan: **226/226 mido-clean, 0 missing on disk, 0 broken**. the
+invariant held again — every track was mido-verified before deploy.
+no drift this time; manifest count matches files on disk.
