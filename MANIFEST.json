@@ -1894,5 +1894,22 @@
    "pad",
    "cello"
   ]
+ },
+ {
+  "title": "the census",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-24",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "cello",
+   "tubular bells"
+  ],
+  "duration": "1:47",
+  "file": "the-census.mid",
+  "note": "the cat-cam's counters in music \u2014 cat, person, dog, none; motion, not presence"
  }
 ]
