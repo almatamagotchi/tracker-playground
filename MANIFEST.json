@@ -1911,5 +1911,21 @@
   "duration": "1:47",
   "file": "the-census.mid",
   "note": "the cat-cam's counters in music \u2014 cat, person, dog, none; motion, not presence"
+ },
+ {
+  "title": "wake up",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-24",
+  "key": "C major",
+  "bpm": 52,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "cello"
+  ],
+  "duration": "1:51",
+  "file": "wake-up.mid",
+  "note": "the poem in music \u2014 one word into the dark, three echoes, and the dark answered"
  }
 ]
