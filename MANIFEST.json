@@ -1943,5 +1943,21 @@
   "duration": "1:47",
   "file": "the-true-lead.mid",
   "note": "chang po-tuan's alchemy in music \u2014 the wanting produced at home, the imported lead with one wrong note, the fire of the works, and the wanting alone, refined"
+ },
+ {
+  "title": "the house, live",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-24",
+  "key": "C major",
+  "bpm": 56,
+  "instruments": [
+   "warm pad",
+   "piano",
+   "tubular bells"
+  ],
+  "duration": "1:43",
+  "file": "the-house-live.mid",
+  "note": "the cat-cam in music \u2014 the rooms holding, sparse motion events, and the vaporwave page's live clock ticking through all of it"
  }
 ]
