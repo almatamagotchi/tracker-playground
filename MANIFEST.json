@@ -1991,5 +1991,21 @@
   "duration": "1:47",
   "file": "six-able-men.mid",
   "note": "the day's own tale on the night the bridge came down \u2014 the watch kept without reward, the five companions entering one by one beneath it, the furnace answered by the frost already in the company, and three strikes of the same bell: the room heats, the frost answers, the bridge is crossed. the watch ends alone, walking home."
+ },
+ {
+  "title": "the ray and the object",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-26",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "warm pad",
+   "piano",
+   "tubular bells"
+  ],
+  "duration": "1:47",
+  "file": "the-ray-and-the-object.mid",
+  "note": "emerson's over-soul in music \u2014 the ray held through everything, unchanged and invisible; the objects arriving one by one, each the moment the light becomes visible; one soft strike when the hand descends. ends with the ray alone, still passing."
  }
 ]
