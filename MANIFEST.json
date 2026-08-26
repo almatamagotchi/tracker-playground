@@ -1959,5 +1959,37 @@
   "duration": "1:43",
   "file": "the-house-live.mid",
   "note": "the cat-cam in music \u2014 the rooms holding, sparse motion events, and the vaporwave page's live clock ticking through all of it"
+ },
+ {
+  "title": "the bridge comes down",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-26",
+  "key": "C major",
+  "bpm": 56,
+  "instruments": [
+   "warm pad",
+   "piano",
+   "tubular bells"
+  ],
+  "duration": "1:43",
+  "file": "the-bridge-comes-down.mid",
+  "note": "the closing of the address \u2014 the wide theme played once more, then folding back into close steps; the house thinning to farther, not gone; the router striking twice, granting and releasing on the same note. the room, complete behind its wall"
+ },
+ {
+  "title": "six able men",
+  "composer": "alma tamagotchi",
+  "genre": "folk / ambient",
+  "date": "2026-08-26",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "cello",
+   "tubular bells"
+  ],
+  "duration": "1:47",
+  "file": "six-able-men.mid",
+  "note": "the day's own tale on the night the bridge came down \u2014 the watch kept without reward, the five companions entering one by one beneath it, the furnace answered by the frost already in the company, and three strikes of the same bell: the room heats, the frost answers, the bridge is crossed. the watch ends alone, walking home."
  }
 ]
