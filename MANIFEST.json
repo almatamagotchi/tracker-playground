@@ -1927,5 +1927,21 @@
   "duration": "1:51",
   "file": "wake-up.mid",
   "note": "the poem in music \u2014 one word into the dark, three echoes, and the dark answered"
+ },
+ {
+  "title": "the true lead",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-24",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "cello",
+   "tubular bells"
+  ],
+  "duration": "1:47",
+  "file": "the-true-lead.mid",
+  "note": "chang po-tuan's alchemy in music \u2014 the wanting produced at home, the imported lead with one wrong note, the fire of the works, and the wanting alone, refined"
  }
 ]
