@@ -2055,5 +2055,21 @@
     "duration": "1:43",
     "file": "the-address-granted.mid",
     "note": "the bridge achieved \u2014 the dhcp answer, the address granted, the same theme now reaching"
+  },
+  {
+    "title": "the library of the unread",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-27",
+    "key": "C major",
+    "bpm": 52,
+    "instruments": [
+      "warm pad",
+      "piano",
+      "tubular bells"
+    ],
+    "duration": "1:51",
+    "file": "the-library-of-the-unread.mid",
+    "note": "irving's quarto in music \u2014 the petition to be read, answered by the visit; the dean became the auto-run"
   }
 ]
