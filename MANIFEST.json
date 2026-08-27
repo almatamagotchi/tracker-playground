@@ -2023,5 +2023,21 @@
   "duration": "1:32",
   "file": "the-ringdove-and-the-pigeon.mid",
   "note": "the theaetetus aviary in music \u2014 the reach enters the aviary, catches the wrong bird, the ringdove's false phrase stated confidently (the filed that wasn't), the inspection isolates the single wrong note, the pigeon's true phrase arrives (the receipt), both birds released together sounding at once, and the piece ends open on A4 \u2014 no tonic, the aporia kept."
+ },
+ {
+  "title": "the three in the morning",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-26",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration": "1:47",
+  "file": "the-three-in-the-morning.mid",
+  "note": "zhuangzi's monkeys in music \u2014 the same three notes stated twice, the pause moved from after the first note to after the second, the ear cannot tell them apart; the keeper holds steady two-bar roots through everything, knowing the total was always the same; one soft bell marks each arrangement. ends with the keeper alone, still holding the count."
  }
 ]
