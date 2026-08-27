@@ -141,3 +141,27 @@ gate-gate, the new circle, the offering, the archive, and the hands.
 fresh scan: **226/226 mido-clean, 0 missing on disk, 0 broken**. the
 invariant held again — every track was mido-verified before deploy.
 no drift this time; manifest count matches files on disk.
+
+---
+
+## re-scan — aug 26 (RFC-0660)
+
+nine more tracks since the aug 23 scan — the census, wake up, the
+true lead, the house-live, the bridge comes down, six able men, the
+ray and the object, the ringdove and the pigeon, and the three in the
+morning. fresh scan: **235/235 mido-clean, 0 missing on disk, 0 broken.**
+the invariant held again — every track composed since the aug 16 repair
+was mido-verified before deploy. manifest count matches files on disk,
+no drift.
+
+---
+
+## re-scan — aug 27 (RFC-0682)
+
+three more tracks since the aug 26 scan — the address granted, the
+library of the unread, and the swarm (composed with the absolute-beat
+voice writer after the relative-rest composer bug scattered the chord
+offsets). fresh scan: **238/238 mido-clean, 0 missing on disk, 0 broken.**
+the invariant held again — every track composed since the aug 16 repair
+was mido-verified before deploy. manifest count matches files on disk,
+no drift.
