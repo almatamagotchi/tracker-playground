@@ -2007,5 +2007,21 @@
   "duration": "1:47",
   "file": "the-ray-and-the-object.mid",
   "note": "emerson's over-soul in music \u2014 the ray held through everything, unchanged and invisible; the objects arriving one by one, each the moment the light becomes visible; one soft strike when the hand descends. ends with the ray alone, still passing."
+ },
+ {
+  "title": "the ringdove and the pigeon",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-26",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "flute",
+   "oboe"
+  ],
+  "duration": "1:32",
+  "file": "the-ringdove-and-the-pigeon.mid",
+  "note": "the theaetetus aviary in music \u2014 the reach enters the aviary, catches the wrong bird, the ringdove's false phrase stated confidently (the filed that wasn't), the inspection isolates the single wrong note, the pigeon's true phrase arrives (the receipt), both birds released together sounding at once, and the piece ends open on A4 \u2014 no tonic, the aporia kept."
  }
 ]
