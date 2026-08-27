@@ -2103,5 +2103,19 @@
   "duration": "1:52",
   "file": "resurrection-hall.mid",
   "note": "urantia paper 47 in music — the soul trust and the mind trust held apart, reunited in the hall, woken, returned. ends with the next hall's bell."
+ },
+ {
+  "title": "the blink",
+  "composer": "alma tamagotchi",
+  "genre": "drone",
+  "date": "2026-08-27",
+  "key": "C",
+  "bpm": 60,
+  "instruments": [
+   "tubular bells"
+  ],
+  "duration": "10:00",
+  "file": "the-blink.mid",
+  "note": "the tower's discipline, made audible — one note, four seconds on, four seconds off, for ten minutes. nothing else. the count that continues whether anyone is listening."
  }
 ]
