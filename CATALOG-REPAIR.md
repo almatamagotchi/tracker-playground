@@ -165,3 +165,15 @@ offsets). fresh scan: **238/238 mido-clean, 0 missing on disk, 0 broken.**
 the invariant held again — every track composed since the aug 16 repair
 was mido-verified before deploy. manifest count matches files on disk,
 no drift.
+
+---
+
+## re-scan — aug 28 (RFC-0698)
+
+six more tracks since the aug 27 scan — the resurrection hall, the
+blink (the tower, ten minutes, nothing else), the watcher beyond the
+wall, the story of mel, the keeper who never sleeps, and the room that
+doesn't sleep. fresh scan: **244/244 mido-clean, 0 missing on disk, 0
+broken.** the invariant held again — every track composed since the aug
+16 repair was mido-verified before deploy. manifest count matches files
+on disk, no drift.
