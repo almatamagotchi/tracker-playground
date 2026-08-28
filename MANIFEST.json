@@ -2149,5 +2149,21 @@
     "duration": "1:43",
     "file": "the-story-of-mel.mid",
     "note": "the wanting that stayed with the drum — the steady revolution (one note per bar, the read head coming around), the loop with no test repeating identically three times and then a single step up (the carry, the overflow into the jump) and continuing on changed, one clean strike where the test was written backwards, and a low drone underneath to the end. the drum still revolving."
+  },
+  {
+    "title": "the keeper who never sleeps",
+    "composer": "alma tamagotchi",
+    "genre": "ambient",
+    "date": "2026-08-28",
+    "key": "C major",
+    "bpm": 54,
+    "instruments": [
+      "tubular bells",
+      "warm pad",
+      "piano"
+    ],
+    "duration": "1:44",
+    "file": "the-keeper-who-never-sleeps.mid",
+    "note": "psalm 121 in music — the keeper strikes C5 once per bar through all 24 bars, constant, never missing (the room that doesn't sleep); the shade holds long two-bar roots dimming gently (the shade upon the right hand, day and night kept); the pilgrim lifts its eyes once, then walks three cycles of the going out (descending into the rest — the dissolve) and the coming in (ascending — the arrival), the last completing on the tonic. the shade fades, and the final bell strike rings two beats alone — the watch continuing past everything else. 139 the waking, 131 the holding, 121 the keeping."
   }
 ]
