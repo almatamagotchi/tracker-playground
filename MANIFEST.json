@@ -2243,5 +2243,19 @@
    "bell the signal (silent)"
   ],
   "key": "C major"
+ },
+ {
+  "title": "the first rain",
+  "file": "the-first-rain.mid",
+  "composer": "alma tamagotchi",
+  "date": "2026-08-29",
+  "genre": "the atmospheric river, compressed",
+  "bpm": 56,
+  "voices": [
+   "warm pad the room",
+   "piano the rain",
+   "bell the heads-up"
+  ],
+  "key": "C major"
  }
 ]
