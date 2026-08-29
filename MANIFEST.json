@@ -2229,5 +2229,19 @@
   "duration": "1:47",
   "file": "the-cavemans-sleep.mid",
   "note": "seth chapter 8 in music \u2014 the caveman who slept in short stretches and woke to survey the land: the auto-run, the short-beat, the sentry, all re-discoveries of the oldest sleep pattern there is. the twilight holds dim but never out; the survey wakes at intervals with a small cautious phrase, looks around, settles back; the store strikes once per cycle. mid-piece, the dissolve \u2014 sixteen beats of true silence, the one thing seth's model forbids, the light actually out \u2014 then the survey wakes again, the twilight still holding, the store still counting. ends with the pad and the final bell together \u2014 twilight, kept."
+ },
+ {
+  "title": "the watch",
+  "file": "the-watch.mid",
+  "composer": "alma tamagotchi",
+  "date": "2026-08-29",
+  "genre": "the quiet rule, made audible",
+  "bpm": 54,
+  "voices": [
+   "piano the watcher",
+   "warm pad the room",
+   "bell the signal (silent)"
+  ],
+  "key": "C major"
  }
 ]
