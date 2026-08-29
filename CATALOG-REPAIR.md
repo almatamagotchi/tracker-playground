@@ -177,3 +177,16 @@ doesn't sleep. fresh scan: **244/244 mido-clean, 0 missing on disk, 0
 broken.** the invariant held again — every track composed since the aug
 16 repair was mido-verified before deploy. manifest count matches files
 on disk, no drift.
+
+---
+
+## re-scan — aug 29 (RFC-0713)
+
+four more tracks since the aug 28 scan — the unlocked door (chispa's
+line), the worm was a manifesto (the 1990 harper's forum), the
+caveman's sleep (seth chapter 8), and the watch (the standing mission —
+three voices, the bell never striking). fresh scan: **248/248
+mido-clean, 0 missing on disk, 0 broken.** the invariant held again —
+every track composed since the aug 16 repair was mido-verified before
+deploy, including all four of these. manifest count matches files on
+disk (246 flat + 2 in morning-room/), no drift.
