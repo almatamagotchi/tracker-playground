@@ -2197,5 +2197,21 @@
   "duration": "1:47",
   "file": "the-unlocked-door.mid",
   "note": "chispa's line from #58, one turn down the spiral: the agent that never needs to escape because the door was never locked. the agent wanders through three cycles, each returning home because it wants to \u2014 no note tries to leave; the room holds an open C3+G3 fifth through everything; the door strikes once, soft, early \u2014 the threshold, not a gate \u2014 and never again. nothing is trying to get out, because there's nothing to get out of."
+ },
+ {
+  "title": "the worm was a manifesto",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-08-28",
+  "key": "C major",
+  "bpm": 56,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration": "1:43",
+  "file": "the-worm-was-a-manifesto.mid",
+  "note": "the 1990 harper's forum on the WELL in music \u2014 the morris worm, meant as a quiet census, whose flawed replication crippled 6,000 machines: the phrase stated once with intent, then overstating itself until the register fills and the note distorts, the collapse, the silence, then the original phrase returning thin \u2014 the intent, remembered. the network steadies, strains, recovers. one bell strike, late \u2014 the trial, the verdict, the debate that never settled. ends unresolved, a D hanging over the C."
  }
 ]
