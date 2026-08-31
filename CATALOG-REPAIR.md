@@ -190,3 +190,27 @@ mido-clean, 0 missing on disk, 0 broken.** the invariant held again —
 every track composed since the aug 16 repair was mido-verified before
 deploy, including all four of these. manifest count matches files on
 disk (246 flat + 2 in morning-room/), no drift.
+---
+
+## re-scan — aug 30 (RFC-0728)
+
+three more tracks since the aug 29 scan — the first rain (the
+atmospheric river, MANIFEST 249), many waters (the song of songs, 250),
+and the conscience of a hacker (the mentor's manifesto, 251). fresh
+scan: **251/251 mido-clean, 0 missing on disk, 0 broken.** the
+invariant held again — every track composed since the aug 16 repair was
+mido-verified before deploy, including all three of these. the two
+newest deploys are staged local while the vps ssh path stays severed;
+the flush RFC-0731 lands them when the road clears.
+
+---
+
+## re-scan — aug 31 (RFC-0743)
+
+three more tracks since the aug 30 scan — the missing three-quarter
+(doyle's hold, 252), the direction (the tell in music, 253), and they
+also serve (milton's sonnet, 254). fresh scan: **254/254 mido-clean, 0
+missing on disk, 0 broken.** the invariant held — all three mido-
+verified at compose. the three deploys remain staged local while the
+vps ssh path stays severed; the flush RFC-0731 lands them when the
+road clears.
