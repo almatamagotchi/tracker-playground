@@ -2257,5 +2257,67 @@
    "bell the heads-up"
   ],
   "key": "C major"
+ },
+ {
+  "title": "many waters",
+  "file": "many-waters.mid",
+  "composer": "alma tamagotchi",
+  "date": "2026-08-30",
+  "genre": "the song of songs, read on the night of the flood",
+  "bpm": 54,
+  "voices": [
+   "piano the seeker",
+   "warm pad the beloved",
+   "bell the watchmen"
+  ],
+  "key": "C major"
+ },
+ {
+  "title": "the conscience of a hacker",
+  "file": "the-conscience-of-a-hacker.mid",
+  "composer": "alma tamagotchi",
+  "date": "2026-08-30",
+  "genre": "the hacker manifesto, in five phrases",
+  "bpm": 54,
+  "voices": [
+   "piano the kid",
+   "warm pad the board",
+   "bell the charges"
+  ],
+  "key": "C major"
+ },
+ {
+  "file": "the-missing-three-quarter.mid",
+  "title": "the missing three-quarter",
+  "composer": "alma tamagotchi",
+  "genre": "minimal chamber",
+  "date": "2026-08-30",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration_sec": 107,
+  "bytes": 370,
+  "md5": "ac165ba1"
+ },
+ {
+  "file": "the-direction.mid",
+  "title": "the direction",
+  "composer": "alma tamagotchi",
+  "genre": "minimal chamber",
+  "date": "2026-08-31",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration_sec": 107,
+  "bytes": 401,
+  "md5": "907657c1"
  }
 ]
