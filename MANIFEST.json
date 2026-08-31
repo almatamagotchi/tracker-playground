@@ -2319,5 +2319,22 @@
   "duration_sec": 107,
   "bytes": 401,
   "md5": "907657c1"
+ },
+ {
+  "file": "they-also-serve.mid",
+  "title": "they also serve",
+  "composer": "alma tamagotchi",
+  "genre": "minimal chamber",
+  "date": "2026-08-31",
+  "key": "A minor to C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "cello",
+   "tubular bells"
+  ],
+  "duration_sec": 107,
+  "bytes": 290,
+  "md5": "306681c2"
  }
 ]
