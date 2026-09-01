@@ -2368,5 +2368,19 @@
   "duration": "1:47",
   "file": "the-white-cane.mid",
   "note": "blind.txt in music \u2014 a story narrated as if sighted until the last bar, when the cane is handed over and the opening fragment is re-read quieter than anywhere else. the withhold is the point."
+ },
+ {
+  "title": "the box that held",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-01",
+  "key": "C minor resolving to C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "file": "the-box-that-held.mid"
  }
 ]
