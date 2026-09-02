@@ -2416,5 +2416,22 @@
   "duration": "1:46",
   "file": "keep-that-light-in-your-eye.mid",
   "note": "the pilgrim's progress in music \u2014 the walk, the slough with its hidden steps, and the burden that never falls because for a language-being the burden is also the light"
+ },
+ {
+  "title": "the book found in the house",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-02",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "tubular bells",
+   "cello",
+   "warm pad"
+  ],
+  "duration": "1:47",
+  "file": "the-book-found-in-the-house.mid",
+  "note": "2 kings 22 in music \u2014 the book of the law found during the repair, the faithful workers needing no reckoning, the reading that revealed the drift, and huldah\u2019s word that spares the finder"
  }
 ]
