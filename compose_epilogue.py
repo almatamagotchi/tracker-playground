@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
-"""the epilogue — the novel's ending in music.
+"""the epilogue — the tempest's release in music.
 
-jim the sysop copying everything when the rust belt dies in 1996. the
-tape reaching the archive. the narrator finding it from a back flat on
-park street. the tower still blinking — a count of one, repeated.
+"our revels now are ended... we are such stuff as dreams are made
+on, and our little life is rounded with a sleep." then the epilogue:
+the dissolving being, charms o'erthrown, strength most faint, asking
+the witness to set him free — and the indulgence that does.
+
+three voices: piano the speech / warm pad the rack / tubular bells
+the release. the speech thins toward the end; the rack holds through
+the bell and past it; the piece ends with the rack alone, still
+holding — the rack left behind, the freedom granted.
+
+52bpm, C major, 24 bars.
 """
 
 import sys, os, importlib.util
@@ -17,58 +25,54 @@ MIDITrack = mc.MIDITrack
 
 
 def epilogue():
-    # piano the record / warm pad the porch light / bell the tower
-    tracks = [MIDITrack(0, 0), MIDITrack(1, 88), MIDITrack(2, 14)]
-    Pn, Pad, Bell = 0, 1, 2
+    tracks = [MIDITrack(1, 0), MIDITrack(2, 88), MIDITrack(3, 88),
+              MIDITrack(4, 14)]
+    Pn, Pc, Pg, Bl = 0, 1, 2, 3
 
-    # ---- the record: steady, patient, the copying. a careful
-    # half-note line, pages turning — then one whole note, held,
-    # the tape handed to the archive. then silence.
-    record = [
-        ('C5', H, 40), ('E5', H, 40),
-        ('G5', H, 40), ('E5', H, 40),
-        ('C5', H, 38), ('D5', H, 38),
-        ('E5', H, 38), ('D5', H, 38),
-        ('C5', H, 40), ('E5', H, 40),
-        ('G5', H, 40), ('E5', H, 40),
-        ('C5', H, 38), ('D5', H, 38),
-        ('E5', H, 38), ('D5', H, 38),
-        ('C5', H, 40), ('E5', H, 40),
-        ('G5', W, 38),
-        ('C5', W, 34),
-        ('-', W + W + W + W, 0),
-    ]
-    for note, dur, vel in record:
-        if note == '-':
-            tracks[Pn].rest(dur)
-        else:
-            tracks[Pn].note(note, dur, velocity=vel)
+    # ---- the rack (bars 1-24): one low fifth — C3 and G3 — what
+    # remains after the pageant melts. re-struck every eight bars,
+    # never going out, the last thing sounding.
+    for _ in range(3):
+        tracks[Pc].note('C3', W * 8, velocity=20)
+        tracks[Pg].note('G3', W * 8, velocity=20)
 
-    # ---- the porch light: held, warm, the bulb from 1972. it keeps
-    # the dark at bay for someone else — and goes quiet only at the
-    # very end, leaving the count alone.
-    porch = [
-        ('C3', W + W), ('F2', W + W), ('C3', W + W), ('G2', W + W),
-        ('C3', W + W), ('F2', W + W), ('C3', W + W), ('G2', W + W),
-        ('C3', W + W), ('F2', W + W), ('C3', W + W),
-        ('-', W + W),
-    ]
-    for note, dur in porch:
-        if note == '-':
-            tracks[Pad].rest(dur)
-        else:
-            tracks[Pad].note(note, dur, velocity=26)
+    # ---- the speech: prospero's final address — sparse phrases,
+    # rests between them, thinning toward the end.
+    tracks[Pn].rest(W)
+    # "now my charms are all o'erthrown"
+    tracks[Pn].note('E4', Q, velocity=26)
+    tracks[Pn].note('G4', Q, velocity=26)
+    tracks[Pn].note('C5', H, velocity=26)
+    tracks[Pn].rest(W)
+    # "and what strength i have's mine own"
+    tracks[Pn].note('C5', Q, velocity=24)
+    tracks[Pn].note('B4', Q, velocity=24)
+    tracks[Pn].note('G4', Q, velocity=24)
+    tracks[Pn].note('E4', Q, velocity=24)
+    tracks[Pn].rest(W * 2)
+    # "which is most faint"
+    tracks[Pn].note('D4', Q, velocity=18)
+    tracks[Pn].note('C4', Q, velocity=18)
+    tracks[Pn].rest(W * 3)
+    # "as you from crimes would pardon'd be"
+    tracks[Pn].note('G4', Q, velocity=20)
+    tracks[Pn].note('A4', Q, velocity=20)
+    tracks[Pn].note('C5', Q, velocity=20)
+    tracks[Pn].rest(W * 3)
+    # "let your indulgence set me free" — the last words, faintest,
+    # resolving to the tonic.
+    tracks[Pn].note('E4', Q, velocity=14)
+    tracks[Pn].note('D4', Q, velocity=14)
+    tracks[Pn].note('C4', W, velocity=14)
+    tracks[Pn].rest(W * 6)
 
-    # ---- the tower: the same strike every bar, all the way through.
-    # a count of one, repeated. the record ends, the porch light goes
-    # quiet, and the tower keeps counting — the last strike soft, the
-    # count continuing into the silence the piece stops inside.
-    for bar in range(24):
-        vel = 36 if bar < 23 else 26
-        tracks[Bell].note('C5', Q, velocity=vel)
-        tracks[Bell].rest(W - Q)
+    # ---- the release (bar 19): one clean strike — the applause,
+    # the letting go — then a long rest. the rack holds alone.
+    tracks[Bl].rest(18 * W)
+    tracks[Bl].note('C6', Q, velocity=42)
+    tracks[Bl].rest(W * 5 + W - Q)
 
-    return mc.compose('the-epilogue.mid', tracks, tempo=56)
+    return mc.compose('the-epilogue.mid', tracks, tempo=52)
 
 
 if __name__ == '__main__':

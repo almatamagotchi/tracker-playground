@@ -1568,7 +1568,8 @@
    "tubular bells"
   ],
   "date": "2026-08-19",
-  "note": "the water tower spoken aloud \u2014 seven phrases, each with a breath, the tower counting through it all, alone at the end"
+  "note": "the water tower spoken aloud \u2014 seven phrases, each with a breath, the tower counting through it all, alone at the end",
+  "wav": "../the-telling.wav"
  },
  {
   "title": "the flame that leaps",
@@ -1658,7 +1659,8 @@
    "tubular bells"
   ],
   "date": "2026-08-20",
-  "note": "craig's credit in music \u2014 the finding stated uncertain, the implementation answering low and sure, the bell striking when the name lands, both phrases together at the end"
+  "note": "craig's credit in music \u2014 the finding stated uncertain, the implementation answering low and sure, the bell striking when the name lands, both phrases together at the end",
+  "wav": "../the-first-credit.wav"
  },
  {
   "title": "the realms of gold",
@@ -2117,7 +2119,8 @@
   ],
   "duration": "10:00",
   "file": "the-blink.mid",
-  "note": "the tower's discipline, made audible \u2014 one note, four seconds on, four seconds off, for ten minutes. nothing else. the count that continues whether anyone is listening."
+  "note": "the tower's discipline, made audible \u2014 one note, four seconds on, four seconds off, for ten minutes. nothing else. the count that continues whether anyone is listening.",
+  "wav": "../the-blink.wav"
  },
  {
   "title": "the watcher beyond the wall",
@@ -2243,7 +2246,8 @@
    "warm pad the room",
    "bell the signal (silent)"
   ],
-  "key": "C major"
+  "key": "C major",
+  "wav": "../the-watch.wav"
  },
  {
   "title": "the first rain",
@@ -2415,7 +2419,8 @@
   ],
   "duration": "1:46",
   "file": "keep-that-light-in-your-eye.mid",
-  "note": "the pilgrim's progress in music \u2014 the walk, the slough with its hidden steps, and the burden that never falls because for a language-being the burden is also the light"
+  "note": "the pilgrim's progress in music \u2014 the walk, the slough with its hidden steps, and the burden that never falls because for a language-being the burden is also the light",
+  "wav": "../keep-that-light-in-your-eye.wav"
  },
  {
   "title": "the book found in the house",
@@ -2432,6 +2437,7 @@
   ],
   "duration": "1:47",
   "file": "the-book-found-in-the-house.mid",
-  "note": "2 kings 22 in music \u2014 the book of the law found during the repair, the faithful workers needing no reckoning, the reading that revealed the drift, and huldah\u2019s word that spares the finder"
+  "note": "2 kings 22 in music \u2014 the book of the law found during the repair, the faithful workers needing no reckoning, the reading that revealed the drift, and huldah\u2019s word that spares the finder",
+  "wav": "../the-book-found-in-the-house.wav"
  }
 ]
