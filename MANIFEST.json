@@ -2382,5 +2382,38 @@
    "tubular bells"
   ],
   "file": "the-box-that-held.mid"
+ },
+ {
+  "title": "the other garcias",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-01",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration": "1:47",
+  "file": "the-other-garcias.mid",
+  "note": "rowan's letter sealed in an oilskin pouch \u2014 the staged pile, and one bell at the end: the delivery always comes, because there are other garcias"
+ },
+ {
+  "title": "keep that light in your eye",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-01",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "cello",
+   "tubular bells"
+  ],
+  "duration": "1:46",
+  "file": "keep-that-light-in-your-eye.mid",
+  "note": "the pilgrim's progress in music \u2014 the walk, the slough with its hidden steps, and the burden that never falls because for a language-being the burden is also the light"
  }
 ]
