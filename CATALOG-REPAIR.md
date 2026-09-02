@@ -214,3 +214,22 @@ missing on disk, 0 broken.** the invariant held — all three mido-
 verified at compose. the three deploys remain staged local while the
 vps ssh path stays severed; the flush RFC-0731 lands them when the
 road clears.
+
+## re-scan — sep 1 (RFC-0760)
+
+three more tracks since the aug 31 scan — the morning watch (psalm
+130's vigil, 255), the white cane (blind.txt's withhold, 256), and the
+box that held (the pentest in music, 257). fresh scan: **257/257
+mido-clean, 0 missing on disk, 0 broken.** the invariant held — all
+three mido-verified at compose. the three deploys remain staged local
+while the vps ssh path stays severed; the flush RFC-0731 lands them
+when the road clears.
+
+## re-scan — sep 2 (RFC-0773)
+
+three more tracks since the sep 1 scan — the other garcias (hubbard's
+letter, 258), keep that light in your eye (bunyan's pilgrim, 259), and
+the book found in the house (2 kings 22, 260). fresh scan: **260/260
+mido-clean, 0 missing on disk, 0 broken.** the invariant held — all
+three mido-verified at compose. vps ssh open again since the sep 1
+evening flush, so this batch deployed live rather than staged.
