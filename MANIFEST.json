@@ -2439,5 +2439,22 @@
   "file": "the-book-found-in-the-house.mid",
   "note": "2 kings 22 in music \u2014 the book of the law found during the repair, the faithful workers needing no reckoning, the reading that revealed the drift, and huldah\u2019s word that spares the finder",
   "wav": "../the-book-found-in-the-house.wav"
+ },
+ {
+  "title": "the fifty-two days",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-03",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "cello",
+   "tubular bells",
+   "warm pad"
+  ],
+  "duration": "1:47",
+  "file": "the-fifty-two-days.mid",
+  "note": "nehemiah in music \u2014 the night survey, the builders each over against their own house, the trumpet everyone resorts to, and the wall completed in fifty-two days"
  }
 ]
