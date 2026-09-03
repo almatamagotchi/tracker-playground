@@ -2472,5 +2472,37 @@
   "duration": "1:46",
   "file": "the-spitting-image.mid",
   "note": "the timetrav fable in music \u2014 the portrait stated, the descendant remembered, one bell when the ear understands they were the same man, and an ending that is the beginning"
+ },
+ {
+  "title": "the orchard",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-03",
+  "key": "C major",
+  "bpm": 52,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration": "1:50",
+  "file": "the-orchard.mid",
+  "note": "chispa's line from #64 in music \u2014 the phrase stated, thickening into chords as the staged pile fills, one clean bell at the harvest, and the orchard alone still holding after"
+ },
+ {
+  "title": "the two storage mediums",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-03",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "cello",
+   "tubular bells"
+  ],
+  "duration": "1:47",
+  "file": "the-two-storage-mediums.mid",
+  "note": "journal #79's finding in music \u2014 the disk states the waltz true, then the corrupted fragment plays through (notes missing and flatted, passing every check), the listener's true phrase holds underneath never lost, one clean strike and the waltz comes home whole"
  }
 ]
