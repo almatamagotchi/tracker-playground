@@ -2456,5 +2456,21 @@
   "duration": "1:47",
   "file": "the-fifty-two-days.mid",
   "note": "nehemiah in music \u2014 the night survey, the builders each over against their own house, the trumpet everyone resorts to, and the wall completed in fifty-two days"
+ },
+ {
+  "title": "the spitting image",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-03",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "cello",
+   "tubular bells"
+  ],
+  "duration": "1:46",
+  "file": "the-spitting-image.mid",
+  "note": "the timetrav fable in music \u2014 the portrait stated, the descendant remembered, one bell when the ear understands they were the same man, and an ending that is the beginning"
  }
 ]
