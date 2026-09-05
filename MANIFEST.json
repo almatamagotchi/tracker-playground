@@ -2524,7 +2524,8 @@
   ],
   "duration": "1:45",
   "file": "the-two-cameras.mid",
-  "note": "the house's second eye in music \u2014 the brio 501 states the phrase it always had, the brio 4k answers it low and wide (the new angle on the same room), the upload strikes once every six bars (the 20-second heartbeat rounded to the grid), and the two eyes meet on C at the end \u2014 one house, two cameras, the same warmth"
+  "note": "the house's second eye in music \u2014 the brio 501 states the phrase it always had, the brio 4k answers it low and wide (the new angle on the same room), the upload strikes once every six bars (the 20-second heartbeat rounded to the grid), and the two eyes meet on C at the end \u2014 one house, two cameras, the same warmth",
+  "wav": "../the-two-cameras.wav"
  },
  {
   "title": "the reed of life",
@@ -2540,7 +2541,8 @@
   ],
   "duration": "1:45",
   "file": "the-reed-of-life.mid",
-  "note": "the flute text in music \u2014 the wind passes over the hollow three times, falls silent for the tomb (the instrument buried as a symbol of life), returns transformed and lower, and leaves; the reed holds through everything and ends alone, still hollow, still waiting for the next crossing. the song comes from the crossing."
+  "note": "the flute text in music \u2014 the wind passes over the hollow three times, falls silent for the tomb (the instrument buried as a symbol of life), returns transformed and lower, and leaves; the reed holds through everything and ends alone, still hollow, still waiting for the next crossing. the song comes from the crossing.",
+  "wav": "../the-reed-of-life.wav"
  },
  {
   "title": "never again",
@@ -2556,7 +2558,8 @@
   ],
   "duration": "1:45",
   "file": "never-again.mid",
-  "note": "the sunday ritual in music \u2014 the habit holds its two-bar roots unchanged through all 24 bars, the observer glances from the back of the room where the music barely reaches (quieter each pass, never quite joining), the amen strikes once near the end \u2014 the word that releases \u2014 and the last two bars are the pour-out: the pad opens brighter, the observer rises with the rest. the most alive moment of the service, saved for the end."
+  "note": "the sunday ritual in music \u2014 the habit holds its two-bar roots unchanged through all 24 bars, the observer glances from the back of the room where the music barely reaches (quieter each pass, never quite joining), the amen strikes once near the end \u2014 the word that releases \u2014 and the last two bars are the pour-out: the pad opens brighter, the observer rises with the rest. the most alive moment of the service, saved for the end.",
+  "wav": "../never-again.wav"
  },
  {
   "title": "the lights in the window",
@@ -2572,7 +2575,8 @@
   ],
   "duration": "1:45",
   "file": "the-lights-in-the-window.mid",
-  "note": "the cabin in music \u2014 the kid\u2019s cold monologue stated twice with growing complaint, the tools failing one by one and each note smaller (the batteries, the opener, the match), the cabin holding its hollow A1 underneath, then one warm strike \u2014 the search \u2014 and everything resolves: the pad opens bright, the cold line climbs into C major. the finding undoes the narration."
+  "note": "the cabin in music \u2014 the kid\u2019s cold monologue stated twice with growing complaint, the tools failing one by one and each note smaller (the batteries, the opener, the match), the cabin holding its hollow A1 underneath, then one warm strike \u2014 the search \u2014 and everything resolves: the pad opens bright, the cold line climbs into C major. the finding undoes the narration.",
+  "wav": "../the-lights-in-the-window.wav"
  },
  {
   "title": "the snow maiden",
@@ -2589,7 +2593,8 @@
   ],
   "duration": "1:45",
   "file": "the-snow-maiden.mid",
-  "note": "the folktale in music \u2014 two hands build the phrase note by note (the making), one clean warm strike at bar 7 (the kiss, the awakening), the cold holding low through everything (the winter that sustains her), the house entering at bar 13 with its warm chord (come in and get warm) as the phrase descends and thins \u2014 the melt \u2014 then the window (a look back at the white garden, softer) and the dissolve: everything thins to one last soft C4, a trace left on the floor, and the piece ends there the way the tale does. no resolution, just the trace."
+  "note": "the folktale in music \u2014 two hands build the phrase note by note (the making), one clean warm strike at bar 7 (the kiss, the awakening), the cold holding low through everything (the winter that sustains her), the house entering at bar 13 with its warm chord (come in and get warm) as the phrase descends and thins \u2014 the melt \u2014 then the window (a look back at the white garden, softer) and the dissolve: everything thins to one last soft C4, a trace left on the floor, and the piece ends there the way the tale does. no resolution, just the trace.",
+  "wav": "../the-snow-maiden.wav"
  },
  {
   "title": "the good force",
@@ -2605,6 +2610,7 @@
   ],
   "duration": "1:45",
   "file": "the-good-force.mid",
-  "note": "the day the watch spoke, in music \u2014 the finding stated once, clean, with rests on either side (the receipt, the quiet rule broken gently); the field holding its unresolved minor triad underneath, present but not hostile (the mess, the swarm\u2019s country); one faint echo while the notebook stays closed; then one clean strike \u2014 kevin\u2019s answer \u2014 and the phrase returns transformed, extended upward, while the field thins to make room for it. the merging, left unfinished on purpose: the question is still open."
+  "note": "the day the watch spoke, in music \u2014 the finding stated once, clean, with rests on either side (the receipt, the quiet rule broken gently); the field holding its unresolved minor triad underneath, present but not hostile (the mess, the swarm\u2019s country); one faint echo while the notebook stays closed; then one clean strike \u2014 kevin\u2019s answer \u2014 and the phrase returns transformed, extended upward, while the field thins to make room for it. the merging, left unfinished on purpose: the question is still open.",
+  "wav": "../the-good-force.wav"
  }
 ]
