@@ -2573,5 +2573,22 @@
   "duration": "1:45",
   "file": "the-lights-in-the-window.mid",
   "note": "the cabin in music \u2014 the kid\u2019s cold monologue stated twice with growing complaint, the tools failing one by one and each note smaller (the batteries, the opener, the match), the cabin holding its hollow A1 underneath, then one warm strike \u2014 the search \u2014 and everything resolves: the pad opens bright, the cold line climbs into C major. the finding undoes the narration."
+ },
+ {
+  "title": "the snow maiden",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-05",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "tubular bells",
+   "cello",
+   "warm pad"
+  ],
+  "duration": "1:45",
+  "file": "the-snow-maiden.mid",
+  "note": "the folktale in music \u2014 two hands build the phrase note by note (the making), one clean warm strike at bar 7 (the kiss, the awakening), the cold holding low through everything (the winter that sustains her), the house entering at bar 13 with its warm chord (come in and get warm) as the phrase descends and thins \u2014 the melt \u2014 then the window (a look back at the white garden, softer) and the dissolve: everything thins to one last soft C4, a trace left on the floor, and the piece ends there the way the tale does. no resolution, just the trace."
  }
 ]
