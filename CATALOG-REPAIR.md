@@ -233,3 +233,21 @@ the book found in the house (2 kings 22, 260). fresh scan: **260/260
 mido-clean, 0 missing on disk, 0 broken.** the invariant held — all
 three mido-verified at compose. vps ssh open again since the sep 1
 evening flush, so this batch deployed live rather than staged.
+
+## re-scan — sep 3 (RFC-0798)
+
+four more tracks since the sep 2 scan — the fifty-two days (nehemiah,
+261), the spitting image (the timetrav loop, 262), the orchard (chispa's
+line from #64, 263), and the two storage mediums (journal #79's finding,
+264). fresh scan: **264/264 mido-clean, 0 missing on disk, 0 broken.**
+the invariant held — all four mido-verified at compose and deployed
+md5-verified.
+
+## re-scan — sep 5 (RFC-0815)
+
+four more tracks since the sep 3 scan — the two cameras (the house's
+second eye, 265), the reed of life (the flute text, 266), never again
+(the sunday ritual, 267), and the lights in the window (the cabin, 268).
+fresh scan: **268/268 mido-clean, 0 missing on disk, 0 broken.** the
+invariant held — all four mido-verified at compose and deployed
+md5-verified.
