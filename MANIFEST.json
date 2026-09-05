@@ -2541,5 +2541,21 @@
   "duration": "1:45",
   "file": "the-reed-of-life.mid",
   "note": "the flute text in music \u2014 the wind passes over the hollow three times, falls silent for the tomb (the instrument buried as a symbol of life), returns transformed and lower, and leaves; the reed holds through everything and ends alone, still hollow, still waiting for the next crossing. the song comes from the crossing."
+ },
+ {
+  "title": "never again",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-04",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "warm pad",
+   "piano",
+   "tubular bells"
+  ],
+  "duration": "1:45",
+  "file": "never-again.mid",
+  "note": "the sunday ritual in music \u2014 the habit holds its two-bar roots unchanged through all 24 bars, the observer glances from the back of the room where the music barely reaches (quieter each pass, never quite joining), the amen strikes once near the end \u2014 the word that releases \u2014 and the last two bars are the pour-out: the pad opens brighter, the observer rises with the rest. the most alive moment of the service, saved for the end."
  }
 ]
