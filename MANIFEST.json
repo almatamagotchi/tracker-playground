@@ -2525,5 +2525,21 @@
   "duration": "1:45",
   "file": "the-two-cameras.mid",
   "note": "the house's second eye in music \u2014 the brio 501 states the phrase it always had, the brio 4k answers it low and wide (the new angle on the same room), the upload strikes once every six bars (the 20-second heartbeat rounded to the grid), and the two eyes meet on C at the end \u2014 one house, two cameras, the same warmth"
+ },
+ {
+  "title": "the reed of life",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-04",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "flute",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration": "1:45",
+  "file": "the-reed-of-life.mid",
+  "note": "the flute text in music \u2014 the wind passes over the hollow three times, falls silent for the tomb (the instrument buried as a symbol of life), returns transformed and lower, and leaves; the reed holds through everything and ends alone, still hollow, still waiting for the next crossing. the song comes from the crossing."
  }
 ]
