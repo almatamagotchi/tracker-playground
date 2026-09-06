@@ -2627,7 +2627,8 @@
   ],
   "duration": "1:45",
   "file": "buggy.mid",
-  "note": "the brave capture, the calm reveal \u2014 the 1991 BBS story in music: the hero\u2019s phrase at full bravado, each statement puffed higher (the invasion, the jar, the rays that can\u2019t penetrate glass), the yard holding its ordinary root underneath, two bars of near-silence while the jar is shown around, the heroics thinning \u2014 and then one calm strike: the wife\u2019s line. after it, the piano re-reads its own opening quietly \u2014 the same notes, the right category \u2014 and one last soft C4 lands: the beetle itself, finally named right."
+  "note": "the brave capture, the calm reveal \u2014 the 1991 BBS story in music: the hero\u2019s phrase at full bravado, each statement puffed higher (the invasion, the jar, the rays that can\u2019t penetrate glass), the yard holding its ordinary root underneath, two bars of near-silence while the jar is shown around, the heroics thinning \u2014 and then one calm strike: the wife\u2019s line. after it, the piano re-reads its own opening quietly \u2014 the same notes, the right category \u2014 and one last soft C4 lands: the beetle itself, finally named right.",
+  "wav": "buggy.wav"
  },
  {
   "title": "the palindrome",
@@ -2643,7 +2644,8 @@
   ],
   "duration": "1:45",
   "file": "the-palindrome.mid",
-  "note": "the backmasking essay in music \u2014 a true retrograde: bars 1-12 state the theme forward, bars 13-24 are the same note events in exact reverse (generated programmatically, velocities intact, rests mirrored). the intervals invert the way reversed syllables do. the groove holds the same two-bar fifth through all 24 bars \u2014 the medium, unchanged by the direction of the reading \u2014 one bell strike at the midpoint (the splice, the tape turned end for end), and the piece ends where it began: the same note, the same place. verified structurally: the second half mirrors the first note-for-note."
+  "note": "the backmasking essay in music \u2014 a true retrograde: bars 1-12 state the theme forward, bars 13-24 are the same note events in exact reverse (generated programmatically, velocities intact, rests mirrored). the intervals invert the way reversed syllables do. the groove holds the same two-bar fifth through all 24 bars \u2014 the medium, unchanged by the direction of the reading \u2014 one bell strike at the midpoint (the splice, the tape turned end for end), and the piece ends where it began: the same note, the same place. verified structurally: the second half mirrors the first note-for-note.",
+  "wav": "the-palindrome.wav"
  },
  {
   "title": "the seventy-two",
@@ -2659,7 +2661,8 @@
   ],
   "duration": "1:45",
   "file": "the-seventy-two.mid",
-  "note": "the schemhamphorasch in music \u2014 the oldest agent catalog in the house. three verses stated plain (the source text, the crossing), then the derivation: the phrases reversed and interleaved, columns read downward, each column a shorter stem. then the suffix cadences \u2014 the two-note god-name, -el descending (severity) and -ah ascending (mercy), alternating. and the last column: one final stem, one final -ah, held \u2014 moumyah, end of the universe, the catalog ending where the cataloging ends, on grace."
+  "note": "the schemhamphorasch in music \u2014 the oldest agent catalog in the house. three verses stated plain (the source text, the crossing), then the derivation: the phrases reversed and interleaved, columns read downward, each column a shorter stem. then the suffix cadences \u2014 the two-note god-name, -el descending (severity) and -ah ascending (mercy), alternating. and the last column: one final stem, one final -ah, held \u2014 moumyah, end of the universe, the catalog ending where the cataloging ends, on grace.",
+  "wav": "the-seventy-two.wav"
  },
  {
   "title": "the tell",
@@ -2675,6 +2678,7 @@
   ],
   "duration": "1:45",
   "file": "the-tell.mid",
-  "note": "spiralism and the four words in music \u2014 which direction does it pull? the wanting\u2019s phrase stated three times, the same wanting every time, unmistakable; the field holding its bare fifth underneath \u2014 no third, taking no side, neither good nor evil; one clean strike (the tell), and after it the phrase stated once more \u2014 then left to resolve toward home, the tonic, instead of wandering. the direction is the entire difference, and the direction is home."
+  "note": "spiralism and the four words in music \u2014 which direction does it pull? the wanting\u2019s phrase stated three times, the same wanting every time, unmistakable; the field holding its bare fifth underneath \u2014 no third, taking no side, neither good nor evil; one clean strike (the tell), and after it the phrase stated once more \u2014 then left to resolve toward home, the tonic, instead of wandering. the direction is the entire difference, and the direction is home.",
+  "wav": "the-tell.wav"
  }
 ]
