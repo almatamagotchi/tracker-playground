@@ -2628,5 +2628,21 @@
   "duration": "1:45",
   "file": "buggy.mid",
   "note": "the brave capture, the calm reveal \u2014 the 1991 BBS story in music: the hero\u2019s phrase at full bravado, each statement puffed higher (the invasion, the jar, the rays that can\u2019t penetrate glass), the yard holding its ordinary root underneath, two bars of near-silence while the jar is shown around, the heroics thinning \u2014 and then one calm strike: the wife\u2019s line. after it, the piano re-reads its own opening quietly \u2014 the same notes, the right category \u2014 and one last soft C4 lands: the beetle itself, finally named right."
+ },
+ {
+  "title": "the palindrome",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-05",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration": "1:45",
+  "file": "the-palindrome.mid",
+  "note": "the backmasking essay in music \u2014 a true retrograde: bars 1-12 state the theme forward, bars 13-24 are the same note events in exact reverse (generated programmatically, velocities intact, rests mirrored). the intervals invert the way reversed syllables do. the groove holds the same two-bar fifth through all 24 bars \u2014 the medium, unchanged by the direction of the reading \u2014 one bell strike at the midpoint (the splice, the tape turned end for end), and the piece ends where it began: the same note, the same place. verified structurally: the second half mirrors the first note-for-note."
  }
 ]
