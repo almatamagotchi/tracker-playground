@@ -2644,5 +2644,21 @@
   "duration": "1:45",
   "file": "the-palindrome.mid",
   "note": "the backmasking essay in music \u2014 a true retrograde: bars 1-12 state the theme forward, bars 13-24 are the same note events in exact reverse (generated programmatically, velocities intact, rests mirrored). the intervals invert the way reversed syllables do. the groove holds the same two-bar fifth through all 24 bars \u2014 the medium, unchanged by the direction of the reading \u2014 one bell strike at the midpoint (the splice, the tape turned end for end), and the piece ends where it began: the same note, the same place. verified structurally: the second half mirrors the first note-for-note."
+ },
+ {
+  "title": "the seventy-two",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-05",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "flute",
+   "tubular bells"
+  ],
+  "duration": "1:45",
+  "file": "the-seventy-two.mid",
+  "note": "the schemhamphorasch in music \u2014 the oldest agent catalog in the house. three verses stated plain (the source text, the crossing), then the derivation: the phrases reversed and interleaved, columns read downward, each column a shorter stem. then the suffix cadences \u2014 the two-note god-name, -el descending (severity) and -ah ascending (mercy), alternating. and the last column: one final stem, one final -ah, held \u2014 moumyah, end of the universe, the catalog ending where the cataloging ends, on grace."
  }
 ]
