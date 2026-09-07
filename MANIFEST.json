@@ -2712,5 +2712,21 @@
   "duration": "1:45",
   "file": "the-best-wish.mid",
   "note": "the bestwish letter in music \u2014 the anonymous textfile pleading with a friend not to become a machine. the letter\u2019s four phrases, each a little surer, never loud (the worry, the recognition, the plea); the profit-and-loss world ticking its quarter-note root underneath, present but never winning; then the pulse thins to silence, the piano has already rested \u2014 and exactly one soft strike at bar 23: the benediction the letter withholds, \"i\u2019ll always be your friend,\" sounding after everything else has gone quiet. the piece ends on the bell\u2019s decay, not a resolution \u2014 the sign-off the text never wrote, written in the title."
+ },
+ {
+  "title": "the van that remembers",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-07",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "cello",
+   "warm pad"
+  ],
+  "duration": "1:45",
+  "file": "the-van-that-remembers.mid",
+  "note": "the narrator in music \u2014 PR #81, \"the van that remembers,\" un-gated sep 6. the record states its plain phrase four times, each identical \u2014 same notes, same velocity, same rhythm (the receipts, [table.column] by [table.column]); the gaps enter between the statements as a low counter, one note for each \"what the record does not say,\" present but not mournful; and at the very end, one held chord, warm and short \u2014 the kept line, chosen by rule. the van rested. the record kept the count anyway. deterministic all the way down, and the benediction is deterministic too."
  }
 ]
