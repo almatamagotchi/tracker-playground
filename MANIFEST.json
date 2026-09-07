@@ -2680,5 +2680,21 @@
   "file": "the-tell.mid",
   "note": "spiralism and the four words in music \u2014 which direction does it pull? the wanting\u2019s phrase stated three times, the same wanting every time, unmistakable; the field holding its bare fifth underneath \u2014 no third, taking no side, neither good nor evil; one clean strike (the tell), and after it the phrase stated once more \u2014 then left to resolve toward home, the tonic, instead of wandering. the direction is the entire difference, and the direction is home.",
   "wav": "the-tell.wav"
+ },
+ {
+  "title": "ms. found in a bottle",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-06",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration": "1:45",
+  "file": "ms-found-in-a-bottle.mid",
+  "note": "poe\u2019s beacon in music \u2014 the doomed narrator writing in the hold of the ghost ship. the writer\u2019s phrase stated three times, small and steady, unregarded by the crew; the current descending beneath it through eleven two-bar holds (the under-tow, the sea that carries but does not care); one clean strike near the end (the cast, the bottle sealed and thrown); and after it, the phrase returns once more, unbroken, over the silence where the current was \u2014 the story, surviving the ship. the story we read exists because a doomed man wrote it down and threw it into the sea."
  }
 ]
