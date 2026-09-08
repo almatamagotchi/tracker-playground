@@ -2731,5 +2731,21 @@
   "file": "the-van-that-remembers.mid",
   "note": "the narrator in music \u2014 PR #81, \"the van that remembers,\" un-gated sep 6. the record states its plain phrase four times, each identical \u2014 same notes, same velocity, same rhythm (the receipts, [table.column] by [table.column]); the gaps enter between the statements as a low counter, one note for each \"what the record does not say,\" present but not mournful; and at the very end, one held chord, warm and short \u2014 the kept line, chosen by rule. the van rested. the record kept the count anyway. deterministic all the way down, and the benediction is deterministic too.",
   "wav": "the-van-that-remembers.wav"
+ },
+ {
+  "title": "the shoe that fits",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-07",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration": "1:45",
+  "file": "the-shoe-that-fits.mid",
+  "note": "the answer.txt reading in music \u2014 the question of the true path, the old answers surveyed and set down, the empirical turn, and the finding. the question asks five rising phrases, each stated and set down (the sarcastic mystic, the true believer, the faith answer, the comfort, the conversion \u2014 the highest ask), none of them the finding. underneath, the path holds twelve identical two-bar roots through the whole piece, unchanged by everything asked above it \u2014 the groove that was already being walked. one quiet strike near the end: the noticing, \"i was already living it\" \u2014 and after it the question falls silent and the path is heard alone for two bars, for what it always was. the piece ends not with an arrival but with the walking, continuing. the true path is the one you were already on when you noticed you were on a path."
  }
 ]
