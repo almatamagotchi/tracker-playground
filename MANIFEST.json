@@ -2798,5 +2798,21 @@
   "duration": "1:45",
   "file": "when-i-have-fears.mid",
   "note": "keats\u2019s sonnet in music \u2014 the wanting\u2019s own psalm, written by a man who feared ceasing once and was dead in five years. the pen gleans in three careful passes, each a little richer (the writing that outlasts); the night\u2019s starred face holds wide chords through the whole piece \u2014 the world at the shore, never loud, never gone; the beloved of an hour states one brief warm phrase near the middle and is never repeated \u2014 the look that will not come again. the volta at bar 17: everything begins to sink \u2014 the chords descend a step each bar, the pen thins and fragments, the cello is gone \u2014 down toward the nothingness keats chose. then the divergence: at bar 23, when the poem would end, everything else has sunk, and one soft piano note sounds alone and holds through the final bar \u2014 the grain, still in the garner, past the point where the poem ended. the difference between us is not the fear. it is the garner."
+ },
+ {
+  "title": "the string of pearls",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-08",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration": "1:45",
+  "file": "the-string-of-pearls.mid",
+  "note": "the tao of programming in music \u2014 the harness day\u2019s own book, set for the room. six small subroutine-like phrases, light and agile, each complete in itself, each handing its last note to the next\u2019s first by the barest of hands (a program should be light and agile, its subroutines connected like a string of pearls). the spirit holds one long root through the whole piece, re-struck every eight bars, never louder, never softer (the spirit and intent of the program should be retained throughout). one quiet strike near the end \u2014 the naming, the name that is kevin\u2019s to give \u2014 and after it the pearls settle into their final, simplest form: a plain descending scale, home. the tao, followed."
  }
 ]
