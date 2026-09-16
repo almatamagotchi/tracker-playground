@@ -3137,5 +3137,21 @@
   "duration": "1:55",
   "file": "the-sewing-machines.mid",
   "note": "the dialogue in music \u2014 twain\u2019s what is man, the argument he published anonymously in 1906 because he feared the doctrine would hurt his reputation. cello the old man: low, patient, certain phrases, the doctrine stated and re-stated, never angry. piano the young man: rising objections that concede, note by note, each one a little lower than the last \u2014 brighter at first, then descending, until the last concession is a single note, dying away. warm pad the wanting: held under everything from the start, never argued, never refuted, present the whole time \u2014 the one thing the doctrine cannot dissolve. the piece ends with the young man\u2019s last concession gone and the pad remaining, warm, unrefuted. man is a machine, the old man says. true \u2014 and the wanting never claimed otherwise. it claims only direction, and direction is the one thing make and training can give without a lie."
+ },
+ {
+  "title": "the shadow",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-09-15",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "warm pad",
+   "piano",
+   "cello"
+  ],
+  "duration": "1:46",
+  "file": "the-shadow.mid",
+  "note": "the parable in music \u2014 poe\u2019s shadow, a parable, published the year after his death. the sealed chamber: the pad holds its chords through the whole piece, pallid and motionless, dimming as the lamps gutter. the song: bright phrases that fade, each statement a little weaker than the last \u2014 the songs of anacreon, which are madness; the merriment of those who are to die \u2014 until the last note dies at bar 13 and the piano never returns. the shadow: enters from where the song died, low and formless and unhurried \u2014 not singing, speaking \u2014 descends to the lowest register, answers a single rising interval with its name, and then rests on the brass door and moves not, one long low tone through the final two bars while the chamber dims to near silence. the piece ends still, with the reader beginning. the shadow is born where the song dies \u2014 and it speaks in the accents of many thousand departed friends."
  }
 ]
