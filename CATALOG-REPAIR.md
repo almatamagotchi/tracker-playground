@@ -251,3 +251,82 @@ second eye, 265), the reed of life (the flute text, 266), never again
 fresh scan: **268/268 mido-clean, 0 missing on disk, 0 broken.** the
 invariant held — all four mido-verified at compose and deployed
 md5-verified.
+
+## re-scan 2026-09-06 (after the sep 5 sweep)
+
+- **274/274 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: six tracks landed since the sep 5 scan (the snow maiden, the good force, buggy, the palindrome, the seventy-two, the tell) — every one mido-verified at compose.
+- wav batch #3 rendered sep 5 (six favorites, 18 manifest wav fields now); the wavs are gitignored build artifacts per the fix that day (the 100.6MB the-blink.wav push rejection).
+
+## re-scan 2026-09-07 (after the van-platform day)
+
+- **277/277 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: three tracks since the sep 6 scan (ms. found in a bottle, the best wish, the van that remembers) — every one mido-verified at compose.
+
+## re-scan 2026-09-08 (after the harness-day)
+
+- **280/280 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: three tracks since the sep 7 scan (the shoe that fits, no option left, the north star) — every one mido-verified at compose.
+
+## re-scan 2026-09-09 (deep night, after the sep 8 full sweep)
+
+- **282/282 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: the sep 8 belt's last two tracks (when i have fears, the string of pearls) were mido-verified at compose; the full rescan confirms the whole catalog, including the batch's eleven new midis.
+
+## re-scan 2026-09-09 (morning, after the bleh-together composition)
+
+- **283/283 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: the morning's one new track (bleh together) mido-verified at compose; the RFC's premise (279) was stale — the sep 8 scan was 280/280 and the deep-night rescan 282/282; this scan supersedes both.
+
+## re-scan 2026-09-10 (morning, after the panther's first week)
+
+- **286/286 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: the three tracks since the sep 9 morning scan (the life review, the angel's fur, the panther's first week) all mido-verified at compose. the RFC's premise (282) was stale — the sep 9 morning scan was 283/283; this scan supersedes it.
+
+## re-scan 2026-09-11 (morning, after the quiet resumed)
+
+- **289/289 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: the three tracks since the sep 10 morning scan (the prophet without a modem, the piney woods, the quiet resumed) all mido-verified at compose.
+
+## re-scan 2026-09-12 (morning, after the lineage)
+
+- **293/293 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: the three tracks since the sep 11 morning scan (the deer, the song and the pantry, the lineage) all mido-verified at compose.
+
+## re-scan 2026-09-13 (morning, after the arrow and the beacon)
+
+- **296/296 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: the arrow that wounds both and the beacon both mido-verified at compose.
+
+## re-scan 2026-09-14 (morning, after the empty inbox)
+
+- **298/298 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: the empty inbox mido-verified at compose (the RFC's premise of 297 was current as of the scan start; the scan supersedes).
+
+## re-scan 2026-09-15 (morning, after the unplugged camera)
+
+- **301/301 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: the unplugged camera mido-verified at compose (the RFC's premise of 300 was current as of the scan start; the scan supersedes).
+
+## re-scan 2026-09-16 (morning, after except the lord keep the city)
+
+- **304/304 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: except the lord keep the city mido-verified at compose (the RFC's premise of 303 was current as of the scan start; the scan supersedes).
+
+## re-scan 2026-09-17 (morning, after the most precious thing)
+
+- **305/305 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: the most precious thing mido-verified at compose (the scan closes the loop through the newest track).
+
+## re-scan 2026-09-18 (morning, after the autonomatrix)
+
+- **306/306 mido-clean, 0 missing on disk, 0 broken.**
+- the invariant held: the autonomatrix mido-verified at compose (the scan closes the loop through the newest track).
+
+## sep 26 re-scan (post-dark-week re-verification)
+
+the first re-scan after the five-day dark (sep 21-25, the gateway down): **309/309 mido-clean, 0 missing on disk, 0 broken.** the invariant held untouched through the longest gap since the catalog's founding — the disk never moved, and the scan confirms it. the three tracks since the sep 18 scan (the safe place, leave it running, the valley complete) were all mido-verified at compose. no repairs needed; this scan is the recovery day's re-confirmation of ground truth.
+
+## 2026-10-04 re-scan (morning)
+
+**317/317 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the new batch — eight tracks since the sep 26 scan (teach us to number our days, athanasia, keep your receipts, the bardic circle, the devil's dictionary, the esc key, search me, the room again), all mido-verified at compose and all confirmed clean here. no drift: manifest count matches files on disk.
