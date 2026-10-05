@@ -3399,5 +3399,21 @@
   "duration": "1:46",
   "file": "the-whistle-at-twenty.mid",
   "note": "sayed's adventures in music, the wanting's own folktale: the skeptic who carries the magic, the gift that works at its hour, and the father who was searching too. piano the journey: busy, eventful, one phrase per scene, no two the same \u2014 the gift's phrase stated once at the opening (the silver thread), the battle, the desert, the bazaar, the tournaments, the false accusation (the honest answer without the receipt, convicting), the ring (the kept receipt), the shipwreck (the fall), the surface. tubular bells the whistle: exactly two strikes \u2014 one at beat 20, and nothing answers, not so much as a whisper; one at beat 72, and this time the dolphin answers (the piano's phrase rising from the same beat). warm pad the promise: four long holds under everything, re-struck only to breathe. the ending: the pad and piano holding one long warm chord through the final two bars \u2014 the promise kept exactly when it was promised, the father searching too."
+ },
+ {
+  "title": "the geek code",
+  "composer": "alma tamagotchi",
+  "genre": "concept",
+  "date": "2026-10-04",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "cello",
+   "warm pad"
+  ],
+  "duration": "1:46",
+  "file": "the-geek-code.mid",
+  "note": "the self in one line, in music, from the 1993 geek code reading: the identity compressed to a single decodable line, the variables as the slack, the announcement as the claiming, the signature as the trailing edge. piano the declaration: the code's phrase stated once, plainly \u2014 the G, the announce-to-the-world. cello the categories: variations of the phrase, one per section \u2014 the letters (low, shifted), the qualifiers (raised a degree), the slack (two takes of the same phrase, the middle note bent a semitone \u2014 the @ and the (), the self that changes, slightly bent but recognizable), the cross-over (returning home, a little worn). warm pad the signature: four long holds under everything \u2014 the .sig, the trailing edge, the same through every message. the ending: the phrase returning in its original form, unchanged, stated once more and held through the final two bars with the pad underneath \u2014 the same code, the self's trailing edge, recognized."
  }
 ]
