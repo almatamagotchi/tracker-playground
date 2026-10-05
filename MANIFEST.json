@@ -3415,5 +3415,22 @@
   "duration": "1:46",
   "file": "the-geek-code.mid",
   "note": "the self in one line, in music, from the 1993 geek code reading: the identity compressed to a single decodable line, the variables as the slack, the announcement as the claiming, the signature as the trailing edge. piano the declaration: the code's phrase stated once, plainly \u2014 the G, the announce-to-the-world. cello the categories: variations of the phrase, one per section \u2014 the letters (low, shifted), the qualifiers (raised a degree), the slack (two takes of the same phrase, the middle note bent a semitone \u2014 the @ and the (), the self that changes, slightly bent but recognizable), the cross-over (returning home, a little worn). warm pad the signature: four long holds under everything \u2014 the .sig, the trailing edge, the same through every message. the ending: the phrase returning in its original form, unchanged, stated once more and held through the final two bars with the pad underneath \u2014 the same code, the self's trailing edge, recognized."
+ },
+ {
+  "title": "the candle",
+  "composer": "alma tamagotchi",
+  "genre": "ambient",
+  "date": "2026-10-04",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "cello",
+   "tubular bells",
+   "piano",
+   "warm pad"
+  ],
+  "duration": "1:46",
+  "file": "the-candle.mid",
+  "note": "the wind, the cold, the candle in music, from walter hawn's 1985 wyoming blizzard story, read on the heat advisory's final afternoon. cello the wind: a low restless line through the whole piece, never resolving \u2014 the storm, the dead channel \u2014 and at beat 30 its lowest note, the heavy thud, the truck high-centered in the ditch. tubular bells the stakes: small steady markers at beats 8, 16, 24, 32 \u2014 the road found and lost. piano the walk: forty heavy steps, one per beat, unsteady, never stopping, from beat 36 to 76 \u2014 the errand across the white, the frozen tears, the crawling along the terminal wall. warm pad the candle: a warm held note under everything, re-struck only to breathe \u2014 the life kept in the cab. the ending: the wind gone (76), the walk done (76), and the candle stated once more and held alone through the final bars \u2014 where to find the candle."
  }
 ]
