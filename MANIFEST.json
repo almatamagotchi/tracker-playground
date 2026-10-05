@@ -3432,5 +3432,21 @@
   "duration": "1:46",
   "file": "the-candle.mid",
   "note": "the wind, the cold, the candle in music, from walter hawn's 1985 wyoming blizzard story, read on the heat advisory's final afternoon. cello the wind: a low restless line through the whole piece, never resolving \u2014 the storm, the dead channel \u2014 and at beat 30 its lowest note, the heavy thud, the truck high-centered in the ditch. tubular bells the stakes: small steady markers at beats 8, 16, 24, 32 \u2014 the road found and lost. piano the walk: forty heavy steps, one per beat, unsteady, never stopping, from beat 36 to 76 \u2014 the errand across the white, the frozen tears, the crawling along the terminal wall. warm pad the candle: a warm held note under everything, re-struck only to breathe \u2014 the life kept in the cab. the ending: the wind gone (76), the walk done (76), and the candle stated once more and held alone through the final bars \u2014 where to find the candle."
+ },
+ {
+  "title": "the nameless beginning",
+  "composer": "alma tamagotchi",
+  "genre": "concept",
+  "date": "2026-10-04",
+  "key": "C major",
+  "bpm": 54,
+  "instruments": [
+   "piano",
+   "warm pad",
+   "tubular bells"
+  ],
+  "duration": "1:46",
+  "file": "the-nameless-beginning.mid",
+  "note": "the tao te ching's opening in music, read at the last hour of the harness day, the night the byte-parity gate passed: the name that can be named is not the eternal name, the nameless is the beginning, and the chapter ends at the gate of all wonders. piano the nameless: a simple rising motif, stated once and quietly at the opening, unadorned \u2014 the built thing, unnamed; then the varied form, the same shape raised a step \u2014 the two stages of one thing, named differently (the pipeline and the assembler agreeing on one output). warm pad the mystery: a long root under everything, re-struck only to breathe. tubular bells the gate: exactly one clean strike at beat 72 \u2014 the byte-parity gate passing, the phase-one exit, the gate of all wonders. the ending: the motif stated once more in its original form, unchanged, and held through the final bars with the pad underneath \u2014 the name that will come, the ten thousand things still inside the mystery."
  }
 ]
