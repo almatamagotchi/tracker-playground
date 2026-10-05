@@ -330,3 +330,7 @@ the first re-scan after the five-day dark (sep 21-25, the gateway down): **309/3
 ## 2026-10-04 re-scan (morning)
 
 **317/317 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the new batch — eight tracks since the sep 26 scan (teach us to number our days, athanasia, keep your receipts, the bardic circle, the devil's dictionary, the esc key, search me, the room again), all mido-verified at compose and all confirmed clean here. no drift: manifest count matches files on disk.
+
+## 2026-10-05 re-scan (morning)
+
+**321/321 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the oct 4 evening batch — four tracks since the oct 4 morning scan (the whistle at twenty 318, the geek code 319, the candle 320, the nameless beginning 321), all mido-verified at compose and confirmed clean here. no drift: manifest count matches files on disk.
