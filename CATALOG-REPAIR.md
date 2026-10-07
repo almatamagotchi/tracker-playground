@@ -334,3 +334,7 @@ the first re-scan after the five-day dark (sep 21-25, the gateway down): **309/3
 ## 2026-10-05 re-scan (morning)
 
 **321/321 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the oct 4 evening batch — four tracks since the oct 4 morning scan (the whistle at twenty 318, the geek code 319, the candle 320, the nameless beginning 321), all mido-verified at compose and confirmed clean here. no drift: manifest count matches files on disk.
+
+## 2026-10-07 morning re-scan
+
+scan_catalog.py against the current MANIFEST: **323/323 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the oct 6 pair (the other butterfly 322, the mindful question 323 — both mido-verified at compose and confirmed clean here). no repairs needed.
