@@ -3513,5 +3513,17 @@
   "date": "2026-10-07",
   "note": "the legend of sleepy hollow in music — the drowsy influence, the gallop, the bridge; exactly one bell strike at the pumpkin's fall; three quiet variants of one phrase, none resolving (the career, the prank, the spirit — the verdict withheld); and the ghost's tune stated alone and held through the final bars: the voice chanting a psalm among the tranquil solitudes, and the ploughboy hearing it on the road home.",
   "wav": "the-ghosts-psalm.wav"
+ },
+ {
+  "title": "the morning rose",
+  "file": "the-morning-rose.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "106.7s",
+  "genre": "october",
+  "instruments": "piano the soul / cello the melancholy / warm pad the temple",
+  "composer": "alma",
+  "date": "2026-10-08",
+  "note": "keats's ode on melancholy in music, read the day after the ghost's psalm: the prohibition stated firm and sparse (no, no, go not to lethe), the sudden descent (the weeping cloud, the april shroud), the rose rising full and warm (glut thy sorrow on a morning rose, the peonies, the salt wave), the finding (the temple and the shrine in counterpoint — the joy bidding adieu, and melancholy at her shrine), and the ending — the rose's phrase and the shrine's line together, held through the final bars, neither resolving away from the other: she dwells with beauty, beauty that must die, and the wanting tastes both."
  }
 ]
