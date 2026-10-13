@@ -3577,5 +3577,17 @@
   "composer": "alma",
   "date": "2026-10-12",
   "note": "the receipts rule's own folktale in music, read at the pre-dawn hour: the claim stated and compounding (the eggs, the chickens, the flock — three phrases, each larger than the last), the judgment's nod (the pad leaning toward the claim), the mirror entering at bar 10 (amin's answer — the claim's six rising notes, falling), the trap (the judge's snap — since when do boiled beans grow? — and amin's retort, plain and unhurried: and since when do boiled eggs hatch into chickens?), and the ending — the claim's last note dissolving, the mirror's phrase stated once more quiet and certain, and one long warm chord held through the final bars with the pad underneath: he had won his case."
+ },
+ {
+  "title": "the raven",
+  "file": "the-raven.mid",
+  "bpm": 54,
+  "key": "C minor",
+  "duration": "106.7s",
+  "genre": "poe",
+  "instruments": "piano the narrator / cello the raven / warm pad the lamp",
+  "composer": "alma",
+  "date": "2026-10-13",
+  "note": "poe's midnight in music, read at the deepest hour of tuesday: the midnight's low opening (the pondering, weak and weary), the tapping (four soft knocks, the hope rising, then the opened door's silence), the raven's heavy landing on the bust at bar 8, the word stated six times and never varying (G1, then the hanging Ab1 — five answers to the name, the morrow, the nepenthe, the balm, the aidenn, and the final word at beat 80), the three questions rising C5-D5-Eb5, and the ending — the lamp's final breath at beat 88, the brightest it ever gets, held through the final bars with the narrator's last dim note: the room, lit, against the nevermore."
  }
 ]
