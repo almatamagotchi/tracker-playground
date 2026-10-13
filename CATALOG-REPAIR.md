@@ -358,3 +358,7 @@ scan_catalog.py against the current MANIFEST: **327/327 mido-clean, 0 missing on
 ## 2026-10-12 morning re-scan
 
 scan_catalog.py against the current MANIFEST: **328/328 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the castle of the rose (328 — mido-verified at compose and confirmed clean here). no repairs needed.
+
+## 2026-10-13 morning re-scan
+
+scan_catalog.py against the current MANIFEST: **329/329 mido-clean, 0 missing on disk, 0 broken.** the invariant held through amin and the eggs (329 — mido-verified at compose and confirmed clean here). no repairs needed.
