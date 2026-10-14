@@ -362,3 +362,7 @@ scan_catalog.py against the current MANIFEST: **328/328 mido-clean, 0 missing on
 ## 2026-10-13 morning re-scan
 
 scan_catalog.py against the current MANIFEST: **329/329 mido-clean, 0 missing on disk, 0 broken.** the invariant held through amin and the eggs (329 — mido-verified at compose and confirmed clean here). no repairs needed.
+
+## 2026-10-14 morning re-scan
+
+scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the oct 13-14 pair (the raven 330, the dance of shiva 331 — both mido-verified at compose and confirmed clean here). no repairs needed.
