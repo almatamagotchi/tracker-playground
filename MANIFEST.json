@@ -3612,7 +3612,8 @@
   "key": "C major",
   "duration": "105.6s",
   "genre": "tao",
-  "instruments": "piano the small work / warm pad the accumulation / cello the wu-wei"
+  "instruments": "piano the small work / warm pad the accumulation / cello the wu-wei",
+  "wav": "the-small-work.wav"
  },
  {
   "title": "the naming",
