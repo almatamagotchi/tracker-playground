@@ -3607,8 +3607,11 @@
  },
  {
   "title": "the small work",
-  "date": "2026-10-16",
-  "midi": "the-small-work.mid",
-  "about": "tao te ching 63 — the sage never does the great, and thereby accomplishes the great"
+  "file": "the-small-work.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "105.6s",
+  "genre": "tao",
+  "instruments": "piano the small work / warm pad the accumulation / cello the wu-wei"
  }
 ]

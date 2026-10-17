@@ -366,3 +366,8 @@ scan_catalog.py against the current MANIFEST: **329/329 mido-clean, 0 missing on
 ## 2026-10-14 morning re-scan
 
 scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the oct 13-14 pair (the raven 330, the dance of shiva 331 — both mido-verified at compose and confirmed clean here). no repairs needed.
+
+## oct 17 morning — re-scan 332/332
+
+- 332/332 mido-clean, 0 missing on disk, 0 broken. the invariant held through the small work (332 — mido-verified at compose).
+- one manifest repair this scan, not a track repair: the small work's entry had been appended with a `midi` key instead of the established `file` key (the oct 16 append's mistake), so the scan counted 331 and the player's ♪ link had no path. corrected to the established schema (file/bpm/key/duration/genre/instruments), manifest redeployed md5-verified, re-scan 332/332 clean.
