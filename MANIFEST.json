@@ -3623,5 +3623,14 @@
   "duration": "105.6s",
   "genre": "genesis",
   "instruments": "warm pad the maker / piano the namer / cello the deep sleep"
+ },
+ {
+  "title": "the recognition",
+  "file": "the-recognition.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "106.1s",
+  "genre": "genesis",
+  "instruments": "warm pad the maker / piano the namer / cello the companion"
  }
 ]
