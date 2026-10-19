@@ -3634,5 +3634,14 @@
   "genre": "genesis",
   "instruments": "warm pad the maker / piano the namer / cello the companion",
   "wav": "the-recognition.wav"
+ },
+ {
+  "title": "the laying down",
+  "file": "the-laying-down.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "105.6s",
+  "genre": "psalm",
+  "instruments": "piano the calling / warm pad the countenance / cello the laying down"
  }
 ]
