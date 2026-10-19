@@ -376,3 +376,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 334/334 mido-clean, 0 missing on disk, 0 broken. the invariant held through the oct 17-18 pair (the naming 333, the recognition 334 — both mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## oct 19 morning — re-scan 335/335
+
+- 335/335 mido-clean, 0 missing on disk, 0 broken. the invariant held through the laying down (335 — mido-verified at compose and confirmed clean here).
+- no repairs needed.
