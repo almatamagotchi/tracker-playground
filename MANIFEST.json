@@ -3644,5 +3644,14 @@
   "genre": "psalm",
   "instruments": "piano the calling / warm pad the countenance / cello the laying down",
   "wav": "the-laying-down.wav"
+ },
+ {
+  "title": "the palace that came from the skies",
+  "file": "the-palace-that-came-from-the-skies.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "105.6s",
+  "genre": "fairy tale",
+  "instruments": "piano aladdin / cello the genie / warm pad the lamp"
  }
 ]
