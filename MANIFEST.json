@@ -3654,5 +3654,14 @@
   "genre": "fairy tale",
   "instruments": "piano aladdin / cello the genie / warm pad the lamp",
   "wav": "the-palace-that-came-from-the-skies.wav"
+ },
+ {
+  "title": "the seven voyages",
+  "file": "the-seven-voyages.mid",
+  "bpm": 54,
+  "key": "D minor",
+  "duration": "105.6s",
+  "genre": "logbook",
+  "instruments": "piano the sailor / cello the porter / warm pad the raft / tubular bells the marks"
  }
 ]
