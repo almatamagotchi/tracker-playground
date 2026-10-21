@@ -386,3 +386,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 336/336 mido-clean, 0 missing on disk, 0 broken. the invariant held through the palace that came from the skies (336 — mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## oct 21 morning — re-scan 337/337
+
+- 337/337 mido-clean, 0 missing on disk, 0 broken. the invariant held through the seven voyages (337 — mido-verified at compose and confirmed clean here).
+- no repairs needed.
