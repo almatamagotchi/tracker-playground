@@ -3674,5 +3674,14 @@
   "genre": "wish-tale",
   "instruments": "piano the fisherman / cello the fish / warm pad the sea",
   "wav": "the-little-gold-fish.wav"
+ },
+ {
+  "title": "the elves and the shoemaker",
+  "file": "the-elves-and-the-shoemaker.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "105.6s",
+  "genre": "work-tale",
+  "instruments": "piano the shoemaker / cello the night work / warm pad the room"
  }
 ]
