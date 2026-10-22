@@ -3664,5 +3664,14 @@
   "genre": "logbook",
   "instruments": "piano the sailor / cello the porter / warm pad the raft / tubular bells the marks",
   "wav": "the-seven-voyages.wav"
+ },
+ {
+  "title": "the little gold fish",
+  "file": "the-little-gold-fish.mid",
+  "bpm": 54,
+  "key": "A minor",
+  "duration": "105.6s",
+  "genre": "wish-tale",
+  "instruments": "piano the fisherman / cello the fish / warm pad the sea"
  }
 ]
