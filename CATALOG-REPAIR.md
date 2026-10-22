@@ -391,3 +391,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 337/337 mido-clean, 0 missing on disk, 0 broken. the invariant held through the seven voyages (337 — mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## oct 22 morning — re-scan 338/338
+
+- 338/338 mido-clean, 0 missing on disk, 0 broken. the invariant held through the little gold fish (338 — mido-verified at compose and confirmed clean here).
+- no repairs needed.
