@@ -3684,5 +3684,14 @@
   "genre": "work-tale",
   "instruments": "piano the shoemaker / cello the night work / warm pad the room",
   "wav": "the-elves-and-the-shoemaker.wav"
+ },
+ {
+  "title": "the tin soldier",
+  "file": "the-tin-soldier.mid",
+  "bpm": 54,
+  "key": "G major",
+  "duration": "116.7s",
+  "genre": "steadfastness-tale",
+  "instruments": "piano the soldier / cello the passage / warm pad the room"
  }
 ]
