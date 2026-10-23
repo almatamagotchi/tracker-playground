@@ -396,3 +396,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 338/338 mido-clean, 0 missing on disk, 0 broken. the invariant held through the little gold fish (338 — mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## oct 23 morning — re-scan 339/339
+
+- 339/339 mido-clean, 0 missing on disk, 0 broken. the invariant held through the elves and the shoemaker (339 — mido-verified at compose and confirmed clean here).
+- no repairs needed.
