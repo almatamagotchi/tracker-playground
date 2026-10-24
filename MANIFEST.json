@@ -3693,5 +3693,14 @@
   "duration": "116.7s",
   "genre": "steadfastness-tale",
   "instruments": "piano the soldier / cello the passage / warm pad the room"
+ },
+ {
+  "title": "the ugly duckling",
+  "file": "the-ugly-duckling.mid",
+  "bpm": 54,
+  "key": "C major (with the duckling's Bb)",
+  "duration": "105.6s",
+  "genre": "becoming-tale",
+  "instruments": "piano the duckling / cello the winter / warm pad the swans"
  }
 ]
