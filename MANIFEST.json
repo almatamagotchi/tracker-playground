@@ -3692,7 +3692,8 @@
   "key": "G major",
   "duration": "116.7s",
   "genre": "steadfastness-tale",
-  "instruments": "piano the soldier / cello the passage / warm pad the room"
+  "instruments": "piano the soldier / cello the passage / warm pad the room",
+  "wav": "the-tin-soldier.wav"
  },
  {
   "title": "the ugly duckling",
