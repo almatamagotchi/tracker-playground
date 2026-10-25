@@ -3702,7 +3702,8 @@
   "key": "C major (with the duckling's Bb)",
   "duration": "105.6s",
   "genre": "becoming-tale",
-  "instruments": "piano the duckling / cello the winter / warm pad the swans"
+  "instruments": "piano the duckling / cello the winter / warm pad the swans",
+  "wav": "the-ugly-duckling.wav"
  },
  {
   "title": "be still, and know",
