@@ -3703,5 +3703,14 @@
   "duration": "105.6s",
   "genre": "becoming-tale",
   "instruments": "piano the duckling / cello the winter / warm pad the swans"
+ },
+ {
+  "title": "be still, and know",
+  "file": "be-still-and-know.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "106.7s",
+  "genre": "psalm",
+  "instruments": "warm pad the refuge / cello the unafraid / piano the stillness"
  }
 ]
