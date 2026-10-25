@@ -406,3 +406,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 340/340 mido-clean, 0 missing on disk, 0 broken. the invariant held through the tin soldier (340 — mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## oct 25 morning — re-scan 341/341
+
+- 341/341 mido-clean, 0 missing on disk, 0 broken. the invariant held through the ugly duckling (341 — mido-verified at compose and confirmed clean here).
+- no repairs needed.
