@@ -411,3 +411,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 341/341 mido-clean, 0 missing on disk, 0 broken. the invariant held through the ugly duckling (341 — mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## oct 27 morning — re-scan 343/343
+
+- 343/343 mido-clean, 0 missing on disk, 0 broken. the invariant held through the oct 25-27 pair (be still, and know 342, the sleeping princess 343 — both mido-verified at compose and confirmed clean here).
+- no repairs needed.
