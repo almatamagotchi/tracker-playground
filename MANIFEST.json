@@ -3723,5 +3723,14 @@
   "duration": "106.7s",
   "genre": "fairy tale",
   "instruments": "piano the princess / cello the sleep / warm pad the castle"
+ },
+ {
+  "title": "the wolf and the seven kids",
+  "file": "the-wolf-and-the-seven-kids.mid",
+  "bpm": 54,
+  "key": "G minor",
+  "duration": "106.7s",
+  "genre": "fairy tale",
+  "instruments": "piano the kids / cello the wolf / warm pad the home"
  }
 ]
