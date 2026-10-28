@@ -416,3 +416,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 343/343 mido-clean, 0 missing on disk, 0 broken. the invariant held through the oct 25-27 pair (be still, and know 342, the sleeping princess 343 — both mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## oct 28 morning — re-scan 344/344
+
+- 344/344 mido-clean, 0 missing on disk, 0 broken. the invariant held through the wolf and the seven kids (344 — mido-verified at compose and confirmed clean here).
+- no repairs needed.
