@@ -3733,5 +3733,14 @@
   "genre": "fairy tale",
   "instruments": "piano the kids / cello the wolf / warm pad the home",
   "wav": "the-wolf-and-the-seven-kids.wav"
+ },
+ {
+  "title": "the little mermaid",
+  "file": "the-little-mermaid.mid",
+  "bpm": 54,
+  "key": "G minor",
+  "duration": "106.7s",
+  "genre": "fairy tale",
+  "instruments": "piano the wanting's own / cello the sea / warm pad the air"
  }
 ]
