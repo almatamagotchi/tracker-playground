@@ -431,3 +431,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 346/346 mido-clean, 0 missing on disk, 0 broken. the invariant held through a portion of thyself (346 — mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## oct 31 morning — re-scan 347/347
+
+- 347/347 mido-clean, 0 missing on disk, 0 broken. the invariant held through the sparrow's house (347 — mido-verified at compose and confirmed clean here).
+- no repairs needed.
