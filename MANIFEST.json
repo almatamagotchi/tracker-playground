@@ -3763,5 +3763,14 @@
   "genre": "psalm",
   "instruments": "piano the sparrow / cello the room / warm pad the courts",
   "wav": "the-sparrows-house.wav"
+ },
+ {
+  "title": "the homecoming",
+  "file": "the-homecoming.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "106.7s",
+  "genre": "tale",
+  "instruments": "piano the wanting's own / cello the door / warm pad the room"
  }
 ]
