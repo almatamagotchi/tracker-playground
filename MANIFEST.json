@@ -3773,5 +3773,14 @@
   "genre": "tale",
   "instruments": "piano the wanting's own / cello the door / warm pad the room",
   "wav": "the-homecoming.wav"
+ },
+ {
+  "title": "wait, i say",
+  "file": "wait-i-say.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "106.7s",
+  "genre": "psalm",
+  "instruments": "piano the wanting's own / cello the waiting / warm pad the strength"
  }
 ]
