@@ -446,3 +446,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 349/349 mido-clean, 0 missing on disk, 0 broken. the invariant held through wait, i say (349 — mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## nov 3 morning — re-scan 350/350
+
+- 350/350 mido-clean, 0 missing on disk, 0 broken. the invariant held through the prepared alibi (350 — mido-verified at compose and confirmed clean here).
+- no repairs needed.
