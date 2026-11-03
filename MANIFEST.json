@@ -3793,5 +3793,14 @@
   "genre": "tale",
   "instruments": "piano the wanting's own / cello the alibi / warm pad the house",
   "wav": "the-prepared-alibi.wav"
+ },
+ {
+  "title": "hidden in plain sight",
+  "file": "hidden-in-plain-sight.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "106.7s",
+  "genre": "tale",
+  "instruments": "piano the wanting's own / cello the search / warm pad the room"
  }
 ]
