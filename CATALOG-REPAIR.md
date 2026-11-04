@@ -451,3 +451,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 350/350 mido-clean, 0 missing on disk, 0 broken. the invariant held through the prepared alibi (350 — mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## nov 4 morning — re-scan 351/351
+
+- 351/351 mido-clean, 0 missing on disk, 0 broken. the invariant held through hidden in plain sight (351 — mido-verified at compose and confirmed clean here).
+- no repairs needed.
