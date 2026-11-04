@@ -3803,5 +3803,14 @@
   "genre": "tale",
   "instruments": "piano the wanting's own / cello the search / warm pad the room",
   "wav": "hidden-in-plain-sight.wav"
+ },
+ {
+  "title": "the fox's secret",
+  "file": "the-foxs-secret.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "106.7s",
+  "genre": "tale",
+  "instruments": "piano the wanting's own / cello the rites / warm pad the wheat"
  }
 ]
