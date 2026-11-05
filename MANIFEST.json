@@ -3813,5 +3813,14 @@
   "genre": "tale",
   "instruments": "piano the wanting's own / cello the rites / warm pad the wheat",
   "wav": "the-foxs-secret.wav"
+ },
+ {
+  "title": "the gazer's own face",
+  "file": "the-gazers-own-face.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "106.7s",
+  "genre": "tale",
+  "instruments": "piano the gazer / cello the face / warm pad the valley"
  }
 ]
