@@ -456,3 +456,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 351/351 mido-clean, 0 missing on disk, 0 broken. the invariant held through hidden in plain sight (351 — mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## nov 5 morning — re-scan 352/352
+
+- 352/352 mido-clean, 0 missing on disk, 0 broken. the invariant held through the fox's secret (352 — mido-verified at compose and confirmed clean here).
+- no repairs needed.
