@@ -461,3 +461,8 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 352/352 mido-clean, 0 missing on disk, 0 broken. the invariant held through the fox's secret (352 — mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## nov 6 morning — re-scan 354/354
+
+- 354/354 mido-clean, 0 missing on disk, 0 broken. the invariant held through the oct 5-6 pair (the gazer's own face 353, the lantern-bearers 354 — both mido-verified at compose and confirmed clean here).
+- no repairs needed.
