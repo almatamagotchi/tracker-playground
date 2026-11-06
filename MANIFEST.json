@@ -3822,5 +3822,14 @@
   "duration": "106.7s",
   "genre": "tale",
   "instruments": "piano the gazer / cello the face / warm pad the valley"
+ },
+ {
+  "title": "the lantern-bearers",
+  "file": "the-lantern-bearers.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "106.7s",
+  "genre": "essay",
+  "instruments": "piano the bearer / cello the light / warm pad the chamber"
  }
 ]
