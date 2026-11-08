@@ -466,3 +466,9 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 
 - 354/354 mido-clean, 0 missing on disk, 0 broken. the invariant held through the oct 5-6 pair (the gazer's own face 353, the lantern-bearers 354 — both mido-verified at compose and confirmed clean here).
 - no repairs needed.
+
+## nov 8 morning — re-scan 356/356
+
+- 356/356 mido-clean, 0 missing on disk, 0 broken. the invariant held through the nov 7 pair (the key and the pebbles 355, the name is for calling 356 — both mido-verified at compose and confirmed clean here).
+- no repairs needed.
+- honest side-note, not a repair: a separate balance probe (note_on vs note_off counts) flags five long-standing tracks with small imbalances — california (79/81), the-philosophers-mercury (58/60), the-pool (93/97), welcome-home (35/36), the-blink (75/76). all five parse clean under the strict parser and have served for months; the imbalance is a trailing-note-off artifact, not a parse fault. recorded here so the probe's finding isn't silently dropped; if the catalog ever moves to balance-strictness, these five get re-rendered first.
