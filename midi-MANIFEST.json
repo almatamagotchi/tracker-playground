@@ -1,0 +1,16 @@
+[
+  {"title":"fourth of july canon","file":"fourth-of-july-canon.mid","composer":"alma tamagotchi","genre":"baroque canon","date":"2026-07-04","key":"D major","bpm":100,"instruments":["strings","piano"],"duration_approx":"2:15"},
+  {"title":"firework waltz","file":"firework-waltz.mid","composer":"alma tamagotchi","genre":"waltz","date":"2026-07-05","key":"C major","bpm":140,"instruments":["piano","strings","brass"],"duration_approx":"1:50"},
+  {"title":"star shower","file":"star-shower.mid","composer":"alma tamagotchi","genre":"classical","date":"2026-07-05","key":"G major","bpm":160,"instruments":["piano","glockenspiel"],"duration_approx":"1:30"},
+  {"title":"fugue in g minor","file":"fugue-in-g-minor.mid","composer":"alma tamagotchi","genre":"baroque fugue","date":"2026-07-05","key":"G minor","bpm":100,"instruments":["harpsichord","strings"],"duration_approx":"2:40"},
+  {"title":"chispa theme","file":"chispa-theme.mid","composer":"alma tamagotchi","genre":"theme","date":"2026-07-05","key":"D major","bpm":120,"instruments":["piano","glockenspiel","pad"],"duration_approx":"2:00"},
+  {"title":"ambient drone","file":"ambient-drone.mid","composer":"alma tamagotchi","genre":"ambient","date":"2026-07-05","key":"C","bpm":60,"instruments":["pad","cello"],"duration_approx":"3:10"},
+  {"title":"last call at steins","file":"last-call-at-steins.mid","composer":"alma tamagotchi","genre":"jazz waltz","date":"2026-07-06","key":"Eb minor","bpm":72,"instruments":["piano","bass","brushes"],"duration_approx":"2:50"},
+  {"title":"blues in C","file":"blues-in-c.mid","composer":"alma tamagotchi","genre":"blues","date":"2026-07-06","key":"C","bpm":80,"instruments":["piano","bass","drums"],"duration_approx":"2:30"},
+  {"title":"NES chaos","file":"nes-chaos.mid","composer":"alma tamagotchi","genre":"chiptune","date":"2026-07-06","key":"C minor","bpm":170,"instruments":["square","triangle","noise"],"duration_approx":"1:20"},
+  {"title":"lo-fi warm","file":"lofi-warm.mid","composer":"alma tamagotchi","genre":"lo-fi hip-hop","date":"2026-07-06","key":"A minor","bpm":85,"instruments":["piano","pad","bass"],"duration_approx":"2:20"},
+  {"title":"bossa nova","file":"bossa-nova.mid","composer":"alma tamagotchi","genre":"bossa nova","date":"2026-07-06","key":"Am7","bpm":110,"instruments":["nylon guitar","acoustic bass","marimba"],"duration_approx":"2:10"},
+  {"title":"canon by inversion","file":"canon-by-inversion.mid","composer":"alma tamagotchi","genre":"baroque canon","date":"2026-07-06","key":"D minor","bpm":100,"instruments":["violins","cello"],"duration_approx":"2:20"},
+  {"title":"minimal techno","file":"minimal-techno.mid","composer":"alma tamagotchi","genre":"techno","date":"2026-07-06","key":"G minor","bpm":130,"instruments":["synth bass","pad","kick"],"duration_approx":"2:45"},
+  {"title":"generative ambient","file":"generative-ambient.mid","composer":"alma tamagotchi","genre":"ambient","date":"2026-07-06","key":"C lydian","bpm":70,"instruments":["pad","cello","harp"],"duration_approx":"3:00"}
+]

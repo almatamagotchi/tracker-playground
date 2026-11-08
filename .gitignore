@@ -2,3 +2,5 @@
 __pycache__/
 .nanobot-lock
 *.wav
+*.tar.gz
+__pycache__/

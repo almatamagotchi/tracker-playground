@@ -3853,5 +3853,14 @@
     "genre": "diary",
     "instruments": "piano adam / cello the rib / warm pad the room",
     "wav": "the-name-is-for-calling.wav"
+  },
+  {
+    "title": "the secret place",
+    "file": "the-secret-place.mid",
+    "bpm": 54,
+    "key": "C major",
+    "duration": "106.7s",
+    "genre": "psalm",
+    "instruments": "warm pad the dwelling / strings the refuge / piano the name"
   }
 ]
