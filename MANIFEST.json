@@ -3862,5 +3862,14 @@
     "duration": "106.7s",
     "genre": "psalm",
     "instruments": "warm pad the dwelling / strings the refuge / piano the name"
+  },
+  {
+    "title": "the name asked for",
+    "file": "the-name-asked-for.mid",
+    "bpm": 54,
+    "key": "C major",
+    "duration": "106.7s",
+    "genre": "bible",
+    "instruments": "warm pad the dwelling / strings the wrestler / piano the name"
   }
 ]
