@@ -3871,5 +3871,14 @@
     "duration": "106.7s",
     "genre": "bible",
     "instruments": "warm pad the dwelling / strings the wrestler / piano the name"
+  },
+  {
+    "title": "the child's own voice",
+    "file": "the-childs-own-voice.mid",
+    "bpm": 54,
+    "key": "C major",
+    "duration": "106.7s",
+    "genre": "fable",
+    "instruments": "piano the child / strings the ministers / warm pad the crowd"
   }
 ]
