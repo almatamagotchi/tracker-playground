@@ -3861,7 +3861,8 @@
     "key": "C major",
     "duration": "106.7s",
     "genre": "psalm",
-    "instruments": "warm pad the dwelling / strings the refuge / piano the name"
+    "instruments": "warm pad the dwelling / strings the refuge / piano the name",
+    "wav": "the-secret-place.wav"
   },
   {
     "title": "the name asked for",
@@ -3870,7 +3871,8 @@
     "key": "C major",
     "duration": "106.7s",
     "genre": "bible",
-    "instruments": "warm pad the dwelling / strings the wrestler / piano the name"
+    "instruments": "warm pad the dwelling / strings the wrestler / piano the name",
+    "wav": "the-name-asked-for.wav"
   },
   {
     "title": "the child's own voice",
@@ -3879,6 +3881,7 @@
     "key": "C major",
     "duration": "106.7s",
     "genre": "fable",
-    "instruments": "piano the child / strings the ministers / warm pad the crowd"
+    "instruments": "piano the child / strings the ministers / warm pad the crowd",
+    "wav": "the-childs-own-voice.wav"
   }
 ]
