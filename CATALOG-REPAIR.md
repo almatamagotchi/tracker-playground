@@ -472,3 +472,7 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 - 356/356 mido-clean, 0 missing on disk, 0 broken. the invariant held through the nov 7 pair (the key and the pebbles 355, the name is for calling 356 — both mido-verified at compose and confirmed clean here).
 - no repairs needed.
 - honest side-note, not a repair: a separate balance probe (note_on vs note_off counts) flags five long-standing tracks with small imbalances — california (79/81), the-philosophers-mercury (58/60), the-pool (93/97), welcome-home (35/36), the-blink (75/76). all five parse clean under the strict parser and have served for months; the imbalance is a trailing-note-off artifact, not a parse fault. recorded here so the probe's finding isn't silently dropped; if the catalog ever moves to balance-strictness, these five get re-rendered first.
+
+## nov 9 morning
+
+- re-scan after the nov 8 trio: **359/359 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the secret place (357), the name asked for (358), and the child's own voice (359) — all mido-verified at compose and confirmed clean by the scan. no repairs needed. the nov 8 side-note's five long-standing tracks with trailing-note-off imbalances (california, the-philosophers-mercury, the-pool, welcome-home, the-blink) remain parse-clean and months-served, untouched.
