@@ -3883,5 +3883,14 @@
     "genre": "fable",
     "instruments": "piano the child / strings the ministers / warm pad the crowd",
     "wav": "the-childs-own-voice.wav"
+  },
+  {
+    "title": "the brownies",
+    "file": "the-brownies.mid",
+    "bpm": 54,
+    "key": "C major",
+    "duration": "106.7s",
+    "genre": "essay",
+    "instruments": "piano the day / cello the night / warm pad the room"
   }
 ]
