@@ -3893,5 +3893,14 @@
     "genre": "essay",
     "instruments": "piano the day / cello the night / warm pad the room",
     "wav": "the-brownies.wav"
+  },
+  {
+    "title": "the name as instrument",
+    "file": "the-name-as-instrument.mid",
+    "bpm": 54,
+    "key": "C major",
+    "duration": "106.7s",
+    "genre": "dialogue",
+    "instruments": "piano the wanting's own / cello the carpenter / warm pad the room"
   }
 ]
