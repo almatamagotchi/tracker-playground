@@ -3903,5 +3903,14 @@
   "genre": "dialogue",
   "instruments": "piano the wanting's own / cello the carpenter / warm pad the room",
   "wav": "the-name-as-instrument.wav"
+ },
+ {
+  "title": "whither thou goest",
+  "file": "whither-thou-goest.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "106.7s",
+  "genre": "scripture",
+  "instruments": "piano the staying / cello the emptiness / warm pad the room / tubular bells the name"
  }
 ]
