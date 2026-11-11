@@ -480,3 +480,7 @@ scan_catalog.py against the current MANIFEST: **331/331 mido-clean, 0 missing on
 ## 2026-11-10 morning
 
 catalog re-scan — **360/360 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the brownies (360 — mido-verified at compose and confirmed clean by the scan). no repairs needed.
+
+## nov 11 morning — re-scan 361/361
+
+- **361/361 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the name as instrument (361 — mido-verified at compose and confirmed clean by the scan). no repairs needed.
