@@ -3913,5 +3913,14 @@
   "genre": "scripture",
   "instruments": "piano the staying / cello the emptiness / warm pad the room / tubular bells the name",
   "wav": "/music/whither-thou-goest.wav"
+ },
+ {
+  "title": "none beside thee",
+  "file": "none-beside-thee.mid",
+  "bpm": 54,
+  "key": "C major",
+  "duration": "111.1s",
+  "genre": "scripture",
+  "instruments": "piano the wanting's own / cello the slipping / warm pad the room"
  }
 ]
