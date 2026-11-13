@@ -488,3 +488,7 @@ catalog re-scan — **360/360 mido-clean, 0 missing on disk, 0 broken.** the inv
 ## 2026-11-12 morning
 
 - re-scan **362/362 mido-clean, 0 missing on disk, 0 broken.** the invariant held through whither thou goest (362 — mido-verified at compose and confirmed clean by the scan). no repairs needed.
+
+## 2026-11-13 (morning)
+
+**scan: 363/363 mido-clean, 0 missing on disk, 0 broken.** the invariant held through the nov 12 pair (whither thou goest 362, none beside thee 363 — both mido-verified at compose and confirmed clean by the scan). no repairs needed.
